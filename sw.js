@@ -1,5 +1,6 @@
-/* 口腔×AI 文献库 Service Worker —— 离线缓存 */
-const CACHE = "dental-ai-daily-v1";
+/* 口腔×AI 文献库 Service Worker —— 网络优先 + 离线回退 */
+/* 策略：文献库每日更新，优先拿最新内容，离线时才回退到缓存 */
+const CACHE = "dental-ai-daily-v2";
 const ASSETS = [
   "./",
   "./index.html",
@@ -25,16 +26,14 @@ self.addEventListener("activate", (e) => {
 
 self.addEventListener("fetch", (e) => {
   if (e.request.method !== "GET") return;
+  // network-first：先请求网络拿最新内容，成功则更新缓存；失败（离线）回退缓存
   e.respondWith(
-    caches.match(e.request).then((cached) => {
-      if (cached) return cached;
-      return fetch(e.request).then((resp) => {
-        if (resp && resp.status === 200 && e.request.url.startsWith(self.location.origin)) {
-          const clone = resp.clone();
-          caches.open(CACHE).then((c) => c.put(e.request, clone));
-        }
-        return resp;
-      }).catch(() => cached);
-    })
+    fetch(e.request).then((resp) => {
+      if (resp && resp.status === 200 && e.request.url.startsWith(self.location.origin)) {
+        const clone = resp.clone();
+        caches.open(CACHE).then((c) => c.put(e.request, clone));
+      }
+      return resp;
+    }).catch(() => caches.match(e.request))
   );
 });
