@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>口腔×AI 文献日报 · 2026-08-28</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f6f7f9; --surface:#ffffff; --border:#e5e8ec; --border-soft:#eef0f3;
+    --text:#1a2233; --text-2:#4a5568; --text-3:#8b95a5;
+    --s:#b8860b; --s-bg:#fff8e6; --s-line:#d4a017;
+    --a:#2563eb; --a-bg:#eef4ff; --a-line:#3b82f6;
+    --b:#0f8a5f; --b-bg:#eafaf2; --b-line:#10b981;
+    --c:#6b7280; --c-bg:#f3f4f6; --c-line:#9ca3af;
+    --mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+    --sans:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:15px;line-height:1.65;-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:980px;margin:0 auto;padding:0 24px;}
+
+  header.hero{background:linear-gradient(135deg,#0f172a,#1e293b);color:#fff;padding:52px 0 44px;}
+  header.hero .wrap{max-width:980px;margin:0 auto;padding:0 24px;}
+  .kicker{font-family:var(--mono);font-size:12px;letter-spacing:2px;color:#93c5fd;text-transform:uppercase;}
+  h1{font-size:30px;font-weight:800;margin-top:8px;letter-spacing:-.5px;}
+  h1 .hl{color:#fbbf24;}
+  .sub{color:#cbd5e1;margin-top:8px;font-size:15px;font-weight:300;}
+  .meta-row{display:flex;gap:12px;margin-top:18px;flex-wrap:wrap;}
+  .meta{font-family:var(--mono);font-size:12px;color:#e2e8f0;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:6px;padding:5px 11px;}
+
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:28px 0 8px;background:transparent;}
+  .stat{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:16px 10px;text-align:center;margin-top:-70px;box-shadow:0 6px 18px rgba(15,23,42,.08);}
+  .stat .num{font-family:var(--mono);font-size:26px;font-weight:700;}
+  .stat .lbl{font-size:11.5px;color:var(--text-3);margin-top:3px;}
+  .stat.s .num{color:var(--s);} .stat.a .num{color:var(--a);} .stat.b .num{color:var(--b);} .stat.c .num{color:var(--c);}
+
+  main{padding:36px 0 60px;}
+  .grade-head{display:flex;align-items:center;gap:12px;margin:34px 0 14px;}
+  .grade-head .badge{font-family:var(--mono);font-weight:700;font-size:14px;color:#fff;border-radius:7px;padding:4px 12px;letter-spacing:1px;}
+  .grade-head .desc{font-size:13px;color:var(--text-3);}
+  .badge.s{background:var(--s-line);} .badge.a{background:var(--a-line);} .badge.b{background:var(--b-line);} .badge.c{background:var(--c-line);}
+
+  .paper{background:var(--surface);border:1px solid var(--border);border-left:4px solid var(--c-line);border-radius:12px;padding:20px 22px;margin-bottom:14px;box-shadow:0 1px 3px rgba(15,23,42,.04);}
+  .paper.s{border-left-color:var(--s-line);background:var(--s-bg);}
+  .paper.a{border-left-color:var(--a-line);background:var(--a-bg);}
+  .paper.b{border-left-color:var(--b-line);background:var(--b-bg);}
+  .paper.c{border-left-color:var(--c-line);background:var(--c-bg);}
+  .paper .top{display:flex;align-items:flex-start;gap:10px;flex-wrap:wrap;}
+  .paper .g{font-family:var(--mono);font-weight:700;font-size:12px;border-radius:5px;padding:2px 8px;color:#fff;letter-spacing:1px;}
+  .g.s{background:var(--s-line);} .g.a{background:var(--a-line);} .g.b{background:var(--b-line);} .g.c{background:var(--c-line);}
+  .paper .tags{margin-left:auto;display:flex;gap:6px;flex-wrap:wrap;}
+  .paper .tag{font-size:11px;color:var(--text-2);background:#fff;border:1px solid var(--border);border-radius:999px;padding:2px 9px;}
+  .paper h3{font-size:16.5px;font-weight:700;margin:10px 0 4px;line-height:1.4;letter-spacing:-.2px;}
+  .paper .src{font-family:var(--mono);font-size:12px;color:var(--text-3);}
+  .paper .src a{color:var(--a);text-decoration:none;}
+  .paper .src a:hover{text-decoration:underline;}
+  .paper .fields{margin-top:12px;display:grid;gap:7px;}
+  .paper .f{font-size:13.5px;color:var(--text-2);}
+  .paper .f b{color:var(--text);font-weight:600;}
+  .paper .f.limit b{color:#9a3412;}
+
+  .tip{background:#fff;border:1px dashed #f59e0b;border-radius:12px;padding:18px 22px;margin-top:10px;}
+  .tip .tt{font-weight:800;color:#b45309;font-size:14px;}
+  .tip p{font-size:13.5px;color:var(--text-2);margin-top:6px;}
+  .tip ul{margin:8px 0 0 18px;font-size:13.5px;color:var(--text-2);}
+  .tip li{margin-bottom:4px;}
+
+  footer{background:var(--surface);border-top:1px solid var(--border);padding:28px 0 46px;text-align:center;color:var(--text-3);font-size:12.5px;}
+  footer .mono{font-family:var(--mono);}
+  footer .src-note{margin-top:8px;font-size:11.5px;color:var(--text-3);}
+
+  @media(max-width:640px){ .stats{grid-template-columns:repeat(2,1fr);} .stat{margin-top:0;} main{padding-top:20px;} h1{font-size:24px;} }
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="wrap">
+    <div class="kicker">Dental × AI Literature Daily</div>
+    <h1>口腔 × AI <span class="hl">文献日报</span></h1>
+    <div class="sub">口腔医学与人工智能交叉领域 · 高质量文献精选</div>
+    <div class="meta-row">
+      <span class="meta">📅 2026-08-28</span>
+      <span class="meta">🔍 PubMed</span>
+      <span class="meta">📚 今日收录 3 篇（新增）+ 2 条行业速递</span>
+      <span class="meta">⭐ 重点：牙外伤 LLM 系统综述 / OKC CBCT Meta</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="stats">
+    <div class="stat s"><div class="num">0</div><div class="lbl">S 级 · 重磅</div></div>
+    <div class="stat a"><div class="num">1</div><div class="lbl">A 级 · 重要</div></div>
+    <div class="stat b"><div class="num">1</div><div class="lbl">B 级 · 有价值</div></div>
+    <div class="stat c"><div class="num">1</div><div class="lbl">C 级 · 参考</div></div>
+  </div>
+</div>
+
+<main class="wrap">
+
+  <!-- A 级 -->
+  <div class="grade-head"><span class="badge a">A 级</span><span class="desc">权威期刊 · 高相关系统综述 + Meta 分析</span></div>
+
+  <div class="paper a">
+    <div class="top"><span class="g a">A</span>
+      <div class="tags"><span class="tag">💬 大语言模型</span><span class="tag">⚙️ AI/算法</span><span class="tag">📈 临床预测</span></div>
+    </div>
+    <h3>AI 聊天机器人与大语言模型用于牙外伤管理决策支持：系统综述与 Meta 分析</h3>
+    <div class="src">Dental Traumatology（IADT 官方期刊） · 2026-08-27 · <a href="https://pubmed.ncbi.nlm.nih.gov/42657907/">PMID 42657907</a></div>
+    <div class="fields">
+      <div class="f"><b>研究目的</b>：系统评价 AI 聊天机器人与大语言模型在牙外伤（牙脱位、撕脱、乳牙外伤等）管理与决策支持中的准确性、一致性、安全性与指南一致性。</div>
+      <div class="f"><b>研究设计 + 样本</b>：检索 PubMed/Scopus/Embase 至 2026-04，纳入 28 项研究；按五大转化功能（患者/照护者急诊指导、指南基准、领域工作流、多模态真实病例、撕脱预后）叙事综合，并对 9 项二分类结局做探索性 Meta 分析。</div>
+      <div class="f"><b>核心结果</b>：准确/指南一致回答的合并比例为 81.7%（异质性极高）；性能随模型、提示格式、参考标准、输入类型与评估方法而异；常见安全隐患包括建议不完整、误导信息、回答不一致、可读性不足、引用不可靠。</div>
+      <div class="f limit"><b>局限</b>：研究间异质性极高、评估方法差异大；多为横断面基准测试，缺乏真实急诊场景的前瞻性验证。</div>
+    </div>
+  </div>
+
+  <!-- B 级 -->
+  <div class="grade-head"><span class="badge b">B 级</span><span class="desc">相关研究 / 系统综述 / 有价值的探索</span></div>
+
+  <div class="paper b">
+    <div class="top"><span class="g b">B</span>
+      <div class="tags"><span class="tag">🦷 影像</span><span class="tag">🧠 深度学习</span><span class="tag">🔪 颌面外科</span></div>
+    </div>
+    <h3>AI 模型在 CBCT 上检测牙源性角化囊性瘤的诊断准确性：系统综述与 Meta 分析</h3>
+    <div class="src">Health Science Reports · 2026-08-27 · <a href="https://pubmed.ncbi.nlm.nih.gov/42657008/">PMID 42657008</a></div>
+    <div class="fields">
+      <div class="f"><b>研究目的</b>：系统评价并荟萃分析 AI 模型在 CBCT 上检测牙源性角化囊性瘤（OKC）、区分其他颌骨透射性病变（如成釉细胞瘤）的诊断准确性。</div>
+      <div class="f"><b>研究设计 + 样本</b>：按 PRISMA-DTA 指南检索 5 个数据库（截至 2025-07-06），纳入 12 项研究；QUADAS-2 评估质量，随机效应模型合并，meta 回归 + 发表偏倚检验。</div>
+      <div class="f"><b>核心结果</b>：合并灵敏度 89%（95%CI 79–95%）、特异度 92%（81–97%），诊断优势比 87.06，AUC 0.828；深度学习灵敏度（91%）优于机器学习（86%）；异质性 I²=78–93%，出版年解释 57.2% 灵敏度变异。</div>
+      <div class="f limit"><b>局限</b>：异质性高（I² 78–93%），缺乏与常规影像判读的头对头前瞻对比，模型阈值与数据集差异大。</div>
+    </div>
+  </div>
+
+  <!-- C 级 -->
+  <div class="grade-head"><span class="badge c">C 级</span><span class="desc">中等相关 / 边缘 · 初步 / 参考</span></div>
+
+  <div class="paper c">
+    <div class="top"><span class="g c">C</span>
+      <div class="tags"><span class="tag">🖥️ 数字化</span><span class="tag">⚙️ AI/算法</span><span class="tag">🦠 口腔微生物</span></div>
+    </div>
+    <h3>智能纳米传感器与 IoT 系统的实时诊断监测进展</h3>
+    <div class="src">Analytical Methods · 2026-08-27 · <a href="https://pubmed.ncbi.nlm.nih.gov/42657776/">PMID 42657776</a></div>
+    <div class="fields">
+      <div class="f"><b>研究目的</b>：综述智能纳米传感器与 AI、物联网（IoT）融合的系统集成框架，用于生物医学/环境/工业的实时诊断监测与床旁检测。</div>
+      <div class="f"><b>研究设计 + 样本</b>：综合性综述，提出「纳米传感器 + AI 分析 + IoT」多层系统集成框架，汇总纳米材料（石墨烯、量子点、等离子体纳米颗粒）传感性能。</div>
+      <div class="f"><b>核心结果</b>：电化学免疫传感器可在 120 秒内以 1.424 fg/mL 检出「口腔癌生物标志物」；石墨烯纳米传感器近 27 pM 检出 C 反应蛋白；提出跨层协同平台以解决当前「传感-处理-决策」各自为政的问题。</div>
+      <div class="f limit"><b>局限</b>：口腔仅为其应用场景之一（口腔癌标志物检测），非牙科专题；仍处实验室/概念验证阶段，可靠性、稳定性与临床生物相容性待解决。</div>
+    </div>
+  </div>
+
+  <!-- 行业速递 -->
+  <div class="tip">
+    <div class="tt">💡 行业速递</div>
+    <ul>
+      <li><b>融资 · 07-16</b>：伦敦国王学院（KCL）与萨里大学分拆公司 BeCertain 获 170 万英镑（约 200 万欧元）pre-seed 融资，由 AI 风投 SVV（Sure Valley Ventures）领投、Innovate UK 支持；其临床级牙科 AI 采用「不确定度感知」机器学习，首个用例为 2D 口内 X 光片解读（龋齿、骨吸收、根尖周感染、修复体缺损），强调临床可信度而非单纯性能分数。</li>
+      <li><b>融资/审批 · 07-23</b>：韩国 AI 数字牙科公司 InnoDtech 完成 50 亿韩元（约 338 万美元）融资（Albatross、KDB 产业银行、SK 证券等参投），推动其 AI 正畸治疗规划平台 Dr.AlignNavi 与隐形矫治方案 Clara AI，目标 9–10 月取得美国 FDA 批准并推进欧洲 CE MDR 认证。</li>
+    </ul>
+  </div>
+
+  <div class="tip" style="border-color:#94a3b8;margin-top:14px;">
+    <div class="tt" style="color:#475569;">📌 编者按</div>
+    <p>今日为轻量更新，新增 3 篇「口腔 × AI」直接相关文献。本期亮点是 IADT 官方期刊 Dental Traumatology 发表的牙外伤 LLM 系统综述 + Meta 分析（28 项研究），这是该领域迄今最系统的证据合成，但结论审慎：合并准确率 81.7% 背后是极高异质性与安全/引用隐患，印证了「AI 只能作辅助、不能替代临床判断」的行业共识。另一篇 OKC 的 CBCT AI Meta（合并灵敏度 89%/特异度 92%）为颌面影像 AI 辅助鉴别诊断提供了较扎实的量化证据。此前几期已推送的 OSCC 淋巴结分割、咬肌 MRI、PAISE 规范、全景片根尖检测等文献本期不再重复。近两日无 S 级重磅，行业层面资本仍持续流入牙科 AI（BeCertain、InnoDtech）。</p>
+  </div>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="mono">DENTAL × AI LITERATURE DAILY · 2026-08-28</div>
+    <div class="src-note">数据来源：PubMed E-utilities（近3天增量检索）· 分级依据期刊影响力 + 主题相关度 + 研究设计 · 摘要经 AI 简略提炼，详情以原文为准</div>
+  </div>
+</footer>
+</body>
+</html>

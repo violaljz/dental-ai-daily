@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>口腔×AI 文献日报 · 2026-08-27</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f6f7f9; --surface:#ffffff; --border:#e5e8ec; --border-soft:#eef0f3;
+    --text:#1a2233; --text-2:#4a5568; --text-3:#8b95a5;
+    --s:#b8860b; --s-bg:#fff8e6; --s-line:#d4a017;
+    --a:#2563eb; --a-bg:#eef4ff; --a-line:#3b82f6;
+    --b:#0f8a5f; --b-bg:#eafaf2; --b-line:#10b981;
+    --c:#6b7280; --c-bg:#f3f4f6; --c-line:#9ca3af;
+    --mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+    --sans:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:15px;line-height:1.65;-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:980px;margin:0 auto;padding:0 24px;}
+
+  header.hero{background:linear-gradient(135deg,#0f172a,#1e293b);color:#fff;padding:52px 0 44px;}
+  header.hero .wrap{max-width:980px;margin:0 auto;padding:0 24px;}
+  .kicker{font-family:var(--mono);font-size:12px;letter-spacing:2px;color:#93c5fd;text-transform:uppercase;}
+  h1{font-size:30px;font-weight:800;margin-top:8px;letter-spacing:-.5px;}
+  h1 .hl{color:#fbbf24;}
+  .sub{color:#cbd5e1;margin-top:8px;font-size:15px;font-weight:300;}
+  .meta-row{display:flex;gap:12px;margin-top:18px;flex-wrap:wrap;}
+  .meta{font-family:var(--mono);font-size:12px;color:#e2e8f0;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:6px;padding:5px 11px;}
+
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:28px 0 8px;background:transparent;}
+  .stat{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:16px 10px;text-align:center;margin-top:-70px;box-shadow:0 6px 18px rgba(15,23,42,.08);}
+  .stat .num{font-family:var(--mono);font-size:26px;font-weight:700;}
+  .stat .lbl{font-size:11.5px;color:var(--text-3);margin-top:3px;}
+  .stat.s .num{color:var(--s);} .stat.a .num{color:var(--a);} .stat.b .num{color:var(--b);} .stat.c .num{color:var(--c);}
+
+  main{padding:36px 0 60px;}
+  .grade-head{display:flex;align-items:center;gap:12px;margin:34px 0 14px;}
+  .grade-head .badge{font-family:var(--mono);font-weight:700;font-size:14px;color:#fff;border-radius:7px;padding:4px 12px;letter-spacing:1px;}
+  .grade-head .desc{font-size:13px;color:var(--text-3);}
+  .badge.s{background:var(--s-line);} .badge.a{background:var(--a-line);} .badge.b{background:var(--b-line);} .badge.c{background:var(--c-line);}
+
+  .paper{background:var(--surface);border:1px solid var(--border);border-left:4px solid var(--c-line);border-radius:12px;padding:20px 22px;margin-bottom:14px;box-shadow:0 1px 3px rgba(15,23,42,.04);}
+  .paper.s{border-left-color:var(--s-line);background:var(--s-bg);}
+  .paper.a{border-left-color:var(--a-line);background:var(--a-bg);}
+  .paper.b{border-left-color:var(--b-line);background:var(--b-bg);}
+  .paper.c{border-left-color:var(--c-line);background:var(--c-bg);}
+  .paper .top{display:flex;align-items:flex-start;gap:10px;flex-wrap:wrap;}
+  .paper .g{font-family:var(--mono);font-weight:700;font-size:12px;border-radius:5px;padding:2px 8px;color:#fff;letter-spacing:1px;}
+  .g.s{background:var(--s-line);} .g.a{background:var(--a-line);} .g.b{background:var(--b-line);} .g.c{background:var(--c-line);}
+  .paper .tags{margin-left:auto;display:flex;gap:6px;flex-wrap:wrap;}
+  .paper .tag{font-size:11px;color:var(--text-2);background:#fff;border:1px solid var(--border);border-radius:999px;padding:2px 9px;}
+  .paper h3{font-size:16.5px;font-weight:700;margin:10px 0 4px;line-height:1.4;letter-spacing:-.2px;}
+  .paper .src{font-family:var(--mono);font-size:12px;color:var(--text-3);}
+  .paper .src a{color:var(--a);text-decoration:none;}
+  .paper .src a:hover{text-decoration:underline;}
+  .paper .fields{margin-top:12px;display:grid;gap:7px;}
+  .paper .f{font-size:13.5px;color:var(--text-2);}
+  .paper .f b{color:var(--text);font-weight:600;}
+  .paper .f.limit b{color:#9a3412;}
+
+  .tip{background:#fff;border:1px dashed #f59e0b;border-radius:12px;padding:18px 22px;margin-top:10px;}
+  .tip .tt{font-weight:800;color:#b45309;font-size:14px;}
+  .tip p{font-size:13.5px;color:var(--text-2);margin-top:6px;}
+  .tip ul{margin:8px 0 0 18px;font-size:13.5px;color:var(--text-2);}
+  .tip li{margin-bottom:4px;}
+
+  footer{background:var(--surface);border-top:1px solid var(--border);padding:28px 0 46px;text-align:center;color:var(--text-3);font-size:12.5px;}
+  footer .mono{font-family:var(--mono);}
+  footer .src-note{margin-top:8px;font-size:11.5px;color:var(--text-3);}
+
+  @media(max-width:640px){ .stats{grid-template-columns:repeat(2,1fr);} .stat{margin-top:0;} main{padding-top:20px;} h1{font-size:24px;} }
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="wrap">
+    <div class="kicker">Dental × AI Literature Daily</div>
+    <h1>口腔 × AI <span class="hl">文献日报</span></h1>
+    <div class="sub">口腔医学与人工智能交叉领域 · 高质量文献精选</div>
+    <div class="meta-row">
+      <span class="meta">📅 2026-08-27</span>
+      <span class="meta">🔍 PubMed</span>
+      <span class="meta">📚 今日收录 8 篇（新增）+ 2 条行业速递</span>
+      <span class="meta">⭐ 重点：OSCC 淋巴结分割 / 咬肌 MRI / PAISE 规范</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="stats">
+    <div class="stat s"><div class="num">0</div><div class="lbl">S 级 · 重磅</div></div>
+    <div class="stat a"><div class="num">2</div><div class="lbl">A 级 · 重要</div></div>
+    <div class="stat b"><div class="num">4</div><div class="lbl">B 级 · 有价值</div></div>
+    <div class="stat c"><div class="num">2</div><div class="lbl">C 级 · 参考</div></div>
+  </div>
+</div>
+
+<main class="wrap">
+
+  <!-- A 级 -->
+  <div class="grade-head"><span class="badge a">A 级</span><span class="desc">高相关原创研究 · 大样本 / 多中心 / 权威期刊</span></div>
+
+  <div class="paper a">
+    <div class="top"><span class="g a">A</span>
+      <div class="tags"><span class="tag">🔪 颌面外科</span><span class="tag">🦷 影像</span><span class="tag">🧠 深度学习</span></div>
+    </div>
+    <h3>OSCC 隐匿性颈淋巴结转移的 AI 分割：或减少细胞角蛋白染色需求</h3>
+    <div class="src">Histopathology · 2026-08-27 · <a href="https://pubmed.ncbi.nlm.nih.gov/42656182/">PMID 42656182</a></div>
+    <div class="fields">
+      <div class="f"><b>研究目的</b>：开发两阶段深度学习框架，从常规 H&E 切片分割口腔鳞癌（OSCC）隐匿性颈淋巴结微转移，以减少对细胞角蛋白（CK）免疫组化的依赖。</div>
+      <div class="f"><b>研究设计 + 样本</b>：资深病理医生标注的 OSCC 原发灶 + 颈淋巴结标本数据集；先在原发灶肿瘤形态预训练，再在淋巴结转移灶微调；留出独立测试集，像素级分割指标 + 病例级分析，与 CK 染色定性对比。</div>
+      <div class="f"><b>核心结果</b>：预训练阶段 precision 0.8484 / recall 0.8682；微调后提升至 0.8778 / 0.8607，整体准确率 0.9193；AI 预测与 CK 染色在可获取免疫组化病例中一致性良好。</div>
+      <div class="f limit"><b>局限</b>：单中心、样本量有限，标注依赖资深病理医生且 CK 仅临床需要时补充；需前瞻性多中心验证方可评估临床减少 CK 染色的实际可行性与成本效益。</div>
+    </div>
+  </div>
+
+  <div class="paper a">
+    <div class="top"><span class="g a">A</span>
+      <div class="tags"><span class="tag">🦷 影像</span><span class="tag">🧠 深度学习</span><span class="tag">📈 临床预测</span></div>
+    </div>
+    <h3>深度学习 MRI 咬肌体积与老年人口腔损伤及认知衰弱相关</h3>
+    <div class="src">Experimental Gerontology · 2026-08-26 · <a href="https://pubmed.ncbi.nlm.nih.gov/42648504/">PMID 42648504</a></div>
+    <div class="fields">
+      <div class="f"><b>研究目的</b>：开发卷积神经网络（CNN）从 T1 加权 MRI 自动分割咬肌，检验咬肌体积这一影像结构表型与老年人口腔损伤及认知衰弱的关联。</div>
+      <div class="f"><b>研究设计 + 样本</b>：人类在环迭代训练的 CNN（基于东北大学医院 T1WI）；应用于日本前瞻性衰老/痴呆协作研究 Hirosaki 队列 3D T1WI，图像质控后最终纳入 2077 名参与者（平均 69.9±4.1 岁）。</div>
+      <div class="f"><b>核心结果</b>：咬肌体积越大，复合口腔损伤评分越低（OR 0.67, 95%CI 0.60–0.74, p&lt;0.001）；与结构异常关联最强（OR 0.60），其次牙周炎症（OR 0.81）、口腔功能下降（OR 0.86）；与认知衰弱呈负相关但完全校正后不显著。</div>
+      <div class="f limit"><b>局限</b>：横断面设计无法确立因果；认知衰弱关联校正后不显著；预训练 CNN 已开源（github.com/bthyreau/masseter_mri），需纵向与多中心验证。</div>
+    </div>
+  </div>
+
+  <!-- B 级 -->
+  <div class="grade-head"><span class="badge b">B 级</span><span class="desc">相关研究 / 综述 / 有价值的探索</span></div>
+
+  <div class="paper b">
+    <div class="top"><span class="g b">B</span>
+      <div class="tags"><span class="tag">🪥 牙体牙髓</span><span class="tag">⚖️ 监管</span></div>
+    </div>
+    <h3>PAISE：牙体牙髓领域 AI 研究报告规范（PRISMA 式）发布</h3>
+    <div class="src">International Endodontic Journal · 2026-08-27 · <a href="https://pubmed.ncbi.nlm.nih.gov/42656074/">PMID 42656074</a></div>
+    <div class="fields">
+      <div class="f"><b>研究目的</b>：宣布制定牙体牙髓领域人工智能研究的报告规范 PAISE（Preferred Reporting Items for AI Studies in Endodontics），对标 PRISMA 式报告标准。</div>
+      <div class="f"><b>研究设计 + 样本</b>：规范制定公告（编辑部声明），当前无完整研究内容与样本。</div>
+      <div class="f"><b>核心结果</b>：该期刊将发布牙体牙髓领域首个 AI 研究报告规范，为相关研究提供结构化报告框架。</div>
+      <div class="f limit"><b>局限</b>：仅为公告，具体条目、共识方法学与验证流程尚未公布，需待正式版本评估其适用性。</div>
+    </div>
+  </div>
+
+  <div class="paper b">
+    <div class="top"><span class="g b">B</span>
+      <div class="tags"><span class="tag">🪥 牙体牙髓</span><span class="tag">🦷 影像</span><span class="tag">🧠 深度学习</span></div>
+    </div>
+    <h3>全景片根尖孔开闭状态的深度学习检测：YOLO vs Faster R-CNN</h3>
+    <div class="src">Journal of Imaging Informatics in Medicine · 2026-08-25 · <a href="https://pubmed.ncbi.nlm.nih.gov/42642693/">PMID 42642693</a></div>
+    <div class="fields">
+      <div class="f"><b>研究目的</b>：开发基于深度学习的下颌恒第一/二磨牙根尖发育状态（开/闭）自动检测系统，减少人工判读的主观性与时间成本，辅助儿童牙科治疗决策。</div>
+      <div class="f"><b>研究设计 + 样本</b>：1498 张 5–14 岁儿童匿名全景片；对比 YOLO（一阶段）与 Faster R-CNN（两阶段）；模型开发集五折交叉验证 + 固定独立测试集，报告 mAP/召回/精确率，并做可解释性（XAI）与错误分析。</div>
+      <div class="f"><b>核心结果</b>：YOLOv8x 独立测试集 mAP@0.5 达 0.956（Faster R-CNN+ResNet-101 为 0.908）；区分开/闭根尖平均精度 0.904、召回 0.942；XAI 显示正确检测多聚焦根尖区。</div>
+      <div class="f limit"><b>局限</b>：单中心、仅下颌第一/二磨牙、年龄 5–14 岁；未覆盖其他牙位与恒牙列完全萌出前变异，需多中心外部验证。</div>
+    </div>
+  </div>
+
+  <div class="paper b">
+    <div class="top"><span class="g b">B</span>
+      <div class="tags"><span class="tag">🔪 颌面外科</span><span class="tag">🦷 影像</span><span class="tag">🧠 深度学习</span></div>
+    </div>
+    <h3>白光图像深度学习检测口腔潜在恶性病变与口腔癌：系统综述与 Meta 分析</h3>
+    <div class="src">Clinical Oral Investigations · 2026-08-26 · <a href="https://pubmed.ncbi.nlm.nih.gov/42645587/">PMID 42645587</a></div>
+    <div class="fields">
+      <div class="f"><b>研究目的</b>：系统评价并荟萃分析人工智能用白光数字照片诊断口腔潜在恶性病变（OPMD）与口腔癌的准确性。</div>
+      <div class="f"><b>研究设计 + 样本</b>：检索 PubMed/Web of Science/Scopus；QUADAS-C 评估偏倚风险；双变量随机效应模型合并灵敏度与特异度。</div>
+      <div class="f"><b>核心结果</b>：OPMD 汇总灵敏度 0.81、特异度 0.161；口腔癌合并灵敏度 0.836、特异度 0.138；尽管算法异质性大，多数模型具备可接受的检出能力，智能手机评估或提升资源有限地区的可及性。</div>
+      <div class="f limit"><b>局限</b>：研究间异质性大；特异度极低（提示大量假阳性，需结合临床复核）；各模型阈值与数据集差异大，结论需谨慎解读。</div>
+    </div>
+  </div>
+
+  <div class="paper b">
+    <div class="top"><span class="g b">B</span>
+      <div class="tags"><span class="tag">💬 大语言模型</span><span class="tag">🔪 颌面外科</span></div>
+    </div>
+    <h3>大语言模型在口腔癌患者教育中的可靠性与可读性评估</h3>
+    <div class="src">Oral Health &amp; Preventive Dentistry · 2026-08-26 · <a href="https://pubmed.ncbi.nlm.nih.gov/42644524/">PMID 42644524</a></div>
+    <div class="fields">
+      <div class="f"><b>研究目的</b>：评估四款主流大语言模型（LLM）回答口腔癌患者常见问题的可靠性与可读性。</div>
+      <div class="f"><b>研究设计 + 样本</b>：经 Google Trends + 口腔肿瘤专家咨询生成 22 个常见问题，单轮输入 ChatGPT-5、Gemini 2.5、Perplexity Pro、DeepSeek v3.2；用 DISCERN/EQIP/JAMA/GQS 评可靠性，6 个可读性指数评可读性。</div>
+      <div class="f"><b>核心结果</b>：DISCERN、EQIP、JAMA 评分四模型差异显著（均 p&lt;0.001），GQS 无显著差异；Perplexity Pro 各项可靠性评分最高（DISCERN 46.36、EQIP 85.00、GQS 4.05、JAMA 1.00）。</div>
+      <div class="f limit"><b>局限</b>：单轮提问、英文为主，未评估多轮对话与引用真实性；可读性普遍偏高，可能超患者理解水平。</div>
+    </div>
+  </div>
+
+  <!-- C 级 -->
+  <div class="grade-head"><span class="badge c">C 级</span><span class="desc">中等相关 / 边缘 · 初步 / 参考</span></div>
+
+  <div class="paper c">
+    <div class="top"><span class="g c">C</span>
+      <div class="tags"><span class="tag">🔩 种植</span><span class="tag">⚙️ AI/算法</span></div>
+    </div>
+    <h3>劈尖钻在皮质骨钻孔中的力/热坏死预测：有限元 + 神经网络建模</h3>
+    <div class="src">Biomedical Physics &amp; Engineering Express · 2026-08-26 · <a href="https://pubmed.ncbi.nlm.nih.gov/42648309/">PMID 42648309</a></div>
+    <div class="fields">
+      <div class="f"><b>研究目的</b>：用有限元（FEM）+ 人工神经网络（ANN）建模手术皮质骨钻孔的钻力、扭矩与热坏死，优化劈尖钻几何参数（骨科/创伤/牙科螺钉、种植体植入）。</div>
+      <div class="f"><b>研究设计 + 样本</b>：有限元模拟不同几何参数劈尖钻与标准钻的皮质骨钻孔；ANN 以 FEM 数据建模，评估训练/测试相关系数与误差率。</div>
+      <div class="f"><b>核心结果</b>：ANN 与 FEM 高度吻合（训练/测试相关系数 0.99998/0.99502，平均误差 1.84%）；最优参数（115° 劈角 + 0.25mm 腹板厚度 + 7° 前角）使钻力降 46.8%、扭矩降 4.6%、热坏死降 5.2%。</div>
+      <div class="f limit"><b>局限</b>：为仿真/数值建模研究，非临床验证；口腔仅为其应用场景之一，需体内试验确认临床获益。</div>
+    </div>
+  </div>
+
+  <div class="paper c">
+    <div class="top"><span class="g c">C</span>
+      <div class="tags"><span class="tag">🦷 影像</span><span class="tag">🧠 深度学习</span></div>
+    </div>
+    <h3>PDDUNet：原始-对偶深度展开网络用于 CT 金属伪影去除</h3>
+    <div class="src">Journal of X-Ray Science and Technology · 2026-08-26 · <a href="https://pubmed.ncbi.nlm.nih.gov/42647755/">PMID 42647755</a></div>
+    <div class="fields">
+      <div class="f"><b>研究目的</b>：提出原始-对偶深度展开网络（PDDUNet），同时展开数据保真项与正则项，用于 CT 金属伪影去除（MAR），改善种植体等金属植入物所致伪影。</div>
+      <div class="f"><b>研究设计 + 样本</b>：统一优化模型含两个数据保真项 + TV 正则，Prior-net 生成先验图；用 Chambolle-Pock 算法求解并逐层展开为神经网络；合成与临床数据集验证。</div>
+      <div class="f"><b>核心结果</b>：PDDUNet 在合成与临床数据集上性能与泛化优于现有 MAR 方法，为 MAR 提供新思路。</div>
+      <div class="f limit"><b>局限</b>：通用 CT MAR 方法，非牙科专用；临床数据集规模有限，未与口腔 CBCT 场景专门对比。</div>
+    </div>
+  </div>
+
+  <!-- 行业速递 -->
+  <div class="tip">
+    <div class="tt">💡 行业速递</div>
+    <ul>
+      <li><b>产品 · 08-17</b>：Overjet 发布基于自研实时大语言模型的「免手硬组织图表 + 自然语音牙周图表」功能（98% 准确率、50M+ token 训练），已覆盖 CareStack/Eaglesoft/Open Dental/Dentrix 等主流 PMS，进一步把 LLM 植入椅旁病历与牙周检查流程。</li>
+      <li><b>数据 · 08-10</b>：Pearl 发布首个美国大规模影像口腔健康普查（Pearl Oral Health Index），用 FDA 获批 AI 分析 2600 万+ 就诊影像，发现未经治疗龋齿达既往全国估计的 4.5 倍，标志 AI 影像分析正从椅旁决策走向公共卫生基础设施。</li>
+    </ul>
+  </div>
+
+  <div class="tip" style="border-color:#94a3b8;margin-top:14px;">
+    <div class="tt" style="color:#475569;">📌 编者按</div>
+    <p>今日新增 8 篇与「口腔 × AI」直接相关的新文献，方向覆盖口腔鳞癌淋巴结病理分割、咬肌 MRI 影像表型、牙体牙髓 AI 报告规范（PAISE）、全景片根尖检测与口腔癌白光图像筛查，以及两项边缘应用（骨钻孔仿真、CT 金属伪影去除）。本期亮点有二：一是 Histopathology 的口腔鳞癌隐匿淋巴结转移分割研究，直击「AI 能否减少免疫组化工作量」这一真实临床痛点；二是国际牙体牙髓病学杂志启动 PAISE 报告规范，标志口腔 AI 研究从「追模型性能」迈向「立方法学标准」。此前几期已推送的 CBCT 前牙分割、机器人种植、根尖周病变集成等文献本期不再重复。</p>
+  </div>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="mono">DENTAL × AI LITERATURE DAILY · 2026-08-27</div>
+    <div class="src-note">数据来源：PubMed E-utilities（近3天增量检索）· 分级依据期刊影响力 + 主题相关度 + 研究设计 · 摘要经 AI 简略提炼，详情以原文为准</div>
+  </div>
+</footer>
+</body>
+</html>
