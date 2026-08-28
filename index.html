@@ -4,10 +4,21 @@
 <meta charset="UTF-8">
 <meta http-equiv="refresh" content="0; url=./library.html">
 <title>口腔×AI 文献库</title>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#4f6ef7">
+<link rel="icon" type="image/png" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
 <script>location.replace('./library.html');</script>
 </head>
 <body style="text-align:center;padding-top:90px;font-family:system-ui,sans-serif;color:#4a5568;">
 <p>正在跳转到文献库…</p>
 <p><a href="./library.html">如果没有自动跳转，点这里</a></p>
+<script>
+if('serviceWorker' in navigator){
+  window.addEventListener('load',()=>navigator.serviceWorker.register('sw.js'));
+}
+</script>
 </body>
 </html>
