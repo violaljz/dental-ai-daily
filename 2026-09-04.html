@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>口腔×AI 文献日报 · 2026-09-04</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f6f7f9; --surface:#ffffff; --border:#e5e8ec; --border-soft:#eef0f3;
+    --text:#1a2233; --text-2:#4a5568; --text-3:#8b95a5;
+    --s:#b8860b; --s-bg:#fff8e6; --s-line:#d4a017;
+    --a:#2563eb; --a-bg:#eef4ff; --a-line:#3b82f6;
+    --b:#0f8a5f; --b-bg:#eafaf2; --b-line:#10b981;
+    --c:#6b7280; --c-bg:#f3f4f6; --c-line:#9ca3af;
+    --mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+    --sans:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:15px;line-height:1.65;-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:980px;margin:0 auto;padding:0 24px;}
+
+  header.hero{background:linear-gradient(135deg,#0f172a,#1e293b);color:#fff;padding:52px 0 44px;}
+  header.hero .wrap{max-width:980px;margin:0 auto;padding:0 24px;}
+  .kicker{font-family:var(--mono);font-size:12px;letter-spacing:2px;color:#93c5fd;text-transform:uppercase;}
+  h1{font-size:30px;font-weight:800;margin-top:8px;letter-spacing:-.5px;}
+  h1 .hl{color:#fbbf24;}
+  .sub{color:#cbd5e1;margin-top:8px;font-size:15px;font-weight:300;}
+  .meta-row{display:flex;gap:12px;margin-top:18px;flex-wrap:wrap;}
+  .meta{font-family:var(--mono);font-size:12px;color:#e2e8f0;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:6px;padding:5px 11px;}
+
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:28px 0 8px;background:transparent;}
+  .stat{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:16px 10px;text-align:center;margin-top:-70px;box-shadow:0 6px 18px rgba(15,23,42,.08);}
+  .stat .num{font-family:var(--mono);font-size:26px;font-weight:700;}
+  .stat .lbl{font-size:11.5px;color:var(--text-3);margin-top:3px;}
+  .stat.s .num{color:var(--s);} .stat.a .num{color:var(--a);} .stat.b .num{color:var(--b);} .stat.c .num{color:var(--c);}
+
+  main{padding:36px 0 60px;}
+  .grade-head{display:flex;align-items:center;gap:12px;margin:34px 0 14px;}
+  .grade-head .badge{font-family:var(--mono);font-weight:700;font-size:14px;color:#fff;border-radius:7px;padding:4px 12px;letter-spacing:1px;}
+  .grade-head .desc{font-size:13px;color:var(--text-3);}
+  .badge.s{background:var(--s-line);} .badge.a{background:var(--a-line);} .badge.b{background:var(--b-line);} .badge.c{background:var(--c-line);}
+
+  .paper{background:var(--surface);border:1px solid var(--border);border-left:4px solid var(--c-line);border-radius:12px;padding:20px 22px;margin-bottom:14px;box-shadow:0 1px 3px rgba(15,23,42,.04);}
+  .paper.s{border-left-color:var(--s-line);background:var(--s-bg);}
+  .paper.a{border-left-color:var(--a-line);background:var(--a-bg);}
+  .paper.b{border-left-color:var(--b-line);background:var(--b-bg);}
+  .paper.c{border-left-color:var(--c-line);background:var(--c-bg);}
+  .paper .top{display:flex;align-items:flex-start;gap:10px;flex-wrap:wrap;}
+  .paper .g{font-family:var(--mono);font-weight:700;font-size:12px;border-radius:5px;padding:2px 8px;color:#fff;letter-spacing:1px;}
+  .g.s{background:var(--s-line);} .g.a{background:var(--a-line);} .g.b{background:var(--b-line);} .g.c{background:var(--c-line);}
+  .paper .tags{margin-left:auto;display:flex;gap:6px;flex-wrap:wrap;}
+  .paper .tag{font-size:11px;color:var(--text-2);background:#fff;border:1px solid var(--border);border-radius:999px;padding:2px 9px;}
+  .paper h3{font-size:16.5px;font-weight:700;margin:10px 0 4px;line-height:1.4;letter-spacing:-.2px;}
+  .paper .src{font-family:var(--mono);font-size:12px;color:var(--text-3);}
+  .paper .src a{color:var(--a);text-decoration:none;}
+  .paper .src a:hover{text-decoration:underline;}
+  .paper .fields{margin-top:12px;display:grid;gap:7px;}
+  .paper .f{font-size:13.5px;color:var(--text-2);}
+  .paper .f b{color:var(--text);font-weight:600;}
+  .paper .f.limit b{color:#9a3412;}
+
+  .tip{background:#fff;border:1px dashed #f59e0b;border-radius:12px;padding:18px 22px;margin-top:10px;}
+  .tip .tt{font-weight:800;color:#b45309;font-size:14px;}
+  .tip p{font-size:13.5px;color:var(--text-2);margin-top:6px;}
+  .tip ul{margin:8px 0 0 18px;font-size:13.5px;color:var(--text-2);}
+  .tip li{margin-bottom:4px;}
+
+  footer{background:var(--surface);border-top:1px solid var(--border);padding:28px 0 46px;text-align:center;color:var(--text-3);font-size:12.5px;}
+  footer .mono{font-family:var(--mono);}
+  footer .src-note{margin-top:8px;font-size:11.5px;color:var(--text-3);}
+
+  @media(max-width:640px){ .stats{grid-template-columns:repeat(2,1fr);} .stat{margin-top:0;} main{padding-top:20px;} h1{font-size:24px;} }
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="wrap">
+    <div class="kicker">Dental × AI Literature Daily</div>
+    <h1>口腔 × AI <span class="hl">文献日报</span></h1>
+    <div class="sub">口腔医学与人工智能交叉领域 · 高质量文献精选</div>
+    <div class="meta-row">
+      <span class="meta">📅 2026-09-04</span>
+      <span class="meta">🔍 PubMed</span>
+      <span class="meta">📚 今日收录 8 篇（新增）+ 1 条行业速递</span>
+      <span class="meta">⭐ 重点：LLM 转诊信评测 / AI CBCT×牙槽嵴保存 / Pearl CBCT AI 落地全科</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="stats">
+    <div class="stat s"><div class="num">0</div><div class="lbl">S 级 · 重磅</div></div>
+    <div class="stat a"><div class="num">1</div><div class="lbl">A 级 · 重要</div></div>
+    <div class="stat b"><div class="num">3</div><div class="lbl">B 级 · 有价值</div></div>
+    <div class="stat c"><div class="num">4</div><div class="lbl">C 级 · 参考</div></div>
+  </div>
+</div>
+
+<main class="wrap">
+
+  <!-- A 级 -->
+  <div class="grade-head"><span class="badge a">A 级</span><span class="desc">高影响力期刊原创研究 · 大样本/多中心临床</span></div>
+
+  <div class="paper a">
+    <div class="top"><span class="g a">A</span>
+      <div class="tags"><span class="tag">💬 大语言模型</span><span class="tag">💻 数字化</span><span class="tag">⚙️ AI/算法</span></div>
+    </div>
+    <h3>牙科→内科会诊转诊信自动生成：Gemini-2.5-Pro / GPT-5 / MedGemma 比较研究</h3>
+    <div class="src">International Dental Journal · 2026-09-03 · <a href="https://pubmed.ncbi.nlm.nih.gov/42691762/">PMID 42691762</a></div>
+    <div class="fields">
+<div class="f"><b>研究目的</b>：评估大语言模型（LLM）自动生成牙科→内科转诊信（面向伴全身疾病的牙科患者）的临床可行性与生成质量。</div><div class="f"><b>研究设计 + 样本</b>：153 组配对数据集；Gemini-2.5-Pro、GPT-5、MedGemma 在标准化提示词框架下生成转诊信；2 名牙科临床医师盲评 9 项子标准（内容/风格/正确性），GPT-5 另做自动化自评对照；Friedman + Wilcoxon（Holm 校正）检验。</div><div class="f"><b>核心结果</b>：人工评价 Gemini-2.5-Pro 总均分最高（2.9487，95%CI 2.9345–2.9606），显著高于 GPT-5（2.8818，95%CI 2.8613–2.9008）与 MedGemma（2.8613）（均 P<.05）；GPT-5 与 MedGemma 差异不显著（P=.3519）；GPT-5 自评结果偏离人工判断，提示模型自评存在偏倚；独立测试集评分者间一致性低（QWK 0.1505）。</div><div class="f limit"><b>局限</b>：临床文书评估主观性高（测试集 QWK 仅 0.1505）；进入常规临床应用前需更大规模系统研究。</div>
+    </div>
+  </div>
+
+  <!-- B 级 -->
+  <div class="grade-head"><span class="badge b">B 级</span><span class="desc">中等期刊相关研究 · 系统综述 / Meta 分析</span></div>
+
+  <div class="paper b">
+    <div class="top"><span class="g b">B</span>
+      <div class="tags"><span class="tag">🦷 种植</span><span class="tag">📷 影像</span><span class="tag">🔧 器械/设备</span><span class="tag">⚙️ AI/算法</span></div>
+    </div>
+    <h3>AI 辅助 CBCT 分析在牙槽嵴保存术中的应用：叙述性综述</h3>
+    <div class="src">European Journal of Dentistry · 2026-09-03 · <a href="https://pubmed.ncbi.nlm.nih.gov/42692081/">PMID 42692081</a></div>
+    <div class="fields">
+<div class="f"><b>研究目的</b>：明确 AI 在 CBCT 分析中用于牙槽嵴保存（ARP）的临床角色，区分技术性能与临床有用性。</div><div class="f"><b>研究设计 + 样本</b>：SANRA 结构化叙述性综述；PubMed/MEDLINE、Web of Science、Scopus（2026-01 检索）纳入 2012–2026 英文文献，JBI 标准评估；33 篇（17 篇 AI 主研究 + 7 篇传统 CBCT 研究 + 9 篇综述）。</div><div class="f"><b>核心结果</b>：AI 牙齿/牙槽骨分割 Dice 稳定 >0.90、处理时间大幅缩短，部分架构跨 CBCT 设备与人群泛化；CBCT-口扫多模态融合与低剂量深度学习图像增强具前景；但无研究把 AI 输出与种植体存活、美学、并发症或再植骨需求等患者结局关联，仅 4 项独立外部验证，报告指标异质。</div><div class="f limit"><b>局限</b>：当前证据支持的是技术（几何）准确性而非临床获益；缺乏结局导向研究与标准化外部验证。</div>
+    </div>
+  </div>
+
+  <div class="paper b">
+    <div class="top"><span class="g b">B</span>
+      <div class="tags"><span class="tag">🛠️ 修复</span><span class="tag">💻 数字化</span><span class="tag">🔧 器械/设备</span><span class="tag">⚙️ AI/算法</span></div>
+    </div>
+    <h3>修复学中的人工智能系统：当前应用与挑战</h3>
+    <div class="src">Australian Dental Journal · 2026-09-02 · <a href="https://pubmed.ncbi.nlm.nih.gov/42687376/">PMID 42687376</a></div>
+    <div class="fields">
+<div class="f"><b>研究目的</b>：梳理人工智能系统（AIS）在修复学的应用、能力与挑战，为临床与研发提供分类框架。</div><div class="f"><b>研究设计 + 样本</b>：叙述性综述；按 5 类 AI 系统组织：影像自动处理与标注、分类与决策支持、可视化与建模、优化与仿真、记录与沟通。</div><div class="f"><b>核心结果</b>：应用覆盖 CAD/CAM 工作流中的修复体边缘勾画、由口扫数据自动生成冠修复设计、面向患者的会话式解释等；能力显著但存在自动化偏倚风险、透明度与可解释性不足、公平性与数据保护问题，以及治疗失败责任不清等伦理法律不确定性。</div><div class="f limit"><b>局限</b>：叙述性综述，多基于技术可行性证据；缺乏前瞻性临床验证与卫生经济学评估。</div>
+    </div>
+  </div>
+
+  <div class="paper b">
+    <div class="top"><span class="g b">B</span>
+      <div class="tags"><span class="tag">🧪 材料</span><span class="tag">🦷 种植</span><span class="tag">⚙️ AI/算法</span></div>
+    </div>
+    <h3>闭环多模态 AI 发现表面活性抗菌肽：种植体抗菌涂层的计算-验证一体化框架</h3>
+    <div class="src">Langmuir (ACS) · 2026-09-01 · <a href="https://pubmed.ncbi.nlm.nih.gov/42689642/">PMID 42689642</a></div>
+    <div class="fields">
+<div class="f"><b>研究目的</b>：构建数据高效的闭环 AI 发现框架，直接预测抗菌肽在「表面固定态」的活性，支撑感染抗性种植/植入体涂层设计。</div><div class="f"><b>研究设计 + 样本</b>：3 种肽生成策略 × 多模态深度学习分类器（理化描述符 + 序列工程特征 + BioBERT 语义嵌入 + 原始序列卷积流）；122 条实验表征序列训练；从 78.9 万生成序列中选出 15 条高/低活性候选，钛表面动力学控制共价接枝并做抗菌验证。</div><div class="f"><b>核心结果</b>：分类器 AUC 0.989、F1 0.941；高活性候选对 P. aeruginosa 的细菌减少 82.9%–91.3%（各策略均值），显著超过低活性对照 38.6%–50.5%，计算预测与实测抗菌效力高度一致。</div><div class="f limit"><b>局限</b>：训练集仅 122 条、单菌种验证；提供的是可迁移蓝图，距牙科种植体临床应用仍需系统性临床前数据。</div>
+    </div>
+  </div>
+
+  <!-- C 级 -->
+  <div class="grade-head"><span class="badge c">C 级</span><span class="desc">相关性中等或边缘 · 小样本 / 初步探索</span></div>
+
+  <div class="paper c">
+    <div class="top"><span class="g c">C</span>
+      <div class="tags"><span class="tag">💬 大语言模型</span><span class="tag">⚙️ AI/算法</span></div>
+    </div>
+    <h3>大语言模型作答牙科专科考试：土耳其 DUS 1026 题的 5 模型比较</h3>
+    <div class="src">European Journal of Dental Education · 2026-09-03 · <a href="https://pubmed.ncbi.nlm.nih.gov/42691237/">PMID 42691237</a></div>
+    <div class="fields">
+<div class="f"><b>研究目的</b>：比较 5 个主流 LLM 回答土耳其牙科专科考试（DUS）临床问题的准确率，评估其在牙科教育与备考中的辅助价值。</div><div class="f"><b>研究设计 + 样本</b>：13 届 DUS（2012–2021）1026 道临床科学题；ChatGPT-5、Gemini 3.5 Flash、Microsoft Copilot、DeepSeek-R1、Grok 4 各作答一次；按专科与题型（知识型 vs 病例型）分层，官方答案计分；卡方与 Z 检验（Bonferroni 校正）。</div><div class="f"><b>核心结果</b>：准确率 79.2%–90.6%：Gemini 3.5 Flash（90.6%）与 ChatGPT-5（88.2%）最高且最稳定，Copilot / DeepSeek-R1 / Grok 4 显著较低（p<0.001）；口腔颌面外科、儿牙、牙周与牙体修复类最高，修复（义齿）、正畸、牙体牙髓类较低；知识型（p<0.001）与病例型（p=0.029）均存在模型间显著差异。</div><div class="f limit"><b>局限</b>：每题仅作答一次；语言与考纲背景限制泛化；考试表现不等于临床能力。</div>
+    </div>
+  </div>
+
+  <div class="paper c">
+    <div class="top"><span class="g c">C</span>
+      <div class="tags"><span class="tag">⚙️ AI/算法</span><span class="tag">💬 大语言模型</span><span class="tag">📜 监管</span></div>
+    </div>
+    <h3>为「智能体牙科」做好准备？自主 AI 对口腔诊疗的影响</h3>
+    <div class="src">International Dental Journal · 2026-09-03 · <a href="https://pubmed.ncbi.nlm.nih.gov/42691769/">PMID 42691769</a></div>
+    <div class="fields">
+<div class="f"><b>研究目的</b>：提出 agentic dentistry（智能体牙科）概念框架，前瞻讨论自主 AI 引入口腔诊疗的机会与风险，并给出研究与政策议程。</div><div class="f"><b>研究设计 + 样本</b>：Perspective 观点文章；基于医学领域自主 AI 发展（如 MEDRA、AMIE 类医疗推理体），系统检视向牙科迁移在科学、伦理、教育、监管与职业层面的问题。</div><div class="f"><b>核心结果</b>：自主 AI 有望增强临床决策、诊疗协调、延续性照护与个性化治疗；但牙科特异性验证缺失，责任归属、教育与监管框架均未就绪；作者倡议在广泛临床采纳前主动塑造负责任的研发路线。</div><div class="f limit"><b>局限</b>：观点性文章，无实证数据；概念框架有待临床与政策研究检验。</div>
+    </div>
+  </div>
+
+  <div class="paper c">
+    <div class="top"><span class="g c">C</span>
+      <div class="tags"><span class="tag">💬 大语言模型</span><span class="tag">🩺 颌面外科</span><span class="tag">⚙️ AI/算法</span></div>
+    </div>
+    <h3>开放 TMJ 手术临床问题：五款生成式 AI 聊天机器人的指南对照评估</h3>
+    <div class="src">Journal of Stomatology, Oral and Maxillofacial Surgery · 2026-09-02 · <a href="https://pubmed.ncbi.nlm.nih.gov/42685976/">PMID 42685976</a></div>
+    <div class="fields">
+<div class="f"><b>研究目的</b>：以指南参考答案为金标准，比较 5 款生成式 AI 聊天机器人在开放 TMJ 手术临床问题上的回答质量与可读性。</div><div class="f"><b>研究设计 + 样本</b>：8 领域 40 问 × 5 平台（ChatGPT-5.5、Claude Opus 4.8、Gemini 3.1 Pro、Grok 4、Perplexity Pro，付费档默认设置）共 200 响应；2 名口外医师盲评（QAMAI、GQS、5 分制总体评级）；FKGL/FRES 可读性；Friedman + Bonferroni 校正 Wilcoxon；ICC 信度。</div><div class="f"><b>核心结果</b>：ICC 0.93–0.99；除清晰度外各指标平台间差异显著（P<.001）；Perplexity QAMAI 总分最高（27.5±1.4，主要来自检索溯源），Claude GQS 最高（4.5±0.6），Gemini 总体评级最高（4.3±0.7），Grok 最低；Claude 与 Gemini 可读性最差（中位 FKGL 22.7 与 26.1；FRES −11.6/−7.5）。</div><div class="f limit"><b>局限</b>：结果反映信息质量而非临床安全或决策能力；平台版本快速迭代，临床使用前须由专科医师核实。</div>
+    </div>
+  </div>
+
+  <div class="paper c">
+    <div class="top"><span class="g c">C</span>
+      <div class="tags"><span class="tag">💻 数字化</span><span class="tag">⚙️ AI/算法</span></div>
+    </div>
+    <h3>远程牙科在各专科的应用：系统综述与 Meta 分析</h3>
+    <div class="src">Journal of Dentistry (Shiraz, Iran) · 2026-09-01 · <a href="https://pubmed.ncbi.nlm.nih.gov/42688783/">PMID 42688783</a></div>
+    <div class="fields">
+<div class="f"><b>研究目的</b>：评估远程牙科（智能手机摄影等）相对面诊金标准的诊断准确性（重点修复科），并审查 AI 与远程牙科结合的现有证据。</div><div class="f"><b>研究设计 + 样本</b>：PubMed/Google Scholar/Embase/Scopus 系统检索（2015–2024）；仅修复科研究满足 Meta 分析条件，其余专科描述性综合；Newcastle-Ottawa Scale 偏倚评估。</div><div class="f"><b>核心结果</b>：修复科 4 项研究：汇总灵敏度 77.2%（95%CI 62.5–87.4）、特异度 89.1%（95%CI 70.5–96.5）；异质性显著（I²=68%/92%）但逐一剔除的敏感性分析稳健；正畸与修复表现有前景、牙体牙髓受限；AI+远程牙科证据不足，无法支持其正面作用。</div><div class="f limit"><b>局限</b>：专科覆盖不足、方法学异质；向其他专科与 AI-远程牙科场景外推受限。</div>
+    </div>
+  </div>
+
+  <!-- 行业速递 -->
+  <div class="tip">
+    <div class="tt">💡 行业速递</div>
+    <ul>
+<li><b>产品 · 09-03</b>：Pearl 宣布 Second Opinion 3D 正式商用：将其此前获 FDA 510(k)、同时覆盖 2D 与 3D 放射影像分析的 CBCT AI（Pearl 为 FDA 首个 2D+3D 双模态获批的牙科 AI 公司）带给美国与加拿大全科牙医。产品自动分割下颌骨、上颌复合体、鼻腔、气道、下牙槽神经管与牙齿，提供交互式 3D 渲染/缩放/透明度/长度测量；新增两大全科工作流：内置专科放射报告请求、CBCT 发现自动转换为保险理赔文档。定位是让 CBCT 从专科工具变为全科日常诊疗入口，并衔接口腔-全身健康。</li>
+    </ul>
+  </div>
+
+  <div class="tip" style="border-color:#94a3b8;margin-top:14px;">
+    <div class="tt" style="color:#475569;">📌 编者按</div>
+    <p>今日 PubMed 增量以「AI 器械落地与文书/影像工作流」为主线，收录 8 篇（1 A + 3 B + 4 C）+ 1 条行业速递。值得留意四点：一是 A 级 Int Dent J 用 153 组配对数据盲评三款 LLM 生成「牙科→内科」转诊信——Gemini-2.5-Pro 领先，GPT-5 的自评结果与人工判断偏离，提示模型自评存在偏倚，LLM 要进临床文书必须先过独立评估这道关（延续此前 OpenAI/Google 新模型评测线）。二是贴住种植/材料/修复主线：Eur J Dent 综述指出 AI 在 CBCT 上的牙/骨分割精度（Dice>0.9）已成熟，但没有任何研究把 AI 输出与种植体存活、美学、并发症等患者结局挂钩——「技术精度 ≠ 临床获益」是当前最大缺口；Langmuir 的闭环 AI 只用 122 条实验序列就完成表面活性抗菌肽的预测并做了钛表面湿实验验证（高活性组杀菌 82.9%–91.3%），对种植体抗菌涂层是值得跟踪的数据高效范式；Aust Dent J 给出修复 AI 的五分类框架与自动化偏倚/责任清单。三是 C 级里 DUS 1026 题五模型评测显示 Gemini 3.5 Flash 与 ChatGPT-5 断层领先，教育评测线持续更新。四是行业侧 Pearl 把 FDA 已批的 CBCT AI 做成全科产品（Second Opinion 3D，美/加），内置放射报告请求与理赔文档自动化——「审批→产品化→全科化」的节奏值得器械从业者关注。此前各期已推送文献本期不重复。</p>
+  </div>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="mono">DENTAL × AI LITERATURE DAILY · 2026-09-04</div>
+    <div class="src-note">数据来源：PubMed E-utilities（近3天增量检索）· 分级依据期刊影响力 + 主题相关度 + 研究设计 · 摘要经 AI 简略提炼，详情以原文为准</div>
+  </div>
+</footer>
+</body>
+</html>
