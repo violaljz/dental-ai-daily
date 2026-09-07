@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>口腔×AI 文献日报 · 2026-09-07</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f6f7f9; --surface:#ffffff; --border:#e5e8ec; --border-soft:#eef0f3;
+    --text:#1a2233; --text-2:#4a5568; --text-3:#8b95a5;
+    --s:#b8860b; --s-bg:#fff8e6; --s-line:#d4a017;
+    --a:#2563eb; --a-bg:#eef4ff; --a-line:#3b82f6;
+    --b:#0f8a5f; --b-bg:#eafaf2; --b-line:#10b981;
+    --c:#6b7280; --c-bg:#f3f4f6; --c-line:#9ca3af;
+    --mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+    --sans:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:15px;line-height:1.65;-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:980px;margin:0 auto;padding:0 24px;}
+
+  header.hero{background:linear-gradient(135deg,#0f172a,#1e293b);color:#fff;padding:52px 0 44px;}
+  header.hero .wrap{max-width:980px;margin:0 auto;padding:0 24px;}
+  .kicker{font-family:var(--mono);font-size:12px;letter-spacing:2px;color:#93c5fd;text-transform:uppercase;}
+  h1{font-size:30px;font-weight:800;margin-top:8px;letter-spacing:-.5px;}
+  h1 .hl{color:#fbbf24;}
+  .sub{color:#cbd5e1;margin-top:8px;font-size:15px;font-weight:300;}
+  .meta-row{display:flex;gap:12px;margin-top:18px;flex-wrap:wrap;}
+  .meta{font-family:var(--mono);font-size:12px;color:#e2e8f0;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:6px;padding:5px 11px;}
+
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:28px 0 8px;background:transparent;}
+  .stat{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:16px 10px;text-align:center;margin-top:-70px;box-shadow:0 6px 18px rgba(15,23,42,.08);}
+  .stat .num{font-family:var(--mono);font-size:26px;font-weight:700;}
+  .stat .lbl{font-size:11.5px;color:var(--text-3);margin-top:3px;}
+  .stat.s .num{color:var(--s);} .stat.a .num{color:var(--a);} .stat.b .num{color:var(--b);} .stat.c .num{color:var(--c);}
+
+  main{padding:36px 0 60px;}
+  .grade-head{display:flex;align-items:center;gap:12px;margin:34px 0 14px;}
+  .grade-head .badge{font-family:var(--mono);font-weight:700;font-size:14px;color:#fff;border-radius:7px;padding:4px 12px;letter-spacing:1px;}
+  .grade-head .desc{font-size:13px;color:var(--text-3);}
+  .badge.s{background:var(--s-line);} .badge.a{background:var(--a-line);} .badge.b{background:var(--b-line);} .badge.c{background:var(--c-line);}
+
+  .paper{background:var(--surface);border:1px solid var(--border);border-left:4px solid var(--c-line);border-radius:12px;padding:20px 22px;margin-bottom:14px;box-shadow:0 1px 3px rgba(15,23,42,.04);}
+  .paper.s{border-left-color:var(--s-line);background:var(--s-bg);}
+  .paper.a{border-left-color:var(--a-line);background:var(--a-bg);}
+  .paper.b{border-left-color:var(--b-line);background:var(--b-bg);}
+  .paper.c{border-left-color:var(--c-line);background:var(--c-bg);}
+  .paper .top{display:flex;align-items:flex-start;gap:10px;flex-wrap:wrap;}
+  .paper .g{font-family:var(--mono);font-weight:700;font-size:12px;border-radius:5px;padding:2px 8px;color:#fff;letter-spacing:1px;}
+  .g.s{background:var(--s-line);} .g.a{background:var(--a-line);} .g.b{background:var(--b-line);} .g.c{background:var(--c-line);}
+  .paper .tags{margin-left:auto;display:flex;gap:6px;flex-wrap:wrap;}
+  .paper .tag{font-size:11px;color:var(--text-2);background:#fff;border:1px solid var(--border);border-radius:999px;padding:2px 9px;}
+  .paper h3{font-size:16.5px;font-weight:700;margin:10px 0 4px;line-height:1.4;letter-spacing:-.2px;}
+  .paper .src{font-family:var(--mono);font-size:12px;color:var(--text-3);}
+  .paper .src a{color:var(--a);text-decoration:none;}
+  .paper .src a:hover{text-decoration:underline;}
+  .paper .fields{margin-top:12px;display:grid;gap:7px;}
+  .paper .f{font-size:13.5px;color:var(--text-2);}
+  .paper .f b{color:var(--text);font-weight:600;}
+  .paper .f.limit b{color:#9a3412;}
+
+  .tip{background:#fff;border:1px dashed #f59e0b;border-radius:12px;padding:18px 22px;margin-top:10px;}
+  .tip .tt{font-weight:800;color:#b45309;font-size:14px;}
+  .tip p{font-size:13.5px;color:var(--text-2);margin-top:6px;}
+  .tip ul{margin:8px 0 0 18px;font-size:13.5px;color:var(--text-2);}
+  .tip li{margin-bottom:4px;}
+
+  footer{background:var(--surface);border-top:1px solid var(--border);padding:28px 0 46px;text-align:center;color:var(--text-3);font-size:12.5px;}
+  footer .mono{font-family:var(--mono);}
+  footer .src-note{margin-top:8px;font-size:11.5px;color:var(--text-3);}
+
+  @media(max-width:640px){ .stats{grid-template-columns:repeat(2,1fr);} .stat{margin-top:0;} main{padding-top:20px;} h1{font-size:24px;} }
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="wrap">
+    <div class="kicker">Dental × AI Literature Daily</div>
+    <h1>口腔 × AI <span class="hl">文献日报</span></h1>
+    <div class="sub">口腔医学与人工智能交叉领域 · 高质量文献精选</div>
+    <div class="meta-row">
+      <span class="meta">📅 2026-09-07</span>
+      <span class="meta">🔍 PubMed</span>
+      <span class="meta">📚 今日收录 0 篇（新增）+ 2 条行业速递</span>
+      <span class="meta">⭐ 重点：无新增文献（与 9-05/9-06 重叠）；FDA 树脂/固化灯 510(k) 指南 · 医保价格预立项</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="stats">
+    <div class="stat s"><div class="num">0</div><div class="lbl">S 级 · 重磅</div></div>
+    <div class="stat a"><div class="num">0</div><div class="lbl">A 级 · 重要</div></div>
+    <div class="stat b"><div class="num">0</div><div class="lbl">B 级 · 有价值</div></div>
+    <div class="stat c"><div class="num">0</div><div class="lbl">C 级 · 参考</div></div>
+  </div>
+</div>
+
+<main class="wrap">
+
+  <div class="tip">
+    <div class="tt">📭 今日无重要新文献</div>
+    <p>PubMed 近 3 天增量与 9-05 / 9-06 两期高度重叠：龋病风险评估系统综述（J Dent）、腮腺肿瘤 DL 分类与 HPV 转录活性检测（Oral Oncology）、牙科图表多模态 LLM（JMIR Med Educ）、氟化物 GenAI 可读性（JDR CTR）、口腔癌 GBD 共负担 ML 分析（Ann Med）等均已在前两期收录推送，去重后无新增高相关口腔×AI 论文，本期不重复推送。</p>
+    <p>需要回顾近期要点的读者可直接翻阅 <b>9-05 期</b>（龋风险 CRA 综述 / 腮腺 DL / 牙科图表 LLM / 氟化物 GenAI）与 <b>9-06 期</b>（HPV+DL 多方法互证 / 口腔癌 ML 流行病学 / 正畸 AI 治理共识）网页存档。</p>
+  </div>
+
+  <!-- 行业速递 -->
+  <div class="tip">
+    <div class="tt">💡 行业速递</div>
+    <ul>
+<li><b>审批/标准 · 09-02</b>：FDA 在联邦公报（91 FR 56452）发布《牙科复合树脂器械 510(k) 申报》与《牙科光固化灯 510(k) 申报》两份最终指南（Docket FDA-2024-D-2511/2512）：明确设备描述、非临床/临床性能测试与标签要求，并首次引用最新 ISO/IEC 标准以统一申报口径；同期国内 NMPA 推进《牙科学 光固化机》YY 0055-2026，计划 2029-08-01 实施。对树脂修复材料与固化灯类器械厂商的注册申报路径影响直接，建议相关产品团队对照更新验证方案。</li>
+<li><b>政策 · 09-04</b>：国家医保局宣布将试行医疗服务价格项目「预立项」制度——新技术获准进入临床研究、新产品进入创新医疗器械特别审查程序至正式获批前，医保部门提前介入价格立项。叠加 1 月《手术和治疗辅助操作类价格立项指南》中「导航 / 参与执行 / 精准执行」三类手术机器人价格项目，口腔种植机器人、手术导航等创新器械的定价与收费通道有望更早打通，器械商业化的医保侧不确定性下降。</li>
+    </ul>
+  </div>
+
+  <div class="tip" style="border-color:#94a3b8;margin-top:14px;">
+    <div class="tt" style="color:#475569;">📌 编者按</div>
+    <p>本期为去重后的「空窗日」：PubMed 增量连续第三天与已收录批次重叠，未发现新的高相关论文，按规则不凑数、不重复推送。行业侧两条信号都指向「器械申报与定价的规则确定性」：FDA 把复合树脂与光固化灯的 510(k) 测试口径落到纸面并引用 ISO/IEC，材料与设备厂商的验证路径趋严趋明；医保「预立项」则把创新器械的定价时点前移到取证之前——对种植机器人 / 手术导航这类高值设备，注册、价格、临床证据三线并行的窗口正在形成。继续关注 FDA/NMPA 后续配套细则。</p>
+  </div>
+
+
+<footer>
+  <div class="wrap">
+    <div class="mono">DENTAL × AI LITERATURE DAILY · 2026-09-07</div>
+    <div class="src-note">数据来源：PubMed E-utilities（近3天增量检索）· 分级依据期刊影响力 + 主题相关度 + 研究设计 · 摘要经 AI 简略提炼，详情以原文为准</div>
+  </div>
+</footer>
+</body>
+</html>
