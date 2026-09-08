@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>口腔×AI 文献日报 · 2026-09-08</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f6f7f9; --surface:#ffffff; --border:#e5e8ec; --border-soft:#eef0f3;
+    --text:#1a2233; --text-2:#4a5568; --text-3:#8b95a5;
+    --s:#b8860b; --s-bg:#fff8e6; --s-line:#d4a017;
+    --a:#2563eb; --a-bg:#eef4ff; --a-line:#3b82f6;
+    --b:#0f8a5f; --b-bg:#eafaf2; --b-line:#10b981;
+    --c:#6b7280; --c-bg:#f3f4f6; --c-line:#9ca3af;
+    --mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+    --sans:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:15px;line-height:1.65;-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:980px;margin:0 auto;padding:0 24px;}
+
+  header.hero{background:linear-gradient(135deg,#0f172a,#1e293b);color:#fff;padding:52px 0 44px;}
+  header.hero .wrap{max-width:980px;margin:0 auto;padding:0 24px;}
+  .kicker{font-family:var(--mono);font-size:12px;letter-spacing:2px;color:#93c5fd;text-transform:uppercase;}
+  h1{font-size:30px;font-weight:800;margin-top:8px;letter-spacing:-.5px;}
+  h1 .hl{color:#fbbf24;}
+  .sub{color:#cbd5e1;margin-top:8px;font-size:15px;font-weight:300;}
+  .meta-row{display:flex;gap:12px;margin-top:18px;flex-wrap:wrap;}
+  .meta{font-family:var(--mono);font-size:12px;color:#e2e8f0;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:6px;padding:5px 11px;}
+
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:28px 0 8px;background:transparent;}
+  .stat{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:16px 10px;text-align:center;margin-top:-70px;box-shadow:0 6px 18px rgba(15,23,42,.08);}
+  .stat .num{font-family:var(--mono);font-size:26px;font-weight:700;}
+  .stat .lbl{font-size:11.5px;color:var(--text-3);margin-top:3px;}
+  .stat.s .num{color:var(--s);} .stat.a .num{color:var(--a);} .stat.b .num{color:var(--b);} .stat.c .num{color:var(--c);}
+
+  main{padding:36px 0 60px;}
+  .grade-head{display:flex;align-items:center;gap:12px;margin:34px 0 14px;}
+  .grade-head .badge{font-family:var(--mono);font-weight:700;font-size:14px;color:#fff;border-radius:7px;padding:4px 12px;letter-spacing:1px;}
+  .grade-head .desc{font-size:13px;color:var(--text-3);}
+  .badge.s{background:var(--s-line);} .badge.a{background:var(--a-line);} .badge.b{background:var(--b-line);} .badge.c{background:var(--c-line);}
+
+  .paper{background:var(--surface);border:1px solid var(--border);border-left:4px solid var(--c-line);border-radius:12px;padding:20px 22px;margin-bottom:14px;box-shadow:0 1px 3px rgba(15,23,42,.04);}
+  .paper.s{border-left-color:var(--s-line);background:var(--s-bg);}
+  .paper.a{border-left-color:var(--a-line);background:var(--a-bg);}
+  .paper.b{border-left-color:var(--b-line);background:var(--b-bg);}
+  .paper.c{border-left-color:var(--c-line);background:var(--c-bg);}
+  .paper .top{display:flex;align-items:flex-start;gap:10px;flex-wrap:wrap;}
+  .paper .g{font-family:var(--mono);font-weight:700;font-size:12px;border-radius:5px;padding:2px 8px;color:#fff;letter-spacing:1px;}
+  .g.s{background:var(--s-line);} .g.a{background:var(--a-line);} .g.b{background:var(--b-line);} .g.c{background:var(--c-line);}
+  .paper .tags{margin-left:auto;display:flex;gap:6px;flex-wrap:wrap;}
+  .paper .tag{font-size:11px;color:var(--text-2);background:#fff;border:1px solid var(--border);border-radius:999px;padding:2px 9px;}
+  .paper h3{font-size:16.5px;font-weight:700;margin:10px 0 4px;line-height:1.4;letter-spacing:-.2px;}
+  .paper .src{font-family:var(--mono);font-size:12px;color:var(--text-3);}
+  .paper .src a{color:var(--a);text-decoration:none;}
+  .paper .src a:hover{text-decoration:underline;}
+  .paper .fields{margin-top:12px;display:grid;gap:7px;}
+  .paper .f{font-size:13.5px;color:var(--text-2);}
+  .paper .f b{color:var(--text);font-weight:600;}
+  .paper .f.limit b{color:#9a3412;}
+
+  .tip{background:#fff;border:1px dashed #f59e0b;border-radius:12px;padding:18px 22px;margin-top:10px;}
+  .tip .tt{font-weight:800;color:#b45309;font-size:14px;}
+  .tip p{font-size:13.5px;color:var(--text-2);margin-top:6px;}
+  .tip ul{margin:8px 0 0 18px;font-size:13.5px;color:var(--text-2);}
+  .tip li{margin-bottom:4px;}
+
+  footer{background:var(--surface);border-top:1px solid var(--border);padding:28px 0 46px;text-align:center;color:var(--text-3);font-size:12.5px;}
+  footer .mono{font-family:var(--mono);}
+  footer .src-note{margin-top:8px;font-size:11.5px;color:var(--text-3);}
+
+  @media(max-width:640px){ .stats{grid-template-columns:repeat(2,1fr);} .stat{margin-top:0;} main{padding-top:20px;} h1{font-size:24px;} }
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="wrap">
+    <div class="kicker">Dental × AI Literature Daily</div>
+    <h1>口腔 × AI <span class="hl">文献日报</span></h1>
+    <div class="sub">口腔医学与人工智能交叉领域 · 高质量文献精选</div>
+    <div class="meta-row">
+      <span class="meta">📅 2026-09-08</span>
+      <span class="meta">🔍 PubMed</span>
+      <span class="meta">📚 今日收录 5 篇（新增）+ 2 条行业速递</span>
+      <span class="meta">⭐ 重点：JDR 牙周菌群诊断基准 / 贴面颜色 DL / 腮腺放射组学 TabResNet / 继发龋 AI Meta</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="stats">
+    <div class="stat s"><div class="num">1</div><div class="lbl">S 级 · 重磅</div></div>
+    <div class="stat a"><div class="num">2</div><div class="lbl">A 级 · 重要</div></div>
+    <div class="stat b"><div class="num">1</div><div class="lbl">B 级 · 有价值</div></div>
+    <div class="stat c"><div class="num">1</div><div class="lbl">C 级 · 参考</div></div>
+  </div>
+</div>
+
+<main class="wrap">
+<div class="grade-head"><span class="badge s">S 级</span><span class="desc">顶刊直接相关的突破性研究 · 行业里程碑</span></div>
+<div class="paper s"><div class="top"><span class="g s">S</span><div class="tags"><span class="tag">牙周</span><span class="tag">口腔微生物</span><span class="tag">AI/算法</span><span class="tag">临床预测</span></div></div><h3>机器学习诊断牙周炎：唾液与龈上菌斑优于龈下——33队列2303例基准评测</h3><div class="src">Journal of Dental Research · 2026-09-07 · <a href="https://pubmed.ncbi.nlm.nih.gov/42703634/">PMID 42703634</a></div><div class="fields"><div class="f"><b>研究目的</b>：系统比较不同口腔微生态采样生境与机器学习建模策略对牙周炎的诊断效能，确定最适于临床决策的无创采样-建模组合。</div><div class="f"><b>研究设计 + 样本</b>：整合33个公共16S rRNA V3-V4测序项目、2303例成人样本（唾液/龈上/龈下菌斑）；ASV比对扩展人类口腔微生物组数据库；sPLS-DA+定制遗传算法筛选特征，5种机器学习算法在重复交叉验证与独立测试集上评测；AUC为主指标+DCA评估临床净获益。</div><div class="f"><b>核心结果</b>：GAM以6–12个ASV的紧凑面板取得最佳判别：唾液AUC 0.928（灵敏度92.4%/特异度85.3%）、龈上0.903，均显著优于龈下菌斑0.803（校正P≤0.001）；DCA唾液净获益最高（0.437），其次龈上(0.419)、龈下(0.331)；48个可注释ASV作为预测特征并具生物学可解释性。</div><div class="f limit"><b>局限</b>：基于公共回顾性16S数据，跨项目批次异质性较大；需前瞻性床旁/即时检验（POC）与靶向PCR进一步验证。</div></div></div>
+<div class="grade-head"><span class="badge a">A 级</span><span class="desc">高影响力/权威期刊 · 高相关原创与大样本临床</span></div>
+<div class="paper a"><div class="top"><span class="g a">A</span><div class="tags"><span class="tag">修复</span><span class="tag">材料</span><span class="tag">深度学习</span><span class="tag">数字化</span></div></div><h3>深度学习预测二硅酸锂贴面最终颜色：目标驱动的贴面-试戴糊剂智能筛选</h3><div class="src">Journal of Dentistry · 2026-09-07 · <a href="https://pubmed.ncbi.nlm.nih.gov/42705446/">PMID 42705446</a></div><div class="fields"><div class="f"><b>研究目的</b>：建立深度学习框架预测二硅酸锂陶瓷贴面的最终颜色，并开发目标驱动的筛选算法，为不同基牙-目标色场景推荐并排序贴面-试戴糊剂组合。</div><div class="f"><b>研究设计 + 样本</b>：体外制作7色×3厚度二硅酸锂贴面试件；2套商用试戴糊剂与29个VITA Linearguide 3D-MASTER色标分别模拟粘接与基牙/目标色；光谱反射率转换为CIELAB坐标；含批归一化+ReLU的全连接神经网络（FCNN）以12个材料色彩学输入预测层叠贴面组件的最终色；841个基牙-目标色场景×210个候选组合筛选，并用实测最终色数据复核。</div><div class="f"><b>核心结果</b>：测试集FCNN平均ΔE00=0.50±0.27，100%预测低于AT(1.8)、87.5%低于PT(0.8)；267个场景找到临床可接受组合（514个排序候选）；实测复核平均ΔE00=0.55±0.40（预测vs实测）、1.22±0.51（实测vs目标色），87.16%的候选组合仍低于AT。</div><div class="f limit"><b>局限</b>：材料库局限于2套试戴糊剂与固定色/厚度范围；体外试件未完全模拟临床粘接、老化与口腔环境；需临床病例扩展验证。</div></div></div>
+<div class="paper a"><div class="top"><span class="g a">A</span><div class="tags"><span class="tag">颌面外科</span><span class="tag">影像</span><span class="tag">放射组学</span><span class="tag">深度学习</span></div></div><h3>FS-T2WI 放射组学鉴别腮腺肿瘤良恶性：TabResNet 优于传统机器学习并获多阅片者验证</h3><div class="src">Journal of Cranio-Maxillo-Facial Surgery · 2026-09-07 · <a href="https://pubmed.ncbi.nlm.nih.gov/42705054/">PMID 42705054</a></div><div class="fields"><div class="f"><b>研究目的</b>：评估FS-T2WI放射组学特征结合传统机器学习与表格深度学习模型对腮腺肿瘤良恶性的术前鉴别性能与临床效用。</div><div class="f"><b>研究设计 + 样本</b>：102例病理确诊腮腺肿瘤的FS-T2WI影像；构建4种传统ML+4种表格DL模型；独立留出测试集评估，5折交叉验证仅用于特征筛选阶段的优化正则化参数选择；以AUC为主指标，辅以DCA与多阅片者试验。</div><div class="f"><b>核心结果</b>：TabResNet在独立测试集取得最高AUC 0.8913，优于最佳传统ML（RF AUC 0.8641），泛化与临床效用更强；其余3种DL架构判别力可接受但未带来持续临床获益；多阅片者试验证实模型辅助提升不同年资与专业背景医生的诊断表现和阅读效率。</div><div class="f limit"><b>局限</b>：单中心、样本量中等（102例）；仅FS-T2WI单序列放射组学；缺乏外部多中心验证。</div></div></div>
+<div class="grade-head"><span class="badge b">B 级</span><span class="desc">中等期刊相关研究 · 系统综述 / Meta 分析</span></div>
+<div class="paper b"><div class="top"><span class="g b">B</span><div class="tags"><span class="tag">牙体牙髓</span><span class="tag">影像</span><span class="tag">AI/算法</span></div></div><h3>AI 检测继发龋的诊断准确性：系统综述与 Meta 分析</h3><div class="src">Caries Research · 2026-09-07 · <a href="https://pubmed.ncbi.nlm.nih.gov/42704746/">PMID 42704746</a></div><div class="fields"><div class="f"><b>要点</b>：PROSPERO注册(CRD420251014888)：检索PubMed/EBSCOhost/Scopus/Embase/IEEE Xplore/Web of Science至2026-06-11，筛得9项研究进入Meta分析；合并灵敏度76.83%（95%CI 51.70–91.13）、特异度84.43%（29.06–98.63），HSROC AUC 0.85（0.81–0.88），异质性59.47%——AI检测继发龋具中等偏上的诊断效能，但证据体有限、异质且3项研究在待评价试验域存在高偏倚风险，临床落地仍需更强验证。</div></div></div>
+<div class="grade-head"><span class="badge c">C 级</span><span class="desc">相关性中等或边缘 · 小样本 / 初步探索 / 综述</span></div>
+<div class="paper c"><div class="top"><span class="g c">C</span><div class="tags"><span class="tag">颌面外科</span><span class="tag">AI/算法</span></div></div><h3>人工智能在头颈外科中的作用：叙述性综述（含口腔颌面外科应用）</h3><div class="src">Turkish Journal of Surgery · 2026-09-07 · <a href="https://pubmed.ncbi.nlm.nih.gov/41987590/">PMID 41987590</a></div><div class="fields"><div class="f"><b>要点</b>：检索2000-01至2025-07 PubMed/Scopus/Google Scholar的叙述性综述：梳理AI/DL/ML在头颈外科（耳鼻喉、口腔颌面、整形等共同实践领域）的肿瘤检测、术前决策、手术规划与康复应用；同时提示患者隐私、数据安全、复杂决策中共情缺失等伦理问题，主张以跨学科监管框架约束而非整体弃用——综述性质、以头颈外科整体视角为主，口腔颌面部分占比有限。</div></div></div>
+  <!-- 行业速递 -->
+  <div class="tip">
+    <div class="tt">💡 行业速递</div>
+    <ul>
+<li><b>产品 · 09-01</b>：9月1日起在美国等市场发售（$499.99，英/法/澳/日同步上架）：内置10万像素微距摄像头以28帧/秒分析画面，Gap Optical Targeting系统检测、跟踪并预测牙间缝隙，刷牙时自动向牙缝喷射最高0.15mL漱口液；影像默认在设备端处理、不存储不上云，仅用户可选实时画面流至MyDyson App并提供覆盖率地图与刷牙反馈。厂商未申报FDA、按消费级电动牙刷销售——AI影像进入口腔护理消费硬件的信号值得关注，但喷射清洁的临床依据仍待验证（Cochrane对水牙线类辅助证据本就有限），隐私与售后维修政策亦需审视。</li><li><b>政策 · 09-04</b>：总统签署《2027持续拨款与延期法案》：联邦机构按FY2026水平维持拨款至12月11日，口腔相关包括NIDCR 5.25亿美元、CDC口腔健康项目2100万、HRSA口腔人力项目4300万、IHS牙科项目2.6亿等；同时至少推迟至12-11后实施OMB联邦拨款审查改革提案。美国口腔研究资助短期趋稳，对NIDCR资助的口腔AI/影像研究是利好，但12月仍有下一轮预算博弈。</li>
+    </ul>
+  </div>
+
+  <div class="tip" style="border-color:#94a3b8;margin-top:14px;">
+    <div class="tt" style="color:#475569;">📌 编者按</div>
+<p>空窗两日后 PubMed 出现一批高相关增量，本期收录 5 篇（1 S + 2 A + 1 B + 1 C）+ 2 条行业速递，均为首次收录。三点值得展开：一是 JDR 的 33 队列 2303 例基准评测给「无创牙周筛查」提供了迄今最强的证据——唾液与龈上菌斑经 GAM 等机器学习建模后 AUC 0.90+，显著优于临床惯用的龈下采样，且紧凑 ASV 面板保留生物学可解释性，为唾液 POC 筛查与微生物标志物产品指明方向。二是两篇「材料/影像 + 深度学习」A 级研究：J Dent 用 FCNN 预测二硅酸锂贴面最终色并做目标驱动筛选（87.16% 候选组合实测仍达标），把比色从经验判断推向可计算的材料选配，对贴面/试戴糊剂类产品的数字化流程有直接参考；JCMS 的腮腺放射组学则是「表格深度学习 TabResNet 优于传统 ML + 多阅片者验证」的完整示例，提示影像组学建模可跳出图像 CNN 之外多考虑 Tabular DL 路线。三是 Caries Research 的 Meta 分析显示 AI 检测继发龋合并灵敏度/特异度约 77%/84%、AUC 0.85，但纳入研究少、异质性高且有偏倚风险——「有潜力、证据未足」是当前多数口腔 AI 诊断场景的共性结论，做产品注册与临床证据规划时应正视。行业侧：戴森 CameraJet 把 AI 摄像头装进 499 美元电动牙刷（机内处理、不上云），消费口腔硬件开始引入视觉 AI，但其临床依据尚缺；美国临时拨款法案把 NIDCR 等口腔研究经费维持到 12 月，口腔 AI 研究资助短期趋稳。另 9-05/9-06 期已推送文献本期不重复。</p>
+  </div>
+
+<footer>
+  <div class="wrap">
+    <div class="mono">DENTAL × AI LITERATURE DAILY · 2026-09-08</div>
+    <div class="src-note">数据来源：PubMed E-utilities（近3天增量检索）· 分级依据期刊影响力 + 主题相关度 + 研究设计 · 摘要经 AI 简略提炼，详情以原文为准</div>
+  </div>
+</footer>
+</body>
+</html>
