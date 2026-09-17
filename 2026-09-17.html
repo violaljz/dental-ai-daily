@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>口腔×AI 文献日报 · 2026-09-17</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f6f7f9; --surface:#ffffff; --border:#e5e8ec; --border-soft:#eef0f3;
+    --text:#1a2233; --text-2:#4a5568; --text-3:#8b95a5;
+    --s:#b8860b; --s-bg:#fff8e6; --s-line:#d4a017;
+    --a:#2563eb; --a-bg:#eef4ff; --a-line:#3b82f6;
+    --b:#0f8a5f; --b-bg:#eafaf2; --b-line:#10b981;
+    --c:#6b7280; --c-bg:#f3f4f6; --c-line:#9ca3af;
+    --mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+    --sans:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:15px;line-height:1.65;-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:980px;margin:0 auto;padding:0 24px;}
+  header.hero{background:linear-gradient(135deg,#0f172a,#1e293b);color:#fff;padding:52px 0 44px;}
+  .kicker{font-family:var(--mono);font-size:12px;letter-spacing:2px;color:#93c5fd;text-transform:uppercase;}
+  h1{font-size:30px;font-weight:800;margin-top:8px;letter-spacing:-.5px;}
+  h1 .hl{color:#fbbf24;}
+  .sub{color:#cbd5e1;margin-top:8px;font-size:15px;font-weight:300;}
+  .meta-row{display:flex;gap:12px;margin-top:18px;flex-wrap:wrap;}
+  .meta{font-family:var(--mono);font-size:12px;color:#e2e8f0;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:6px;padding:5px 11px;}
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:28px 0 8px;}
+  .stat{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:16px 10px;text-align:center;margin-top:-70px;box-shadow:0 6px 18px rgba(15,23,42,.08);}
+  .stat .num{font-family:var(--mono);font-size:26px;font-weight:700;}
+  .stat .lbl{font-size:11.5px;color:var(--text-3);margin-top:3px;}
+  .stat.s .num{color:var(--s);} .stat.a .num{color:var(--a);} .stat.b .num{color:var(--b);} .stat.c .num{color:var(--c);}
+  main{padding:36px 0 60px;}
+  .grade-head{display:flex;align-items:center;gap:12px;margin:34px 0 14px;}
+  .grade-head .badge{font-family:var(--mono);font-weight:700;font-size:14px;color:#fff;border-radius:7px;padding:4px 12px;letter-spacing:1px;}
+  .grade-head .desc{font-size:13px;color:var(--text-3);}
+  .badge.s{background:var(--s-line);} .badge.a{background:var(--a-line);} .badge.b{background:var(--b-line);} .badge.c{background:var(--c-line);}
+  .paper{background:var(--surface);border:1px solid var(--border);border-left:4px solid var(--c-line);border-radius:12px;padding:20px 22px;margin-bottom:14px;box-shadow:0 1px 3px rgba(15,23,42,.04);}
+  .paper.s{border-left-color:var(--s-line);background:var(--s-bg);}
+  .paper.a{border-left-color:var(--a-line);background:var(--a-bg);}
+  .paper.b{border-left-color:var(--b-line);background:var(--b-bg);}
+  .paper.c{border-left-color:var(--c-line);background:var(--c-bg);}
+  .paper .top{display:flex;align-items:flex-start;gap:10px;flex-wrap:wrap;}
+  .paper .g{font-family:var(--mono);font-weight:700;font-size:12px;border-radius:5px;padding:2px 8px;color:#fff;letter-spacing:1px;}
+  .g.s{background:var(--s-line);} .g.a{background:var(--a-line);} .g.b{background:var(--b-line);} .g.c{background:var(--c-line);}
+  .paper .tags{margin-left:auto;display:flex;gap:6px;flex-wrap:wrap;}
+  .paper .tag{font-size:11px;color:var(--text-2);background:#fff;border:1px solid var(--border);border-radius:999px;padding:2px 9px;}
+  .paper h3{font-size:16.5px;font-weight:700;margin:10px 0 4px;line-height:1.4;letter-spacing:-.2px;}
+  .paper .src{font-family:var(--mono);font-size:12px;color:var(--text-3);}
+  .paper .src a{color:var(--a);text-decoration:none;}
+  .paper .src a:hover{text-decoration:underline;}
+  .paper .fields{margin-top:12px;display:grid;gap:7px;}
+  .paper .f{font-size:13.5px;color:var(--text-2);}
+  .paper .f b{color:var(--text);font-weight:600;}
+  .paper .f.limit b{color:#9a3412;}
+  .tip{background:#fff;border:1px dashed #f59e0b;border-radius:12px;padding:18px 22px;margin-top:10px;}
+  .tip .tt{font-weight:800;color:#b45309;font-size:14px;}
+  .tip ul{margin:8px 0 0 18px;font-size:13.5px;color:var(--text-2);}
+  .tip li{margin-bottom:8px;}
+  footer{background:var(--surface);border-top:1px solid var(--border);padding:28px 0 46px;text-align:center;color:var(--text-3);font-size:12.5px;}
+  footer .mono{font-family:var(--mono);}
+  footer .src-note{margin-top:8px;font-size:11.5px;color:var(--text-3);}
+  @media(max-width:640px){ .stats{grid-template-columns:repeat(2,1fr);} .stat{margin-top:0;} main{padding-top:20px;} h1{font-size:24px;} }
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="wrap">
+    <div class="kicker">Dental × AI Literature Daily</div>
+    <h1>口腔 × AI <span class="hl">文献日报</span></h1>
+    <div class="sub">口腔医学与人工智能交叉领域 · 高质量文献精选</div>
+    <div class="meta-row">
+      <span class="meta">📅 2026-09-17</span>
+      <span class="meta">🔍 PubMed</span>
+      <span class="meta">📚 今日收录 6 篇 + 2 条行业速递</span>
+      <span class="meta">⭐ 重点：CBCT 27 结构分割 / 口内照片不齐指数 / 口腔衰弱预测 / 国产 AI 器械新规</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="stats">
+    <div class="stat s"><div class="num">0</div><div class="lbl">S 级 · 重磅</div></div>
+    <div class="stat a"><div class="num">1</div><div class="lbl">A 级 · 重要</div></div>
+    <div class="stat b"><div class="num">4</div><div class="lbl">B 级 · 有价值</div></div>
+    <div class="stat c"><div class="num">1</div><div class="lbl">C 级 · 参考</div></div>
+  </div>
+</div>
+
+<main class="wrap">
+<div class="grade-head"><span class="badge a">A 级</span><span class="desc">口腔领域权威期刊高相关原创研究 · 今日无 S 级新文献</span></div>
+
+<div class="paper a"><div class="top"><span class="g a">A</span><div class="tags"><span class="tag">影像</span><span class="tag">深度学习</span><span class="tag">颌面外科</span><span class="tag">数字化</span></div></div><h3>CRANIOSEG：CBCT 颅颌面 27 个解剖结构的多类自动分割（nnU-Net v2）</h3><div class="src">Dentomaxillofacial Radiology · 09-15 · <a href="https://pubmed.ncbi.nlm.nih.gov/42745446/">PMID 42745446</a></div><div class="fields"><div class="f"><b>研究目的</b>：开发并评估基于 nnU-Net v2 的深度学习模型，在 CBCT 上对 27 个颅颌面解剖结构进行全自动多类分割。</div><div class="f"><b>研究设计</b>：单中心回顾性研究；106 例成人 CBCT，以 3D Slicer 分层标注流程建立共识参考标准；按患者划分训练集 96 例 / 内部留出测试集 10 例；训练三维全分辨率 nnU-Net v2；以 DSC、IoU、精确率、召回率、HD95、ASSD 评估。</div><div class="f"><b>核心结果</b>：27 个结构平均 DSC 0.850±0.132、IoU 0.773±0.159、精确率 0.863、召回率 0.868、HD95 2.34 mm；鼻旁窦与颅面骨框架最佳（DSC 0.961），下颌骨 0.976、上颌窦 0.977；颅底裂隙与窝最差（DSC 0.694），其中翼腭窝仅 0.377、下颌管 0.654。</div><div class="f limit"><b>局限</b>：仅单中心内部数据集、测试集仅 10 例；小体积/低对比结构（下颌管、翼腭窝）性能不足；需多中心外部验证才能评估真实临床可用性。</div></div></div>
+
+<div class="grade-head"><span class="badge b">B 级</span><span class="desc">中等期刊相关研究 / 有价值原创</span></div>
+
+<div class="paper b"><div class="top"><span class="g b">B</span><div class="tags"><span class="tag">正畸</span><span class="tag">影像</span><span class="tag">深度学习</span><span class="tag">器械/设备</span></div></div><h3>卷积神经网络从口内照片自动测量 Little 不齐指数</h3><div class="src">BMC Oral Health · 09-16 · <a href="https://pubmed.ncbi.nlm.nih.gov/42745250/">PMID 42745250</a></div><div class="fields"><div class="f"><b>研究目的</b>：评估用卷积神经网络在口内咬合照片上自动定位下颌前牙邻接触点并计算 Little 不齐指数（LII）的可行性，以支持远程监控。</div><div class="f"><b>研究设计</b>：构建标注下颌前牙邻接触点的口内咬合照片数据集训练模型；由接触点推导单牙位移与 LII；ICC 评估标注可靠性；独立测试集 Bland-Altman 一致性分析 + 牙级探索性分析；事先按 2 mm 等效阈值做功效分析确定测试集规模。</div><div class="f"><b>核心结果</b>：接触点定位平均径向误差 0.55±0.22 mm；牙位移与 LII 平均绝对误差分别为 0.42±0.32 mm 与 1.37±0.89 mm；LII 存在显著偏倚 1.07 mm，一致性界限 −1.36 至 3.50 mm（宽于 2 mm 等效阈值）；牙级分析偏倚 0.21 mm（−0.74 至 1.17 mm）。</div><div class="f limit"><b>局限</b>：一致性界限宽于预设等效阈值，目前只能作为补充/辅助工具；单中心数据，未评估对临床决策与远程监测结局的影响。</div></div></div>
+
+<div class="paper b"><div class="top"><span class="g b">B</span><div class="tags"><span class="tag">临床预测</span><span class="tag">AI/算法</span></div></div><h3>口腔健康指标纳入衰弱预测：性别分层可解释机器学习（KNHANES 1.2 万人）</h3><div class="src">Journal of Applied Gerontology · 09-16 · <a href="https://pubmed.ncbi.nlm.nih.gov/42747015/">PMID 42747015</a></div><div class="fields"><div class="f"><b>研究目的</b>：构建性别分层的可解释机器学习模型，评估口腔健康指标在 50 岁以上成人衰弱预测中的价值。</div><div class="f"><b>研究设计</b>：KNHANES 2016–2019 横断面数据 12,302 名 ≥50 岁成人；以改良 Fried 表型定义衰弱（robust 与 prefrail 合并为非衰弱）；男女分别开发 5 种算法并在独立测试集评估，最优模型用 SHAP 解释。</div><div class="f"><b>核心结果</b>：加权衰弱患病率 14.1%（95% CI 13.3–14.9）；测试集 AUROC 男性 0.73–0.78、女性 0.75–0.81；XGBoost 入选解释，SHAP 显示咀嚼困难与言语困难的重要性在两个性别中均高于高血压；男性以吸烟与餐后刷牙更突出，女性以未满足的牙科就诊需求与漱口水使用更突出；去除分析显示咀嚼困难有互补贡献。</div><div class="f limit"><b>局限</b>：横断面设计无法推断因果；口腔指标多来自自报问卷而非临床检查；模型缺乏外部验证。</div></div></div>
+
+<div class="paper b"><div class="top"><span class="g b">B</span><div class="tags"><span class="tag">牙周</span><span class="tag">临床预测</span><span class="tag">AI/算法</span></div></div><h3>牙周病与 2 型糖尿病负担的联合轨迹：204 个国家聚类分析</h3><div class="src">Diabetes Research and Clinical Practice · 09-16 · <a href="https://pubmed.ncbi.nlm.nih.gov/42749192/">PMID 42749192</a></div><div class="fields"><div class="f"><b>研究目的</b>：检验各国是否呈现可重复的牙周病与 2 型糖尿病负担联合纵向模式，而非单一均质的全球轨迹。</div><div class="f"><b>研究设计</b>：生态学研究，204 个国家年龄标化发病率、患病率与 DALY 率；6 条年度轨迹经对数转换与标准化后，用多变量动态时间规整（DTW）结合 PAM 聚类；以 200 次国家自举、更早观测窗与 PCA-k-means 评估稳定性。</div><div class="f"><b>核心结果</b>：识别出 3 种轨迹表型，分别涵盖 19、89、96 个国家，对应「糖尿病主导伴牙周下降」「低糖尿病伴中等牙周负担」「双高负担」；自举调整兰德指数中位数 0.866，早期窗口与替代算法分别为 0.911 与 0.900；仅按曲线形状聚类的一致性极低（0.010），提示负担量级决定了分组。</div><div class="f limit"><b>局限</b>：生态学设计只能提示群体层面模式，不能证明个体共病或因果关系；聚类主要由负担量级而非轨迹形状驱动。</div></div></div>
+
+<div class="paper b"><div class="top"><span class="g b">B</span><div class="tags"><span class="tag">牙周</span><span class="tag">AI/算法</span></div></div><h3>鲁斯可皂苷元靶向 TXNIP 抑制牙周炎 PANoptosis 与炎症</h3><div class="src">Oral Diseases · 09-15 · <a href="https://pubmed.ncbi.nlm.nih.gov/42745234/">PMID 42745234</a></div><div class="fields"><div class="f"><b>研究目的</b>：探讨 PANoptosis（协同调控性细胞死亡）在牙周炎中的作用，识别关键 PANoptosis 相关基因并评估潜在小分子抑制剂。</div><div class="f"><b>研究设计</b>：ssGSEA 评估牙周组织 PANoptosis 活性；从 GEO 数据集（GSE10334、GSE16134）筛选差异表达的 PANoptosis 相关基因；GO/KEGG 富集、WGCNA 与多种机器学习方法筛选枢纽基因，ROC 验证并在临床样本确认；分子对接与分子动力学模拟筛选靶向 TXNIP 的化合物；单细胞 RNA 测序定位表达；细胞实验与小鼠牙周炎模型验证炎症反应与组织破坏。</div><div class="f"><b>核心结果</b>：TXNIP 被确定为关键 PANoptosis 相关基因，广泛表达于牙龈细胞并与 PANoptosis 激活相关；鲁斯可皂苷元被预测并经实验验证可抑制 TXNIP 相关 PANoptosis 与牙周炎症。</div><div class="f limit"><b>局限</b>：以生物信息学、细胞与动物实验为主，无临床干预数据；小分子药物的疗效、剂量与安全性尚待后续研究。</div></div></div>
+
+<div class="grade-head"><span class="badge c">C 级</span><span class="desc">相关性中等或边缘 · 初步探索</span></div>
+
+<div class="paper c"><div class="top"><span class="g c">C</span><div class="tags"><span class="tag">影像</span><span class="tag">AI/算法</span><span class="tag">临床预测</span></div></div><h3>光谱分析估计骨骼遗骸死后间隔：系统综述（含机器学习模型）</h3><div class="src">International Journal of Legal Medicine · 09-15 · <a href="https://pubmed.ncbi.nlm.nih.gov/42742720/">PMID 42742720</a></div><div class="fields"><div class="f"><b>要点</b>：纳入 19 项 2015–2025 年研究：最常用傅里叶变换红外光谱（FTIR，10 项）与拉曼光谱（7 项），FTIR 数据更一致；常测磷酸盐、碳酸盐、酰胺、钙等参数比值；考古与法医遗骸存在差异但常不显著（p&gt;0.05），PMI 短于 90 天时尤为明显；整合光谱的机器学习模型准确率 58–100%；偏倚风险低（全部 6.0 分以上）。</div><div class="f limit"><b>局限</b>：对 PMI 短于 90 天的遗骸区分能力不足；协议未标准化、缺乏外部验证；需多模态整合与规范化流程。</div></div></div>
+
+  <!-- 行业速递 -->
+  <div class="tip">
+    <div class="tt">💡 行业速递</div>
+    <ul>
+<li><b>政策</b>：2026-09-14 国家药监局器审中心发布《人工智能医疗器械注册审查指导原则（2026 年修订版）（征求意见稿）》，意见反馈截止 2026-10-12。该指导原则是 AI 医疗器械注册申报与审评的通用文件，适用于二类/三类 AI 独立软件及含 AI 软件组件的器械（口腔影像诊断软件、AI 辅助诊断系统均在其中）。本次修订系统区分辅助决策类 vs 非辅助决策类（含实时/非实时）、处理/控制/安全功能、白盒 vs 黑盒算法、成熟 vs 全新类型等维度；明确算法更新判定规则——算法驱动型更新（含弃用原数据、换用全新训练数据重新训练）通常属重大软件更新需申请变更注册，数据驱动型更新（仅增加训练数据量）则以基于一致测试集的性能评估是否显著改变为准；强调以泛化能力为根本、以模型与数据质控为基础，并兼顾算力不足与失效风险。对国内口腔 AI 影像/诊断软件的注册路径与资料准备有直接影响。</li>
+<li><b>标准</b>：2026-09-14 国家药监局公告（2026 年第 79 号，标准于 8 月 24 日审定）发布 YY/T 2029—2026《脑机接口医疗器械 用于人工智能算法的脑电数据集质量要求与评价方法》。该行业标准首次针对「用于人工智能算法的医疗器械数据集」给出质量要求与评价方法，为口腔等领域的 AI 医疗器械在训练集/测试集构建、标注质控与可追溯性上提供了可参照的标准范式，呼应新版 AI 医疗器械注册审查指导原则对数据质控的要求。</li>
+    </ul>
+  </div>
+</main><footer>
+  <div class="wrap">
+    <div class="mono">DENTAL × AI LITERATURE DAILY · 2026-09-17</div>
+    <div class="src-note">数据来源：PubMed E-utilities（近3天增量检索）· 分级依据期刊影响力 + 主题相关度 + 研究设计 · 摘要经 AI 简略提炼，详情以原文为准</div>
+  </div>
+</footer>
+</body>
+</html>
