@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>口腔×AI 文献日报 · 2026-09-19</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f6f7f9; --surface:#ffffff; --border:#e5e8ec; --border-soft:#eef0f3;
+    --text:#1a2233; --text-2:#4a5568; --text-3:#8b95a5;
+    --s:#b8860b; --s-bg:#fff8e6; --s-line:#d4a017;
+    --a:#2563eb; --a-bg:#eef4ff; --a-line:#3b82f6;
+    --b:#0f8a5f; --b-bg:#eafaf2; --b-line:#10b981;
+    --c:#6b7280; --c-bg:#f3f4f6; --c-line:#9ca3af;
+    --mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+    --sans:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:15px;line-height:1.65;-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:980px;margin:0 auto;padding:0 24px;}
+  header.hero{background:linear-gradient(135deg,#0f172a,#1e293b);color:#fff;padding:52px 0 44px;}
+  .kicker{font-family:var(--mono);font-size:12px;letter-spacing:2px;color:#93c5fd;text-transform:uppercase;}
+  h1{font-size:30px;font-weight:800;margin-top:8px;letter-spacing:-.5px;}
+  h1 .hl{color:#fbbf24;}
+  .sub{color:#cbd5e1;margin-top:8px;font-size:15px;font-weight:300;}
+  .meta-row{display:flex;gap:12px;margin-top:18px;flex-wrap:wrap;}
+  .meta{font-family:var(--mono);font-size:12px;color:#e2e8f0;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:6px;padding:5px 11px;}
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:28px 0 8px;}
+  .stat{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:16px 10px;text-align:center;margin-top:-70px;box-shadow:0 6px 18px rgba(15,23,42,.08);}
+  .stat .num{font-family:var(--mono);font-size:26px;font-weight:700;}
+  .stat .lbl{font-size:11.5px;color:var(--text-3);margin-top:3px;}
+  .stat.s .num{color:var(--s);} .stat.a .num{color:var(--a);} .stat.b .num{color:var(--b);} .stat.c .num{color:var(--c);}
+  main{padding:36px 0 60px;}
+  .grade-head{display:flex;align-items:center;gap:12px;margin:34px 0 14px;}
+  .grade-head .badge{font-family:var(--mono);font-weight:700;font-size:14px;color:#fff;border-radius:7px;padding:4px 12px;letter-spacing:1px;}
+  .grade-head .desc{font-size:13px;color:var(--text-3);}
+  .badge.s{background:var(--s-line);} .badge.a{background:var(--a-line);} .badge.b{background:var(--b-line);} .badge.c{background:var(--c-line);}
+  .paper{background:var(--surface);border:1px solid var(--border);border-left:4px solid var(--c-line);border-radius:12px;padding:20px 22px;margin-bottom:14px;box-shadow:0 1px 3px rgba(15,23,42,.04);}
+  .paper.s{border-left-color:var(--s-line);background:var(--s-bg);}
+  .paper.a{border-left-color:var(--a-line);background:var(--a-bg);}
+  .paper.b{border-left-color:var(--b-line);background:var(--b-bg);}
+  .paper.c{border-left-color:var(--c-line);background:var(--c-bg);}
+  .paper .top{display:flex;align-items:flex-start;gap:10px;flex-wrap:wrap;}
+  .paper .g{font-family:var(--mono);font-weight:700;font-size:12px;border-radius:5px;padding:2px 8px;color:#fff;letter-spacing:1px;}
+  .g.s{background:var(--s-line);} .g.a{background:var(--a-line);} .g.b{background:var(--b-line);} .g.c{background:var(--c-line);}
+  .paper .tags{margin-left:auto;display:flex;gap:6px;flex-wrap:wrap;}
+  .paper .tag{font-size:11px;color:var(--text-2);background:#fff;border:1px solid var(--border);border-radius:999px;padding:2px 9px;}
+  .paper h3{font-size:16.5px;font-weight:700;margin:10px 0 4px;line-height:1.4;letter-spacing:-.2px;}
+  .paper .src{font-family:var(--mono);font-size:12px;color:var(--text-3);}
+  .paper .src a{color:var(--a);text-decoration:none;}
+  .paper .src a:hover{text-decoration:underline;}
+  .paper .fields{margin-top:12px;display:grid;gap:7px;}
+  .paper .f{font-size:13.5px;color:var(--text-2);}
+  .paper .f b{color:var(--text);font-weight:600;}
+  .paper .f.limit b{color:#9a3412;}
+  .tip{background:#fff;border:1px dashed #f59e0b;border-radius:12px;padding:18px 22px;margin-top:10px;}
+  .tip .tt{font-weight:800;color:#b45309;font-size:14px;}
+  .tip ul{margin:8px 0 0 18px;font-size:13.5px;color:var(--text-2);}
+  .tip li{margin-bottom:8px;}
+  footer{background:var(--surface);border-top:1px solid var(--border);padding:28px 0 46px;text-align:center;color:var(--text-3);font-size:12.5px;}
+  footer .mono{font-family:var(--mono);}
+  footer .src-note{margin-top:8px;font-size:11.5px;color:var(--text-3);}
+  @media(max-width:640px){ .stats{grid-template-columns:repeat(2,1fr);} .stat{margin-top:0;} main{padding-top:20px;} h1{font-size:24px;} }
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="wrap">
+    <div class="kicker">Dental × AI Literature Daily</div>
+    <h1>口腔 × AI <span class="hl">文献日报</span></h1>
+    <div class="sub">口腔医学与人工智能交叉领域 · 高质量文献精选</div>
+    <div class="meta-row">
+      <span class="meta">📅 2026-09-19</span>
+      <span class="meta">🔍 PubMed</span>
+      <span class="meta">📚 今日收录 5 篇 + 2 条行业速递</span>
+      <span class="meta">⭐ 重点：序贯 ML 正畸拔牙决策 / 正颌手术需求 AI 评估 / 正畸软件测量准确性 / 儿童龋病 AI 照护者应用</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="stats">
+    <div class="stat s"><div class="num">0</div><div class="lbl">S 级 · 重磅</div></div>
+    <div class="stat a"><div class="num">1</div><div class="lbl">A 级 · 重要</div></div>
+    <div class="stat b"><div class="num">2</div><div class="lbl">B 级 · 有价值</div></div>
+    <div class="stat c"><div class="num">2</div><div class="lbl">C 级 · 参考</div></div>
+  </div>
+</div>
+
+<main class="wrap">
+<div class="grade-head"><span class="badge a">A 级</span><span class="desc">口腔领域权威期刊高相关原创研究 · 今日无 S 级新文献</span></div>
+
+<div class="paper a"><div class="top"><span class="g a">A</span><div class="tags"><span class="tag">正畸</span><span class="tag">AI/算法</span><span class="tag">临床预测</span><span class="tag">数字化</span></div></div><h3>序贯机器学习辅助正畸拔牙决策：模仿人类临床推理的两阶段模型</h3><div class="src">Orthodontics &amp; Craniofacial Research · 09-17 · <a href="https://pubmed.ncbi.nlm.nih.gov/42754949/">PMID 42754949</a></div><div class="fields"><div class="f"><b>研究目的</b>：开发并验证一种创新的序贯机器学习框架，用于正畸前磨牙拔除决策，并通过可解释性技术提供透明的临床推理。</div><div class="f"><b>研究设计</b>：回顾性研究；纳入哥伦比亚卡利 500 名成人患者（88.4% 混血、11.6% 非裔哥伦比亚人），采用 36 个正畸医生选取变量，评估 8 种监督学习算法；提出两阶段序贯架构（下颌拔牙预测驱动上颌决策，模拟人类临床推理）；用 SHAP、置换重要性与部分依赖图做可解释性分析。</div><div class="f"><b>核心结果</b>：序贯框架表现优异——下颌准确率 92%（梯度提升）、上颌 93%（XGBoost）、总体 92.5%，较此前最佳提升 8.3%；成功分类全部 9 种对称拔牙组合（既往研究仅 5 种）；可解释性分析提示 L1-APog（4.88–6.37 mm）与下牙列拥挤度的临床意义阈值，下颌决策对上颌预测影响强。</div><div class="f limit"><b>局限</b>：单一人群（混血为主），缺乏外部/多中心验证；为回顾性数据；模型定位为辅助治疗计划工具而非替代医师决策。</div></div></div>
+
+<div class="grade-head"><span class="badge b">B 级</span><span class="desc">口腔领域权威期刊相关研究 / 中等期刊高质量研究</span></div>
+
+<div class="paper b"><div class="top"><span class="g b">B</span><div class="tags"><span class="tag">颌面外科</span><span class="tag">正畸</span><span class="tag">大语言模型</span><span class="tag">影像</span></div></div><h3>面部吸引力与侧貌感知的正颌手术需求：专业人士、普通人与 AI 模型的对比评估</h3><div class="src">International Journal of Oral and Maxillofacial Surgery · 09-18 · <a href="https://pubmed.ncbi.nlm.nih.gov/42760153/">PMID 42760153</a></div><div class="fields"><div class="f"><b>研究目的</b>：评估受控 2° 矢状向侧貌修改对面部吸引力评分与基于侧貌的正颌手术需求感知的影响，并与多模态 AI 系统做探索性对比。</div><div class="f"><b>研究设计</b>：横断面评估；各 1 个标准化女/男面部模型，从 -8° 到 +8° 生成 9 档侧貌图像；72 名评价者（正畸医生、口腔颌面外科医生、普通人）评分；ChatGPT-4.0 与 Gemini 1.5 Pro 独立生成吸引度评分作人机一致性基准。</div><div class="f"><b>核心结果</b>：女模吸引度峰值在轻后缩范围（-2°~-4°），男模随矢状向前突增加而上升；特定位置存在显著组间差异，正畸医生审美容忍度更窄；男模手术建议组间差异显著（P&lt;0.001），颌面外科医生最常建议干预；人机一致性依模型而异（女模 Gemini、男模 ChatGPT-4.0 更贴近人类），两 AI 均因内置伦理限制拒绝给出手术建议。</div><div class="f limit"><b>局限</b>：仅两个模型、基于侧貌的探索性设计，结论为模型特异而非可推广的性别审美标准。</div></div></div>
+
+<div class="paper b"><div class="top"><span class="g b">B</span><div class="tags"><span class="tag">正畸</span><span class="tag">数字化</span><span class="tag">器械/设备</span><span class="tag">影像</span></div></div><h3>三款正畸软件平台测量牙冠近远中宽度与 Bolton 分析的准确性比较</h3><div class="src">International Orthodontics · 09-18 · <a href="https://pubmed.ncbi.nlm.nih.gov/42759075/">PMID 42759075</a></div><div class="fields"><div class="f"><b>研究目的</b>：比较三款正畸软件平台（3Shape OrthoAnalyzer®、uDesign®、Titan Dental Design™）的牙冠近远中宽度测量与 Bolton 分析结果，以物理卡尺为对照，并评估轻中度拥挤对测量准确性的影响。</div><div class="f"><b>研究设计</b>：回顾性研究；路易斯安那州立大学牙学院 14 名轻中度拥挤患者的治疗前/后数字化模型，经口内扫描获取并由各平台自动分割工作流处理；物理对照模型由同一 STL 3D 打印后用数字卡尺测量；采用线性混合效应模型与 Tukey 校正两两比较。</div><div class="f"><b>核心结果</b>：三平台近远中宽度测量差异显著（P&lt;0.05），与物理对照的偏差亦显著；Titan Dental Design 相对物理参考高估最多，3Shape OrthoAnalyzer 最接近卡尺；所有软件间差异均低于 0.25 mm 临床显著性阈值；总体 Bolton 比在治疗前有显著差异、治疗后无；牙齿排列对齐未显著影响测量准确性。</div><div class="f limit"><b>局限</b>：样本仅 14 例、单中心、回顾性；差异虽具统计学意义但属亚临床，作者建议临床保持平台使用一致性并审慎解读。</div></div></div>
+
+<div class="grade-head"><span class="badge c">C 级</span><span class="desc">相关性中等或边缘 · 初步探索 / 方案</span></div>
+
+<div class="paper c"><div class="top"><span class="g c">C</span><div class="tags"><span class="tag">牙体牙髓</span><span class="tag">AI/算法</span><span class="tag">临床预测</span></div></div><h3>面向非正式照护者的儿童龋病预防与管理 AI 应用：范围综述方案</h3><div class="src">BMJ Open · 09-18 · <a href="https://pubmed.ncbi.nlm.nih.gov/42760089/">PMID 42760089</a></div><div class="fields"><div class="f"><b>研究目的</b>：映射并刻画现有证据——以非正式照护者为中心、支持儿童龋病预防与管理的 AI 移动健康应用。</div><div class="f"><b>研究设计</b>：范围综述方案，遵循 JBI 方法学与 PRISMA-ScR 报告规范；检索 Embase（Ovid）、MEDLINE、PubMed、Scopus；两名评审独立筛选标题/摘要/全文、第三人解决分歧；按 PCC 框架纳入研究；描述性统计 + 定性主题映射整合数据，不限发表年份、仅限英文原始研究。</div><div class="f"><b>核心结果</b>：方案阶段暂无检索结果；作者指出 AI 移动健康应用有望帮助照护者参与口腔健康教育、早期发现与其他预防活动，但现有证据仍有限。背景为服务可及性有限、人力短缺与照护者口腔健康素养不足导致儿童龋病延迟发现。</div><div class="f limit"><b>局限</b>：属方案（protocol），尚无结果；仅纳入英文原始研究，可能存在语言偏倚；AI 应用证据本身有限。</div></div></div>
+
+<div class="paper c"><div class="top"><span class="g c">C</span><div class="tags"><span class="tag">颌面外科</span><span class="tag">影像</span><span class="tag">深度学习</span><span class="tag">数字化</span></div></div><h3>基于深度学习的 3D 法医面部重建：用颅骨条件 U-Net 做体积形态推断</h3><div class="src">International Journal of Legal Medicine · 09-19 · <a href="https://pubmed.ncbi.nlm.nih.gov/42760423/">PMID 42760423</a></div><div class="fields"><div class="f"><b>研究目的</b>：评估颅骨条件化体积重建的方法学可行性，并刻画解剖结构化重建误差（法医面部重建用于缺乏 DNA、牙科记录、指纹等首要识别依据时的人脸近似）。</div><div class="f"><b>研究设计</b>：可行性概念研究；基于颅颌面 CT 数据，用 3D U-Net 学习「二值颅骨体积 → 面部软组织包络」的体素级映射，仅用颅骨几何、不纳入人口学元数据；采用复合损失缓解体积类别不平衡；以体积重叠与表面距离指标评估重建精度。</div><div class="f"><b>核心结果</b>：独立测试集平均 Dice 0.93±0.01、95 分位 Hausdorff 距离（HD95）2.8±0.8 mm；空间误差分析显示颅骨锚定区更准、解剖约束不足区偏差更大，符合解剖约束原理。</div><div class="f limit"><b>局限</b>：数据集规模有限，作者明确为可行性概念研究，不追求人群级泛化；颅骨无法唯一确定面部形态，结果仅为解剖学合理的面部近似。</div></div></div>
+
+  <!-- 行业速递 -->
+  <div class="tip">
+    <div class="tt">💡 行业速递</div>
+    <ul>
+<li><b>产业</b>：2026-09-15，Carestream Dental 旗下 <b>Sensei</b> 与 AI 汇款/应收平台 <b>Zentist</b> 合作，将其 <b>Remit AI</b> 作为独立产品开放给全部 Carestream Dental 客户，自动化 EOB（福利说明）处理与 AI 理赔拒付管理，覆盖 Sensei Cloud 及 SoftDent、OrthoTrac、WinOMS、PracticeWorks 等 legacy 诊所管理系统，面向 DSO、多门店集团与独立诊所。该方案覆盖约 160 家付款方、清算网络可达 1,500 付款方与计划；Zentist 2025 年处理逾 1,120 万份理赔、金额约 21 亿美元。牙科 AI 正持续从影像诊断向收入周期管理（RCM）环节渗透。</li>
+<li><b>器械</b>：Dental Tribune 2026-09-16 报道，中国团队（Shizhu Bai 等）研发的<b>自主多轴机器人</b>用于牙自体移植受植牙槽窝预备：与传统静态导板辅助相比，机器人在窝底深度位置精度更高、更贴近计划窝形，钻削角度更精准，在双根牙等复杂解剖下优势最大；有望减少不必要的骨去除与反复试植。牙自体移植可保留天然牙功能并支持青少年颌骨发育，是种植之外的重要替代方案。此进展凸显「机器人 + AI」在口腔外科/种植方向正从导航辅助向任务自主演进。</li>
+    </ul>
+  </div>
+</main><footer>
+  <div class="wrap">
+    <div class="mono">DENTAL × AI LITERATURE DAILY · 2026-09-19</div>
+    <div class="src-note">数据来源：PubMed E-utilities（近3天增量检索）· 分级依据期刊影响力 + 主题相关度 + 研究设计 · 摘要经 AI 简略提炼，详情以原文为准</div>
+  </div>
+</footer>
+</body>
+</html>
