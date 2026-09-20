@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>口腔×AI 文献日报 · 2026-09-20</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f6f7f9; --surface:#ffffff; --border:#e5e8ec; --border-soft:#eef0f3;
+    --text:#1a2233; --text-2:#4a5568; --text-3:#8b95a5;
+    --s:#b8860b; --s-bg:#fff8e6; --s-line:#d4a017;
+    --a:#2563eb; --a-bg:#eef4ff; --a-line:#3b82f6;
+    --b:#0f8a5f; --b-bg:#eafaf2; --b-line:#10b981;
+    --c:#6b7280; --c-bg:#f3f4f6; --c-line:#9ca3af;
+    --mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+    --sans:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:15px;line-height:1.65;-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:980px;margin:0 auto;padding:0 24px;}
+  header.hero{background:linear-gradient(135deg,#0f172a,#1e293b);color:#fff;padding:52px 0 44px;}
+  .kicker{font-family:var(--mono);font-size:12px;letter-spacing:2px;color:#93c5fd;text-transform:uppercase;}
+  h1{font-size:30px;font-weight:800;margin-top:8px;letter-spacing:-.5px;}
+  h1 .hl{color:#fbbf24;}
+  .sub{color:#cbd5e1;margin-top:8px;font-size:15px;font-weight:300;}
+  .meta-row{display:flex;gap:12px;margin-top:18px;flex-wrap:wrap;}
+  .meta{font-family:var(--mono);font-size:12px;color:#e2e8f0;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:6px;padding:5px 11px;}
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:28px 0 8px;}
+  .stat{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:16px 10px;text-align:center;margin-top:-70px;box-shadow:0 6px 18px rgba(15,23,42,.08);}
+  .stat .num{font-family:var(--mono);font-size:26px;font-weight:700;}
+  .stat .lbl{font-size:11.5px;color:var(--text-3);margin-top:3px;}
+  .stat.s .num{color:var(--s);} .stat.a .num{color:var(--a);} .stat.b .num{color:var(--b);} .stat.c .num{color:var(--c);}
+  main{padding:36px 0 60px;}
+  .grade-head{display:flex;align-items:center;gap:12px;margin:34px 0 14px;}
+  .grade-head .badge{font-family:var(--mono);font-weight:700;font-size:14px;color:#fff;border-radius:7px;padding:4px 12px;letter-spacing:1px;}
+  .grade-head .desc{font-size:13px;color:var(--text-3);}
+  .badge.s{background:var(--s-line);} .badge.a{background:var(--a-line);} .badge.b{background:var(--b-line);} .badge.c{background:var(--c-line);}
+  .paper{background:var(--surface);border:1px solid var(--border);border-left:4px solid var(--c-line);border-radius:12px;padding:20px 22px;margin-bottom:14px;box-shadow:0 1px 3px rgba(15,23,42,.04);}
+  .paper.s{border-left-color:var(--s-line);background:var(--s-bg);}
+  .paper.a{border-left-color:var(--a-line);background:var(--a-bg);}
+  .paper.b{border-left-color:var(--b-line);background:var(--b-bg);}
+  .paper.c{border-left-color:var(--c-line);background:var(--c-bg);}
+  .paper .top{display:flex;align-items:flex-start;gap:10px;flex-wrap:wrap;}
+  .paper .g{font-family:var(--mono);font-weight:700;font-size:12px;border-radius:5px;padding:2px 8px;color:#fff;letter-spacing:1px;}
+  .g.s{background:var(--s-line);} .g.a{background:var(--a-line);} .g.b{background:var(--b-line);} .g.c{background:var(--c-line);}
+  .paper .tags{margin-left:auto;display:flex;gap:6px;flex-wrap:wrap;}
+  .paper .tag{font-size:11px;color:var(--text-2);background:#fff;border:1px solid var(--border);border-radius:999px;padding:2px 9px;}
+  .paper h3{font-size:16.5px;font-weight:700;margin:10px 0 4px;line-height:1.4;letter-spacing:-.2px;}
+  .paper .src{font-family:var(--mono);font-size:12px;color:var(--text-3);}
+  .paper .src a{color:var(--a);text-decoration:none;}
+  .paper .src a:hover{text-decoration:underline;}
+  .paper .fields{margin-top:12px;display:grid;gap:7px;}
+  .paper .f{font-size:13.5px;color:var(--text-2);}
+  .paper .f b{color:var(--text);font-weight:600;}
+  .paper .f.limit b{color:#9a3412;}
+  .tip{background:#fff;border:1px dashed #f59e0b;border-radius:12px;padding:18px 22px;margin-top:10px;}
+  .tip .tt{font-weight:800;color:#b45309;font-size:14px;}
+  .tip ul{margin:8px 0 0 18px;font-size:13.5px;color:var(--text-2);}
+  .tip li{margin-bottom:8px;}
+  footer{background:var(--surface);border-top:1px solid var(--border);padding:28px 0 46px;text-align:center;color:var(--text-3);font-size:12.5px;}
+  footer .mono{font-family:var(--mono);}
+  footer .src-note{margin-top:8px;font-size:11.5px;color:var(--text-3);}
+  @media(max-width:640px){ .stats{grid-template-columns:repeat(2,1fr);} .stat{margin-top:0;} main{padding-top:20px;} h1{font-size:24px;} }
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="wrap">
+    <div class="kicker">Dental × AI Literature Daily</div>
+    <h1>口腔 × AI <span class="hl">文献日报</span></h1>
+    <div class="sub">口腔医学与人工智能交叉领域 · 高质量文献精选</div>
+    <div class="meta-row">
+      <span class="meta">📅 2026-09-20</span>
+      <span class="meta">🔍 PubMed</span>
+      <span class="meta">📚 今日收录 5 篇 + 2 条行业速递</span>
+      <span class="meta">⭐ 重点：口扫 AI 综述 / AI 义齿与咬合装置设计 / 修复教学 LLM / 口腔 AI 依赖</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="stats">
+    <div class="stat s"><div class="num">0</div><div class="lbl">S 级 · 重磅</div></div>
+    <div class="stat a"><div class="num">0</div><div class="lbl">A 级 · 重要</div></div>
+    <div class="stat b"><div class="num">4</div><div class="lbl">B 级 · 有价值</div></div>
+    <div class="stat c"><div class="num">1</div><div class="lbl">C 级 · 参考</div></div>
+  </div>
+</div>
+
+<main class="wrap">
+<div class="grade-head"><span class="badge b">B 级</span><span class="desc">口腔领域权威期刊相关研究 / 中等期刊高质量研究 · 今日无 S/A 级新文献（轻量日）</span></div>
+
+<div class="paper b"><div class="top"><span class="g b">B</span><div class="tags"><span class="tag">器械/设备</span><span class="tag">数字化</span><span class="tag">AI/算法</span></div></div><h3>AI 在口内扫描中的应用：叙述性综述</h3><div class="src">Australian Dental Journal · 09-19 · <a href="https://pubmed.ncbi.nlm.nih.gov/42763412/">PMID 42763412</a></div><div class="fields"><div class="f"><b>研究目的</b>：总结 AI 应用于口内扫描（IOS）数据的技术原理、当前应用、挑战与机遇。</div><div class="f"><b>研究设计</b>：叙述性综述，识别并描述近期涉及 IOS 数据 AI 应用的研究，涵盖牙体分割、标志点检测、配准与质量控制等环节。</div><div class="f"><b>核心结果</b>：自动牙体分割是最成熟的应用，正畸、修复、外科与诊断领域应用正在兴起；尽管性能有前景，但数据集有限、跨扫描系统差异、标注复杂、算力需求与泛化性下降等挑战仍存。</div><div class="f limit"><b>局限</b>：叙述性综述、非系统检索；多数研究缺乏标准化数据集与外部验证，结论以定性综合为主。</div></div></div>
+
+<div class="paper b"><div class="top"><span class="g b">B</span><div class="tags"><span class="tag">修复</span><span class="tag">数字化</span><span class="tag">AI/算法</span></div></div><h3>AI 自动设计咬合装置与修复体的性能与效率：系统综述</h3><div class="src">Journal of Esthetic and Restorative Dentistry · 09-19 · <a href="https://pubmed.ncbi.nlm.nih.gov/42762167/">PMID 42762167</a></div><div class="fields"><div class="f"><b>研究目的</b>：评估基于 AI 的程序设计咬合装置与牙支持式修复体的准确性与时间效率。</div><div class="f"><b>研究设计</b>：系统综述，检索 PubMed/Medline、Scopus、Embase、Web of Science、Cochrane 五个数据库并手工检索；纳入评估商用 AI 设计软件（咬合装置、嵌体、高嵌体、单冠与固定桥）准确性与时间效率的研究；两名研究者独立以 JBI 工具评价质量。</div><div class="f"><b>核心结果</b>：纳入 24 项研究（21 项单冠含 3 项肩台位置、2 项嵌体/高嵌体、1 项咬合装置、1 项 3 单位固定桥；其中 4 项评估时间效率）。各研究中 AI 程序设计耗时一致短于传统流程；AI 性能因修复体类型而异。</div><div class="f limit"><b>局限</b>：可用证据有限且异质性大，尚难对 AI 设计软件性能下定论，需更多设计良好的研究。</div></div></div>
+
+<div class="paper b"><div class="top"><span class="g b">B</span><div class="tags"><span class="tag">修复</span><span class="tag">大语言模型</span></div></div><h3>AI 聊天机器人在修复学教育中的测评：基于多选题的定量研究</h3><div class="src">International Journal of Dentistry · 09-19 · <a href="https://pubmed.ncbi.nlm.nih.gov/42761247/">PMID 42761247</a></div><div class="fields"><div class="f"><b>研究目的</b>：用 150 道临床情景修复学多选题（MCQ），评估 ChatGPT-5、Claude 4、Microsoft Copilot、DeepSeek-V3 的表现与可靠性。</div><div class="f"><b>研究设计</b>：将 150 道题提交给四款聊天机器人；采用 BLEU、词错率（WER）、余弦语义相似度、Flesch 阅读易度（FRE）多指标，评估词汇相似度、错误率、语义一致性与可读性。</div><div class="f"><b>核心结果</b>：Copilot（74%，95% CI 72.2–76.2%）与 ChatGPT-5（73%，71.5–75.8%）总体准确率最高；ChatGPT-5 词错率最低（WER 7.86）、可读性最佳（FRE 20.22）；Claude 4 与参考答案 BLEU 对齐最高（0.0106）。</div><div class="f limit"><b>局限</b>：题库来源单一、为选择题形式，与真实临床推理存在差距；各模型为特定版本快照，结果不可简单外推。</div></div></div>
+
+<div class="paper b"><div class="top"><span class="g b">B</span><div class="tags"><span class="tag">大语言模型</span><span class="tag">AI/算法</span></div></div><h3>口腔学生与从业者的 AI 依赖：功能性 vs 存在性依赖的混合网络分析</h3><div class="src">European Journal of Dental Education · 09-19 · <a href="https://pubmed.ncbi.nlm.nih.gov/42762081/">PMID 42762081</a></div><div class="fields"><div class="f"><b>研究目的</b>：刻画口腔学生与从业者对生成式 AI 的两种依赖（功能性 FD、存在性 ED），及其与社交媒体问题使用、焦虑、注意控制之间的关系。</div><div class="f"><b>研究设计</b>：342 名巴西口腔学生/从业者横断面在线调查；将验证性因子分析所得潜因子得分与观测变量结合，用正则化高斯图模型与自举估计网络结构、中心性与稳定性。</div><div class="f"><b>核心结果</b>：FD 与 ED 正相关（部分 r=0.447）；FD 与焦虑负相关、ED 与焦虑正相关（r=-0.146 vs 0.264）；两者均与问题性社交媒体使用正相关（ED 更强，0.237 vs 0.168）；注意聚焦与焦虑、社交媒体问题使用负相关、与 AI 依赖无关；中心性估计不稳定（CS=0.05，未用于节点排序）。</div><div class="f limit"><b>局限</b>：横断面设计无法推断因果；中心性不稳定；单一人群（巴西），需跨文化验证。</div></div></div>
+
+<div class="grade-head"><span class="badge c">C 级</span><span class="desc">相关性中等或边缘 · 评论 / 初步探索</span></div>
+
+<div class="paper c"><div class="top"><span class="g c">C</span><div class="tags"><span class="tag">大语言模型</span><span class="tag">数字化</span></div></div><h3>致编辑：AI 个性化三年级口腔临床实践教学（来信 / 回应）</h3><div class="src">Journal of Dental Education · 09-17 · <a href="https://pubmed.ncbi.nlm.nih.gov/42751957/">PMID 42751957</a></div><div class="fields"><div class="f"><b>研究目的</b>：围绕「AI 个性化三年级口腔临床实践教学」研究致编辑的信/回应，讨论大语言模型在临床教学个性化中的应用与争议。</div><div class="f"><b>研究设计</b>：期刊来信 / 评论（无原始数据）。</div><div class="f"><b>核心结果</b>：无数据；为该领域教育应用提供观点交流与讨论。</div><div class="f limit"><b>局限</b>：评论性质、证据等级低，仅为观点性交流。</div></div></div>
+
+  <!-- 行业速递 -->
+  <div class="tip">
+    <div class="tt">💡 行业速递</div>
+    <ul>
+<li><b>产业 · 器械</b>：动脉网/新浪财经（2026-09-14）报道，口腔医疗整体承压之际，<b>齿科 3D 打印逆势增长</b>——先临三维、联泰科技正在冲刺 IPO，黑格科技海外营收占比超 60%（欧洲增速超 100%）、铼赛智能 2022-2025 年均营收增长近 100%；国内技工所 3D 打印渗透率超 80%，而诊所端仅 3%-5%，材料收入占比（黑格、铼赛均超 70%）成为主要盈利来源。未来方向为永久修复材料与直接打印隐形矫治器，<b>AI 正推动「口扫→AI 病例设计→云打印」全流程自动化</b>。</li>
+<li><b>产业 · 资本</b>：GlobeNewswire（2026-09-17），牙科收入周期管理（RCM）公司 <b>Vyne</b> 将旗下医院/医疗业务 Vyne Medical 出售给 MRO，全面聚焦 Vyne Dental 牙科 RCM 平台；CEO 称此为「焦点决策」，最大机会在牙科 RCM。反映牙科 AI/RCM 赛道正走向专业化与整合。</li>
+    </ul>
+  </div>
+</main><footer>
+  <div class="wrap">
+    <div class="mono">DENTAL × AI LITERATURE DAILY · 2026-09-20</div>
+    <div class="src-note">数据来源：PubMed E-utilities（近3天增量检索）· 分级依据期刊影响力 + 主题相关度 + 研究设计 · 摘要经 AI 简略提炼，详情以原文为准</div>
+  </div>
+</footer>
+</body>
+</html>
