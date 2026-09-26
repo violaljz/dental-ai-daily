@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>口腔×AI 文献日报 · 2026-09-26</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f6f7f9; --surface:#ffffff; --border:#e5e8ec; --border-soft:#eef0f3;
+    --text:#1a2233; --text-2:#4a5568; --text-3:#8b95a5;
+    --s:#b8860b; --s-bg:#fff8e6; --s-line:#d4a017;
+    --a:#2563eb; --a-bg:#eef4ff; --a-line:#3b82f6;
+    --b:#0f8a5f; --b-bg:#eafaf2; --b-line:#10b981;
+    --c:#6b7280; --c-bg:#f3f4f6; --c-line:#9ca3af;
+    --mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+    --sans:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:15px;line-height:1.65;-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:980px;margin:0 auto;padding:0 24px;}
+  header.hero{background:linear-gradient(135deg,#0f172a,#1e293b);color:#fff;padding:52px 0 44px;}
+  .kicker{font-family:var(--mono);font-size:12px;letter-spacing:2px;color:#93c5fd;text-transform:uppercase;}
+  h1{font-size:30px;font-weight:800;margin-top:8px;letter-spacing:-.5px;}
+  h1 .hl{color:#fbbf24;}
+  .sub{color:#cbd5e1;margin-top:8px;font-size:15px;font-weight:300;}
+  .meta-row{display:flex;gap:12px;margin-top:18px;flex-wrap:wrap;}
+  .meta{font-family:var(--mono);font-size:12px;color:#e2e8f0;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:6px;padding:5px 11px;}
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:28px 0 8px;}
+  .stat{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:16px 10px;text-align:center;margin-top:-70px;box-shadow:0 6px 18px rgba(15,23,42,.08);}
+  .stat .num{font-family:var(--mono);font-size:26px;font-weight:700;}
+  .stat .lbl{font-size:11.5px;color:var(--text-3);margin-top:3px;}
+  .stat.s .num{color:var(--s);} .stat.a .num{color:var(--a);} .stat.b .num{color:var(--b);} .stat.c .num{color:var(--c);}
+  main{padding:36px 0 60px;}
+  .grade-head{display:flex;align-items:center;gap:12px;margin:34px 0 14px;}
+  .grade-head .badge{font-family:var(--mono);font-weight:700;font-size:14px;color:#fff;border-radius:7px;padding:4px 12px;letter-spacing:1px;}
+  .grade-head .desc{font-size:13px;color:var(--text-3);}
+  .badge.s{background:var(--s-line);} .badge.a{background:var(--a-line);} .badge.b{background:var(--b-line);} .badge.c{background:var(--c-line);}
+  .paper{background:var(--surface);border:1px solid var(--border);border-left:4px solid var(--c-line);border-radius:12px;padding:20px 22px;margin-bottom:14px;box-shadow:0 1px 3px rgba(15,23,42,.04);}
+  .paper.s{border-left-color:var(--s-line);background:var(--s-bg);}
+  .paper.a{border-left-color:var(--a-line);background:var(--a-bg);}
+  .paper.b{border-left-color:var(--b-line);background:var(--b-bg);}
+  .paper.c{border-left-color:var(--c-line);background:var(--c-bg);}
+  .paper .top{display:flex;align-items:flex-start;gap:10px;flex-wrap:wrap;}
+  .paper .g{font-family:var(--mono);font-weight:700;font-size:12px;border-radius:5px;padding:2px 8px;color:#fff;letter-spacing:1px;}
+  .g.s{background:var(--s-line);} .g.a{background:var(--a-line);} .g.b{background:var(--b-line);} .g.c{background:var(--c-line);}
+  .paper .tags{margin-left:auto;display:flex;gap:6px;flex-wrap:wrap;}
+  .paper .tag{font-size:11px;color:var(--text-2);background:#fff;border:1px solid var(--border);border-radius:999px;padding:2px 9px;}
+  .paper h3{font-size:16.5px;font-weight:700;margin:10px 0 4px;line-height:1.4;letter-spacing:-.2px;}
+  .paper .src{font-family:var(--mono);font-size:12px;color:var(--text-3);}
+  .paper .src a{color:var(--a);text-decoration:none;}
+  .paper .src a:hover{text-decoration:underline;}
+  .paper .fields{margin-top:12px;display:grid;gap:7px;}
+  .paper .f{font-size:13.5px;color:var(--text-2);}
+  .paper .f b{color:var(--text);font-weight:600;}
+  .paper .f.limit b{color:#9a3412;}
+  .tip{background:#fff;border:1px dashed #f59e0b;border-radius:12px;padding:18px 22px;margin-top:10px;}
+  .tip .tt{font-weight:800;color:#b45309;font-size:14px;}
+  .tip ul{margin:8px 0 0 18px;font-size:13.5px;color:var(--text-2);}
+  .tip li{margin-bottom:8px;}
+  footer{background:var(--surface);border-top:1px solid var(--border);padding:28px 0 46px;text-align:center;color:var(--text-3);font-size:12.5px;}
+  footer .mono{font-family:var(--mono);}
+  footer .src-note{margin-top:8px;font-size:11.5px;color:var(--text-3);}
+  @media(max-width:640px){ .stats{grid-template-columns:repeat(2,1fr);} .stat{margin-top:0;} main{padding-top:20px;} h1{font-size:24px;} }
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="wrap">
+    <div class="kicker">Dental × AI Literature Daily</div>
+    <h1>口腔 × AI <span class="hl">文献日报</span></h1>
+    <div class="sub">口腔医学与人工智能交叉领域 · 高质量文献精选</div>
+    <div class="meta-row">
+      <span class="meta">📅 2026-09-26</span>
+      <span class="meta">🔍 PubMed</span>
+      <span class="meta">📚 今日收录 8 篇 + 2 条行业速递</span>
+      <span class="meta">⭐ 重点：口腔 AI 器械审批持续：Neocis 种植机器人再融资 / Medit×Overjet 口扫-CBCT 单屏读片</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="stats">
+    <div class="stat s"><div class="num">1</div><div class="lbl">S 级 · 重磅</div></div>
+    <div class="stat a"><div class="num">1</div><div class="lbl">A 级 · 重要</div></div>
+    <div class="stat b"><div class="num">4</div><div class="lbl">B 级 · 有价值</div></div>
+    <div class="stat c"><div class="num">2</div><div class="lbl">C 级 · 参考</div></div>
+  </div>
+</div>
+
+<main class="wrap">
+<div class="grade-head"><span class="badge s">S 级</span><span class="desc">圈层重磅 / 顶刊 · 今日新增 1 篇</span></div>
+<div class="paper s"><div class="top"><span class="g s">S</span><div class="tags"><span class="tag">口腔微生物</span><span class="tag">AI/算法</span></div></div><h3>多模态 AI 筛选鉴定口腔共生菌 Neisseria flavescens 为中枢性「促长寿」微生物</h3><div class="src">Nature Aging · 09-24 · <a href="https://pubmed.ncbi.nlm.nih.gov/42786310/">PMID 42786310</a></div><div class="fields"><div class="f"><b>研究目的</b>：探索口腔微生物组中影响衰老的决定因素，并识别具有促长寿潜力的口腔共生菌。</div><div class="f"><b>研究设计</b>：开发生成式多模态框架 AURORA 并构建多模态衰老时钟，在计算机模拟中筛查可缩小年龄差距（age-gap）的干预；分离两株 N. flavescens (Nf) 并验证其代谢产物；在秀丽隐杆线虫与老年小鼠中做功能验证。</div><div class="f"><b>核心结果</b>：Nf 被预测为首选候选；体外证实其产生有益代谢物；活 Nf 延长线虫寿命与健康寿命；热灭活 Nf 补充使老年小鼠血清代谢组、肝脏转录组与肠道菌群回转向年轻状态。</div><div class="f limit"><b>局限</b>：人体证据为观察性关联，因果与临床干预尚未验证；主要功能实验在模式动物与体外完成。</div></div></div>
+<div class="grade-head"><span class="badge a">A 级</span><span class="desc">高影响力 / 口腔领域权威期刊的高相关原创研究 · 今日新增 1 篇</span></div>
+<div class="paper a"><div class="top"><span class="g a">A</span><div class="tags"><span class="tag">颌面外科</span><span class="tag">影像</span><span class="tag">深度学习</span><span class="tag">数字化</span></div></div><h3>深度学习自动分割下颌升支矢状劈开术后截骨间隙：nnU-Net 模型</h3><div class="src">Journal of Cranio-Maxillo-Facial Surgery · 09-25 · <a href="https://pubmed.ncbi.nlm.nih.gov/42790304/">PMID 42790304</a></div><div class="fields"><div class="f"><b>研究目的</b>：开发并验证基于深度学习的 BSSO 术后截骨间隙自动分割模型，并量化训练集大小对分割性能的影响。</div><div class="f"><b>研究设计</b>：36 例患者共 72 个截骨间隙人工分割；6 例（12 部位）留作独立评估集，30 例（60 部位）为完整训练集并抽出 15 例（30 部位）为缩减训练集；训练 nnU-Net；以体素精确率、敏感度、Dice（DSC）、ASSD、HD95 评估，并用 Bland-Altman 分析体积一致性。</div><div class="f"><b>核心结果</b>：平均 DSC 0.73、ASSD 1.02 mm、HD95 3.52 mm；手动与自动体积测量无显著差异，偏倚小（+1.58 mm³）、一致性界限窄；缩减 15 例模型几何精度相当但体积偏倚更大（+32.75 mm³）。</div><div class="f limit"><b>局限</b>：单中心回顾性研究、样本量小（72 个间隙）；分割精度对临床判断骨愈合的阈值仍需前瞻性验证。</div></div></div>
+<div class="grade-head"><span class="badge b">B 级</span><span class="desc">中等期刊相关研究 / 系统综述 / 有价值的方法学工作 · 今日新增 4 篇</span></div>
+<div class="paper b"><div class="top"><span class="g b">B</span><div class="tags"><span class="tag">正畸</span><span class="tag">数字化</span><span class="tag">深度学习</span><span class="tag">器械/设备</span></div></div><h3>AI 自动数字模型分析 vs 手工方法：正畸诊断的准确性与可靠性</h3><div class="src">Turkish Journal of Orthodontics · 09-25 · <a href="https://pubmed.ncbi.nlm.nih.gov/42787727/">PMID 42787727</a></div><div class="fields"><div class="f"><b>研究目的</b>：比较 AI 支持的自动数字模型分析与手工数字、手工石膏方法在正畸诊断中的准确性与可靠性。</div><div class="f"><b>研究设计</b>：24 例轻中度拥挤恒牙列患者（8 男 16 女，平均 19.5±6.05 岁）；石膏模型用数字卡尺测量；口扫数字模型用 3Shape OrthoSystem 做手工与自动分割；评估近远中牙冠尺寸、牙弓长度不足与 Bolton 分析（牙弓宽度仅比较数字 vs 石膏）；重复测量 ANOVA、Friedman、配对 t 检验（p&lt;0.05）。</div><div class="f"><b>核心结果</b>：三方法结果一致、标准差小、置信区间窄；数字系统与石膏在牙冠近远中测量存在显著差异（前磨牙除外，p&lt;0.05）；自动分割（AD）与手工数字（MD）在牙弓长度不足、Bolton 上无显著差异（p&gt;0.05）；石膏测量值普遍偏高。</div><div class="f limit"><b>局限</b>：单中心小样本（24 例）；牙弓宽度因软件自动识别标志点受限未能三方比较；不同扫描仪/软件的泛化性待验证。</div></div></div>
+<div class="paper b"><div class="top"><span class="g b">B</span><div class="tags"><span class="tag">正畸</span><span class="tag">大语言模型</span><span class="tag">临床预测</span></div></div><h3>ChatGPT-5.0 对垒机器学习：正畸拔牙治疗决策</h3><div class="src">Turkish Journal of Orthodontics · 09-25 · <a href="https://pubmed.ncbi.nlm.nih.gov/42563491/">PMID 42563491</a></div><div class="fields"><div class="f"><b>研究目的</b>：评估 ChatGPT-5.0 判定正畸拔牙决策的能力，并与五种监督式机器学习算法比较。</div><div class="f"><b>研究设计</b>：回顾性 550 份正畸记录，30 份用于校准，520 份入主分析；金标准为 3 名 5 年以上经验正畸专家共识；分析 23 个变量（13 临床 + 7 头影测量 + 照片）；ChatGPT-5.0 采用 5 折交叉验证，对比 XGBoost、随机森林、SVM、逻辑回归、MLP；Cochran&#x27;s Q 与 McNemar 检验（Holm-Bonferroni 校正）。</div><div class="f"><b>核心结果</b>：520 例中 223 例（42.88%）为拔牙治疗；XGBoost 准确率最高（78.08%），ChatGPT-5.0 次之（75.77%）；ChatGPT 显著优于随机森林/SVM/逻辑回归/MLP，与 XGBoost 无显著差异；ChatGPT 敏感度最高（76.68%），XGBoost 特异度最高（82.15%）。</div><div class="f limit"><b>局限</b>：单中心回顾性、以专家共识为标签而非真实治疗结局；LLM 输出随版本/提示波动，可复现性存疑。</div></div></div>
+<div class="paper b"><div class="top"><span class="g b">B</span><div class="tags"><span class="tag">大语言模型</span><span class="tag">监管</span></div></div><h3>生成式 AI 时代的学术诚信：牙科科研、出版与临床实践准备好了吗？</h3><div class="src">Journal of the American Dental Association · 09-25 · <a href="https://pubmed.ncbi.nlm.nih.gov/42788933/">PMID 42788933</a></div><div class="fields"><div class="f limit"><b>局限</b>：观点性文章，无实证数据；具体政策与执行影响待观察。</div></div></div>
+<div class="paper b"><div class="top"><span class="g b">B</span><div class="tags"><span class="tag">正畸</span><span class="tag">数字化</span><span class="tag">AI/算法</span></div></div><h3>正畸数字化的文献计量图谱：科研贡献、合作网络与未来方向（2000–2024）</h3><div class="src">Turkish Journal of Orthodontics · 09-25 · <a href="https://pubmed.ncbi.nlm.nih.gov/42788090/">PMID 42788090</a></div><div class="fields"><div class="f"><b>研究目的</b>：绘制数字正畸学术趋势图谱，量化发文增长、识别有影响力贡献者与合作网络、勾勒新兴研究主题。</div><div class="f"><b>研究设计</b>：Web of Science 核心合集 2000-01 至 2024-05 记录；VOSviewer 分析合著网络、关键词共现、机构产出与引用模式。</div><div class="f"><b>核心结果</b>：纳入 1,567 篇；2020 年后产出显著上升、2023 年达峰；美国、意大利、中国领先；核心机构含北京大学、Radboud 大学、圣保罗大学；主要主题簇集中在 3D 打印、人工智能与数字化建模。</div><div class="f limit"><b>局限</b>：单一数据库覆盖有限，可能与多库结果不同；文献计量无法评估临床结局，需补充定性评价与结局导向研究。</div></div></div>
+<div class="grade-head"><span class="badge c">C 级</span><span class="desc">相关性中等 / 初步或概念性 · 今日新增 2 篇</span></div>
+<div class="paper c"><div class="top"><span class="g c">C</span><div class="tags"><span class="tag">大语言模型</span><span class="tag">修复</span></div></div><h3>七款 AI 聊天机器人在美国修复住院医师考试（NPRE）上的表现</h3><div class="src">The International Journal of Prosthodontics · 09-25 · <a href="https://pubmed.ncbi.nlm.nih.gov/41166088/">PMID 41166088</a></div><div class="fields"><div class="f"><b>研究目的</b>：比较七款 AI 聊天机器人（ChatGPT-3.5/4/4o、Gemini、Claude 3、Copilot、Llama）与美国修复科住院医师在全国修复住院医师考试（NPRE）2011–2023 上的表现。</div><div class="f"><b>研究设计</b>：从 ACP 获取 NPRE 试题与答案；标准化提示仅要求字母选项；取首次回答与官方答案比对，按正确率评估；采用重复测量 ANOVA + Bonferroni 事后比较。</div><div class="f"><b>核心结果</b>：组间差异显著（P&lt;.001）；ChatGPT-3.5 得分最高，其次 Claude 3 与 Llama；Copilot 显著低于住院医师；其余模型与人类相当但波动明显。</div><div class="f limit"><b>局限</b>：以考题式评估为主，不等于临床能力；结果对模型版本与提示高度敏感，时效性有限。</div></div></div>
+<div class="paper c"><div class="top"><span class="g c">C</span><div class="tags"><span class="tag">监管</span><span class="tag">器械/设备</span><span class="tag">人工智能</span><span class="tag">影像</span></div></div><h3>FDA 获批放射 AI 器械格局（1998–2025）：功能、厂家与监管特征</h3><div class="src">Academic Radiology · 09-24 · <a href="https://pubmed.ncbi.nlm.nih.gov/42786081/">PMID 42786081</a></div><div class="fields"><div class="f"><b>研究目的</b>：全面刻画 FDA 授权放射 AI 器械的整体格局（功能、临床应用、厂家类型与监管特征）。</div><div class="f"><b>研究设计</b>：纳入截至 2025-12 FDA AI 器械清单中 1,094 款放射 AI 器械，按功能类别、CAD 子类、临床用例、厂家段（OEM vs 非 OEM）分类；监管特征含审评时长、PCCP 授权、AI 谓词引用；采用卡方/Wilcoxon/Kruskal-Wallis 检验。</div><div class="f"><b>核心结果</b>：2023→2025 年授权量增 42%，但功能构成稳定（图像管理 38.2%、成像系统 33.4%、判读工具 21.5%）；非牙科判读器械中胸心影像与神经放射占比由 &lt;2020 的 42% 升至 2023-25 的 70%；OEM vs 非 OEM 在功能、审阅时长（118 vs 138 天）、PCCP 授权（1.5% vs 4.2%）上显著不同；PCCP 授权由 0.8% 升至 8.7%。</div><div class="f limit"><b>局限</b>：仅覆盖 FDA 器械清单，缺乏临床效果与真实世界落地数据；分类为归纳性，牙科器械仅作对照参照。</div></div></div>
+
+  <!-- 行业速递 -->
+  <div class="tip">
+    <div class="tt">💡 行业速递</div>
+    <ul>
+<li><b>资本 · Neocis 追加融资：Yomi 牙科种植机器人再获 NVentures 等投资</b>：Neocis（Yomi 机器人辅助种植手术系统）宣布获得新一轮数百万美元级融资，NVentures（NVIDIA 风投）等参与；其 Yomi 平台累计已完成逾 10 万例机器人骨切开。Yomi 仍是目前唯一获 FDA 批准用于牙科种植、全牙弓种植与骨修整的牙科手术机器人。信号：机器人 + AI 在种植领域持续获资本加注。</li><li><b>器械 · Medit 发布 AuraVue：3D 口扫 + X 光同屏，内置 Overjet AI 读片</b>：3D 口扫厂商 Medit 与牙科 AI 公司 Overjet 合作推出 AuraVue：把患者 3D 口内扫描与 2D X 光片整合进同一交互工作区，由 Overjet AI 自动读片并标注龋坏、骨水平等发现。信号：口扫硬件 + 影像 AI 走向「单屏统一阅片」，减少多软件切换；口腔影像 AI 正从独立软件变为设备与平台的底层能力。</li>
+    </ul>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="mono">DENTAL × AI LITERATURE DAILY · 2026-09-26</div>
+    <div class="src-note">数据来源：PubMed E-utilities（近3天增量检索）· 分级依据期刊影响力 + 主题相关度 + 研究设计 · 摘要经 AI 简略提炼，详情以原文为准</div>
+  </div>
+</footer>
+</body>
+</html>
