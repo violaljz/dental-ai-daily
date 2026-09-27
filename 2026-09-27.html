@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>口腔×AI 文献日报 · 2026-09-27</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f6f7f9; --surface:#ffffff; --border:#e5e8ec; --border-soft:#eef0f3;
+    --text:#1a2233; --text-2:#4a5568; --text-3:#8b95a5;
+    --s:#b8860b; --s-bg:#fff8e6; --s-line:#d4a017;
+    --a:#2563eb; --a-bg:#eef4ff; --a-line:#3b82f6;
+    --b:#0f8a5f; --b-bg:#eafaf2; --b-line:#10b981;
+    --c:#6b7280; --c-bg:#f3f4f6; --c-line:#9ca3af;
+    --mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+    --sans:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:15px;line-height:1.65;-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:980px;margin:0 auto;padding:0 24px;}
+  header.hero{background:linear-gradient(135deg,#0f172a,#1e293b);color:#fff;padding:52px 0 44px;}
+  .kicker{font-family:var(--mono);font-size:12px;letter-spacing:2px;color:#93c5fd;text-transform:uppercase;}
+  h1{font-size:30px;font-weight:800;margin-top:8px;letter-spacing:-.5px;}
+  h1 .hl{color:#fbbf24;}
+  .sub{color:#cbd5e1;margin-top:8px;font-size:15px;font-weight:300;}
+  .meta-row{display:flex;gap:12px;margin-top:18px;flex-wrap:wrap;}
+  .meta{font-family:var(--mono);font-size:12px;color:#e2e8f0;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:6px;padding:5px 11px;}
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:28px 0 8px;}
+  .stat{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:16px 10px;text-align:center;margin-top:-70px;box-shadow:0 6px 18px rgba(15,23,42,.08);}
+  .stat .num{font-family:var(--mono);font-size:26px;font-weight:700;}
+  .stat .lbl{font-size:11.5px;color:var(--text-3);margin-top:3px;}
+  .stat.s .num{color:var(--s);} .stat.a .num{color:var(--a);} .stat.b .num{color:var(--b);} .stat.c .num{color:var(--c);}
+  main{padding:36px 0 60px;}
+  .grade-head{display:flex;align-items:center;gap:12px;margin:34px 0 14px;}
+  .grade-head .badge{font-family:var(--mono);font-weight:700;font-size:14px;color:#fff;border-radius:7px;padding:4px 12px;letter-spacing:1px;}
+  .grade-head .desc{font-size:13px;color:var(--text-3);}
+  .badge.s{background:var(--s-line);} .badge.a{background:var(--a-line);} .badge.b{background:var(--b-line);} .badge.c{background:var(--c-line);}
+  .paper{background:var(--surface);border:1px solid var(--border);border-left:4px solid var(--c-line);border-radius:12px;padding:20px 22px;margin-bottom:14px;box-shadow:0 1px 3px rgba(15,23,42,.04);}
+  .paper.s{border-left-color:var(--s-line);background:var(--s-bg);}
+  .paper.a{border-left-color:var(--a-line);background:var(--a-bg);}
+  .paper.b{border-left-color:var(--b-line);background:var(--b-bg);}
+  .paper.c{border-left-color:var(--c-line);background:var(--c-bg);}
+  .paper .top{display:flex;align-items:flex-start;gap:10px;flex-wrap:wrap;}
+  .paper .g{font-family:var(--mono);font-weight:700;font-size:12px;border-radius:5px;padding:2px 8px;color:#fff;letter-spacing:1px;}
+  .g.s{background:var(--s-line);} .g.a{background:var(--a-line);} .g.b{background:var(--b-line);} .g.c{background:var(--c-line);}
+  .paper .tags{margin-left:auto;display:flex;gap:6px;flex-wrap:wrap;}
+  .paper .tag{font-size:11px;color:var(--text-2);background:#fff;border:1px solid var(--border);border-radius:999px;padding:2px 9px;}
+  .paper h3{font-size:16.5px;font-weight:700;margin:10px 0 4px;line-height:1.4;letter-spacing:-.2px;}
+  .paper .src{font-family:var(--mono);font-size:12px;color:var(--text-3);}
+  .paper .src a{color:var(--a);text-decoration:none;}
+  .paper .src a:hover{text-decoration:underline;}
+  .paper .fields{margin-top:12px;display:grid;gap:7px;}
+  .paper .f{font-size:13.5px;color:var(--text-2);}
+  .paper .f b{color:var(--text);font-weight:600;}
+  .paper .f.limit b{color:#9a3412;}
+  .tip{background:#fff;border:1px dashed #f59e0b;border-radius:12px;padding:18px 22px;margin-top:10px;}
+  .tip .tt{font-weight:800;color:#b45309;font-size:14px;}
+  .tip ul{margin:8px 0 0 18px;font-size:13.5px;color:var(--text-2);}
+  .tip li{margin-bottom:8px;}
+  footer{background:var(--surface);border-top:1px solid var(--border);padding:28px 0 46px;text-align:center;color:var(--text-3);font-size:12.5px;}
+  footer .mono{font-family:var(--mono);}
+  footer .src-note{margin-top:8px;font-size:11.5px;color:var(--text-3);}
+  @media(max-width:640px){ .stats{grid-template-columns:repeat(2,1fr);} .stat{margin-top:0;} main{padding-top:20px;} h1{font-size:24px;} }
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="wrap">
+    <div class="kicker">Dental × AI Literature Daily</div>
+    <h1>口腔 × AI <span class="hl">文献日报</span></h1>
+    <div class="sub">口腔医学与人工智能交叉领域 · 高质量文献精选</div>
+    <div class="meta-row">
+      <span class="meta">📅 2026-09-27</span>
+      <span class="meta">🔍 PubMed</span>
+      <span class="meta">📚 今日收录 6 篇 + 2 条行业速递</span>
+      <span class="meta">⭐ 重点：CBCT 骨丧失深度学习与全景片视觉语言模型两大影像方向；消费级口腔 AI 硬件首发遇挫</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="stats">
+    <div class="stat s"><div class="num">0</div><div class="lbl">S 级 · 重磅</div></div>
+    <div class="stat a"><div class="num">0</div><div class="lbl">A 级 · 重要</div></div>
+    <div class="stat b"><div class="num">4</div><div class="lbl">B 级 · 有价值</div></div>
+    <div class="stat c"><div class="num">2</div><div class="lbl">C 级 · 参考</div></div>
+  </div>
+</div>
+
+<main class="wrap">
+<div class="grade-head"><span class="badge b">B 级</span><span class="desc">中等期刊相关研究 / 系统综述 / 有价值的方法学工作 · 今日新增 4 篇</span></div>
+
+<div class="paper b"><div class="top"><span class="g b">B</span><div class="tags"><span class="tag">影像</span><span class="tag">牙周</span><span class="tag">深度学习</span><span class="tag">器械/设备</span></div></div><h3>深度学习智能评估下颌第一磨牙水平骨丧失（CBCT）</h3><div class="src">Clinical Oral Investigations · 09-26 · <a href="https://pubmed.ncbi.nlm.nih.gov/42799962/">PMID 42799962</a></div><div class="fields"><div class="f"><b>研究目的</b>：开发基于深度学习的工具，在 CBCT 影像上自动检测下颌第一磨牙水平骨丧失的程度。</div><div class="f"><b>研究设计 + 样本</b>：纳入 505 例下颌第一磨牙水平骨丧失患者的 CBCT；临床专家标注骨丧失区域；采用 3D-ResNets 模型将骨丧失程度分类（健康、I/II 度、III 度）；评估模型的诊断与分类性能。</div><div class="f"><b>核心结果</b>：三分类 Precision 0.814/0.778/0.906，Recall 0.921/0.737/0.829，F1 0.864/0.757/0.866，准确率 0.901/0.838/0.919；模型总体准确率 0.829，与牙医 0.820 无显著差异。</div><div class="f limit"><b>局限</b>：单中心回顾性研究，模型仅针对特定牙位；缺乏多中心外部验证与临床落地评估。</div></div></div>
+
+<div class="paper b"><div class="top"><span class="g b">B</span><div class="tags"><span class="tag">影像</span><span class="tag">大语言模型</span><span class="tag">正畸</span></div></div><h3>视觉语言模型能否从全景片估计患者年龄？</h3><div class="src">Clinical Oral Investigations · 09-26 · <a href="https://pubmed.ncbi.nlm.nih.gov/42799800/">PMID 42799800</a></div><div class="fields"><div class="f"><b>研究目的</b>：探究三种视觉语言模型（VLM）从全景片估计实际年龄的能力与局限。</div><div class="f"><b>研究设计 + 样本</b>：140 张 7–20 岁人群全景片分别上传 ChatGPT-4o、Microsoft Copilot Fast、Copilot Deep，独立提示依据牙萌出模式估计年龄；与真实年龄比对，计算 ±1 岁一致率，单因素方差分析（α=0.05）。</div><div class="f"><b>核心结果</b>：三模型一致率均 &lt;35%；9–10 岁组略好；7–8 岁与 17–20 岁两端偏差最大；ChatGPT-4o 在 7/17/18/19/20 岁、Copilot Fast 在 15/20 岁、Copilot Deep 在 20 岁均无正确估计。</div><div class="f limit"><b>局限</b>：小样本、单中心；VLM 版本迭代快、提示敏感、可复现性差；目前不宜用于临床或法医场景。</div></div></div>
+
+<div class="paper b"><div class="top"><span class="g b">B</span><div class="tags"><span class="tag">颌面外科</span><span class="tag">AI/算法</span><span class="tag">临床预测</span></div></div><h3>颅缝早闭颅骨生长预测建模：系统综述与 Meta 分析</h3><div class="src">Journal of Cranio-Maxillo-Facial Surgery · 09-26 · <a href="https://pubmed.ncbi.nlm.nih.gov/42800324/">PMID 42800324</a></div><div class="fields"><div class="f"><b>研究目的</b>：系统评估颅缝早闭患儿颅骨生长预测与形态测量模型的现有证据，为个体化手术规划提供依据。</div><div class="f"><b>研究设计 + 样本</b>：PRISMA 系统综述，检索 PubMed/MEDLINE、Scopus、Web of Science（2020-01 至 2025-11）；纳入 29 项研究（有限元 FEA 14 项、统计形状与回归模型 9 项、机器学习 3 项）；用 PROBAST、QUIPS、CASP 评估偏倚；行随机效应 Meta 分析。</div><div class="f"><b>核心结果</b>：四项研究报告头指数，合并效应不显著（MD −1.23，95%CI −3.35~0.89，p=0.26，I²=57%）；两项报告颅内体积显著降低（SMD −1.81，95%CI −3.32~−0.31，p=0.02，I²=77%）；69% 研究为中偏倚风险，多为小样本单中心回顾性。</div><div class="f limit"><b>局限</b>：研究数少、异质性高（尤其颅内体积），难以定论；普遍缺乏外部验证与标准化报告。</div></div></div>
+
+<div class="paper b"><div class="top"><span class="g b">B</span><div class="tags"><span class="tag">大语言模型</span><span class="tag">颌面外科</span><span class="tag">影像</span></div></div><h3>ChatGPT 文本简化提升医学报告的患者理解：对比研究</h3><div class="src">Oral and Maxillofacial Surgery · 09-26 · <a href="https://pubmed.ncbi.nlm.nih.gov/42791420/">PMID 42791420</a></div><div class="fields"><div class="f"><b>研究目的</b>：评估 ChatGPT 能否在保留临床内容的前提下简化医学报告，并检验简化是否提升患者可读性、理解度与沟通质量。</div><div class="f"><b>研究设计 + 样本</b>：分析 5 类医生撰写的报告（MRI、CT、手术记录、病理报告、出院小结）；用标准化提示做面向患者的简化，每篇 10 次简化评估完整性；以 FRE 与 LIX 测可读性；576 名非医学背景者随机评价简化版或原版并完成标准问卷与理解测试。</div><div class="f"><b>核心结果</b>：简化版可读性显著提高（FRE 48.4±5.0 vs 22.9±5.2，p&lt;0.0001；LIX 48.3±3.2 vs 59.2±2.5，p=0.004）；各文档类型患者对清晰度/结构/实用性评分更高（p&lt;0.001）；理解准确率提升（如 MRI 80.3% vs 53.7%，p&lt;0.001）；未见医学信息丢失。</div><div class="f limit"><b>局限</b>：单一 LLM 与单次提示；可读性指标非临床结局；理解测试为受控条件下的近迁移，真实场景泛化待验证。</div></div></div>
+
+<div class="grade-head"><span class="badge c">C 级</span><span class="desc">相关性中等 / 初步或概念性 · 今日新增 2 篇</span></div>
+
+<div class="paper c"><div class="top"><span class="g c">C</span><div class="tags"><span class="tag">器械/设备</span><span class="tag">AI/算法</span><span class="tag">颌面外科</span></div></div><h3>便携 fNIRS + AI：个体化麻醉状态检测</h3><div class="src">Brain Research Bulletin · 09-26 · <a href="https://pubmed.ncbi.nlm.nih.gov/42800644/">PMID 42800644</a></div><div class="fields"><div class="f"><b>研究目的</b>：探索便携功能性近红外光谱（fNIRS）结合 AI，在局麻场景下进行个体化、基于脑信号的麻醉状态检测的可行性，并考察参考方案与验证方式的影响。</div><div class="f"><b>研究设计 + 样本</b>：采集 25 例患者局麻前（Pre）与局麻后（Post）叩诊时的 fNIRS；主队列 13 例疼痛完全消除者，156 个患牙 epoch，以患者自身健侧牙反应为个体参考；采用留一被试（LOSO）验证；随机森林三特征 HbO panel。</div><div class="f"><b>核心结果</b>：患牙分类平均 AUC=0.752（95%CI 0.624–0.865，p=0.0057）；嵌套特征选择 AUC=0.740；参考方案改善 4 个分类器中 2 个；Pre-session 中静息态与分半参考将患牙 vs 健康 AUC 由 0.513/0.524 提升至 0.731/0.782；队列内池化交叉验证比 LOSO 平均高 0.159 AUC（验证膨胀）。</div><div class="f limit"><b>局限</b>：仅 25 例小样本、概念验证；牙块顺序固定可能引入位置效应；验证膨胀提示方法学需谨慎。</div></div></div>
+
+<div class="paper c"><div class="top"><span class="g c">C</span><div class="tags"><span class="tag">AI/算法</span><span class="tag">临床预测</span><span class="tag">大语言模型</span></div></div><h3>AI 在围手术期疼痛中的应用：范围综述方案</h3><div class="src">BMJ Open · 09-25 · <a href="https://pubmed.ncbi.nlm.nih.gov/42790900/">PMID 42790900</a></div><div class="fields"><div class="f"><b>研究目的</b>：系统刻画 AI 在围手术期疼痛（术后急性痛、阿片需求、镇痛相关不良事件、慢性术后痛及疼痛轨迹）应用中的证据，并识别影响临床可信度与落地的方法学特征。</div><div class="f"><b>研究设计 + 样本</b>：遵循 JBI 范围综述方法学并按 PRISMA-ScR 报告；纳入评估 AI 方法的人类研究（观察性、干预性与预测建模）；AI 方法涵盖机器学习、深度学习、自然语言处理、计算机视觉、大语言模型及混合/集成方法；检索 PubMed/MEDLINE、Embase、Cochrane、medRxiv、arXiv、ClinicalTrials.gov；描述性综合；计划 2026 年 9 月正式检索、12 月完成。</div><div class="f"><b>核心结果</b>：方案性文件，尚无结果；将重点记录研究中的伦理要素（回顾性电子健康记录治理、知情同意豁免、隐私保护）。</div><div class="f limit"><b>局限</b>：仅为研究方案，结果未出；与口腔科直接相关度有限，属跨学科方法学参考。</div></div></div>
+
+  <!-- 行业速递 -->
+  <div class="tip">
+    <div class="tt">💡 行业速递</div>
+    <ul>
+<li><b>产品 · Dyson CameraJet 首款 AI 摄像牙刷上市不足一月多国下架</b>：499 美元的 Dyson CameraJet（机内摄像头 + 机器学习识别牙缝并喷射液流）上市不到一个月，即从多国门店与线上撤下。用户反馈漏水、充电失败、短时停用等问题；Consumer Reports 的评测机开箱不到一天即报废。Dyson 承认早期批次存在「单一元件问题」并已隔离，但未披露具体元件与受影响数量，否认召回，称因需求旺盛、正加紧生产，预计数周后回归。信号：消费级口腔 AI 硬件（机内视觉 + 端侧机器学习）在量产与品控上面临首发可靠性考验。</li>
+<li><b>政策 · 2026 全国爱牙日活动：AI 赋能口腔健康成主线</b>：9 月 21 日，「2026 年口腔新健康行动·全国爱牙日」活动在北京举行，以「AI 赋能」开启口腔健康新篇章；华西口腔医院副院长朱桂全作《AI 赋能口腔健康智能化发展》演讲，云南白药分享《AI 赋能口腔护理用品市场……》。信号：AI 正从临床诊断向口腔公共卫生宣教与消费护理产品（牙膏/护理品）两端延伸。</li>
+    </ul>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="mono">DENTAL × AI LITERATURE DAILY · 2026-09-27</div>
+    <div class="src-note">数据来源：PubMed E-utilities（近3天增量检索）· 分级依据期刊影响力 + 主题相关度 + 研究设计 · 摘要经 AI 简略提炼，详情以原文为准</div>
+  </div>
+</footer>
+</body>
+</html>
