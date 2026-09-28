@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>口腔×AI 文献日报 · 2026-09-28</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f6f7f9; --surface:#ffffff; --border:#e5e8ec; --border-soft:#eef0f3;
+    --text:#1a2233; --text-2:#4a5568; --text-3:#8b95a5;
+    --s:#b8860b; --s-bg:#fff8e6; --s-line:#d4a017;
+    --a:#2563eb; --a-bg:#eef4ff; --a-line:#3b82f6;
+    --b:#0f8a5f; --b-bg:#eafaf2; --b-line:#10b981;
+    --c:#6b7280; --c-bg:#f3f4f6; --c-line:#9ca3af;
+    --mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+    --sans:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:15px;line-height:1.65;-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:980px;margin:0 auto;padding:0 24px;}
+  header.hero{background:linear-gradient(135deg,#0f172a,#1e293b);color:#fff;padding:52px 0 44px;}
+  .kicker{font-family:var(--mono);font-size:12px;letter-spacing:2px;color:#93c5fd;text-transform:uppercase;}
+  h1{font-size:30px;font-weight:800;margin-top:8px;letter-spacing:-.5px;}
+  h1 .hl{color:#fbbf24;}
+  .sub{color:#cbd5e1;margin-top:8px;font-size:15px;font-weight:300;}
+  .meta-row{display:flex;gap:12px;margin-top:18px;flex-wrap:wrap;}
+  .meta{font-family:var(--mono);font-size:12px;color:#e2e8f0;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:6px;padding:5px 11px;}
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:28px 0 8px;}
+  .stat{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:16px 10px;text-align:center;margin-top:-70px;box-shadow:0 6px 18px rgba(15,23,42,.08);}
+  .stat .num{font-family:var(--mono);font-size:26px;font-weight:700;}
+  .stat .lbl{font-size:11.5px;color:var(--text-3);margin-top:3px;}
+  .stat.s .num{color:var(--s);} .stat.a .num{color:var(--a);} .stat.b .num{color:var(--b);} .stat.c .num{color:var(--c);}
+  main{padding:36px 0 60px;}
+  .grade-head{display:flex;align-items:center;gap:12px;margin:34px 0 14px;}
+  .grade-head .badge{font-family:var(--mono);font-weight:700;font-size:14px;color:#fff;border-radius:7px;padding:4px 12px;letter-spacing:1px;}
+  .grade-head .desc{font-size:13px;color:var(--text-3);}
+  .badge.s{background:var(--s-line);} .badge.a{background:var(--a-line);} .badge.b{background:var(--b-line);} .badge.c{background:var(--c-line);}
+  .paper{background:var(--surface);border:1px solid var(--border);border-left:4px solid var(--c-line);border-radius:12px;padding:20px 22px;margin-bottom:14px;box-shadow:0 1px 3px rgba(15,23,42,.04);}
+  .paper.s{border-left-color:var(--s-line);background:var(--s-bg);}
+  .paper.a{border-left-color:var(--a-line);background:var(--a-bg);}
+  .paper.b{border-left-color:var(--b-line);background:var(--b-bg);}
+  .paper.c{border-left-color:var(--c-line);background:var(--c-bg);}
+  .paper .top{display:flex;align-items:flex-start;gap:10px;flex-wrap:wrap;}
+  .paper .g{font-family:var(--mono);font-weight:700;font-size:12px;border-radius:5px;padding:2px 8px;color:#fff;letter-spacing:1px;}
+  .g.s{background:var(--s-line);} .g.a{background:var(--a-line);} .g.b{background:var(--b-line);} .g.c{background:var(--c-line);}
+  .paper .tags{margin-left:auto;display:flex;gap:6px;flex-wrap:wrap;}
+  .paper .tag{font-size:11px;color:var(--text-2);background:#fff;border:1px solid var(--border);border-radius:999px;padding:2px 9px;}
+  .paper h3{font-size:16.5px;font-weight:700;margin:10px 0 4px;line-height:1.4;letter-spacing:-.2px;}
+  .paper .src{font-family:var(--mono);font-size:12px;color:var(--text-3);}
+  .paper .src a{color:var(--a);text-decoration:none;}
+  .paper .src a:hover{text-decoration:underline;}
+  .paper .fields{margin-top:12px;display:grid;gap:7px;}
+  .paper .f{font-size:13.5px;color:var(--text-2);}
+  .paper .f b{color:var(--text);font-weight:600;}
+  .paper .f.limit b{color:#9a3412;}
+  .tip{background:#fff;border:1px dashed #f59e0b;border-radius:12px;padding:18px 22px;margin-top:10px;}
+  .tip .tt{font-weight:800;color:#b45309;font-size:14px;}
+  .tip ul{margin:8px 0 0 18px;font-size:13.5px;color:var(--text-2);}
+  .tip li{margin-bottom:8px;}
+  footer{background:var(--surface);border-top:1px solid var(--border);padding:28px 0 46px;text-align:center;color:var(--text-3);font-size:12.5px;}
+  footer .mono{font-family:var(--mono);}
+  footer .src-note{margin-top:8px;font-size:11.5px;color:var(--text-3);}
+  @media(max-width:640px){ .stats{grid-template-columns:repeat(2,1fr);} .stat{margin-top:0;} main{padding-top:20px;} h1{font-size:24px;} }
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="wrap">
+    <div class="kicker">Dental × AI Literature Daily</div>
+    <h1>口腔 × AI <span class="hl">文献日报</span></h1>
+    <div class="sub">口腔医学与人工智能交叉领域 · 高质量文献精选</div>
+    <div class="meta-row">
+      <span class="meta">📅 2026-09-28</span>
+      <span class="meta">🔍 PubMed</span>
+      <span class="meta">📚 今日收录 10 篇 + 3 条行业速递</span>
+      <span class="meta">⭐ 重点：口扫→3D 打印全自动管线、CBCT 种植前上颌窦评估、多模态大模型影像判读能力边界</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="stats">
+    <div class="stat s"><div class="num">0</div><div class="lbl">S 级 · 重磅</div></div>
+    <div class="stat a"><div class="num">1</div><div class="lbl">A 级 · 重要</div></div>
+    <div class="stat b"><div class="num">8</div><div class="lbl">B 级 · 有价值</div></div>
+    <div class="stat c"><div class="num">1</div><div class="lbl">C 级 · 参考</div></div>
+  </div>
+</div>
+
+<main class="wrap">
+<div class="grade-head"><span class="badge a">A 级</span><span class="desc">高影响力期刊（IF≥5）高相关原创研究 · 今日新增 1 篇</span></div>
+
+<div class="paper a"><div class="top"><span class="g a">A</span><div class="tags"><span class="tag">颌面外科</span><span class="tag">影像</span><span class="tag">深度学习</span></div></div><h3>不平衡口腔癌图像分类：CNN 与 Transformer 架构及失衡缓解策略对比</h3><div class="src">Cancers (Basel) · 09-09 · <a href="https://pubmed.ncbi.nlm.nih.gov/42794893/">PMID 42794893</a></div><div class="fields"><div class="f"><b>研究目的</b>：针对口腔癌图像数据集类别不平衡问题，系统评估失衡缓解策略（医学安全增强、随机欠采样、过采样）对 CNN 与 Transformer 诊断性能的影响。</div><div class="f"><b>研究设计 + 样本</b>：3000 张移动设备采集口内图像，分 4 类（健康/良性/口腔潜在恶性病变 OPMD/口腔癌）；EfficientNet、Vision Transformer、Swin Transformer 三种骨干在 4 种训练条件下对比；分层五折交叉验证，报告验证折均值指标。</div><div class="f"><b>核心结果</b>：医学安全数据增强整体表现最强，EfficientNet 宏 F1 最高 0.669±0.024、AUC 0.881±0.015；临床导向二分类（高危 vs 低危）敏感度 0.817±0.030；随机欠采样在所有架构下表现持续最低。</div><div class="f limit"><b>局限</b>：移动端图像、单一数据集，四分类宏 F1 仅约 0.67；未做外部人群验证，距临床分诊部署仍有距离。</div></div></div>
+
+<div class="grade-head"><span class="badge b">B 级</span><span class="desc">中等期刊相关研究 / 系统综述 / 有价值的方法学工作 · 今日新增 8 篇</span></div>
+
+<div class="paper b"><div class="top"><span class="g b">B</span><div class="tags"><span class="tag">数字化</span><span class="tag">器械/设备</span><span class="tag">产品</span><span class="tag">深度学习</span></div></div><h3>口扫自动牙体分割 + 3D 打印牙合垫生成：数字牙科全自动深度学习管线</h3><div class="src">Diagnostics (Basel) · 09-19 · <a href="https://pubmed.ncbi.nlm.nih.gov/42793824/">PMID 42793824</a></div><div class="fields"><div class="f"><b>研究目的</b>：开发自动化框架，从原始 3D 口内扫描完成诊断性牙体分割并生成患者特异咬合稳定牙合垫（splint），减少人工 CAD 的操作者差异。</div><div class="f"><b>研究设计 + 样本</b>：使用 Teeth3DS+ 数据集；斐波那契半球相机策略将 3D 网格渲染为 32 视图；训练 7 种深度学习架构做 34 个牙体结构的像素级分类；概率聚合投票 + 图扩散回投至网格；SVD 由牙齿质心估咬合平面；拓扑膨胀 + 法向位移合成双层壳牙合垫；60 例留出扫描评估。</div><div class="f"><b>核心结果</b>：UNet++ 表现最佳（MPA 98.75%、mIoU 71.76%、Dice 75.20%，配对 t 检验与 Wilcoxon 均 p&lt;0.001）；回投与图扩散将分割质量从逐视图 mIoU 62.0% 提升至网格级 87.4%（Dice 65.2%→91.3%）；第三磨牙等稀有/后牙类别对学习率敏感。</div><div class="f limit"><b>局限</b>：基于公开数据集（Teeth3DS+）而非真实临床队列；稀有牙位分割精度偏低；生成牙合垫的临床适配性与力学性能未做患者验证。</div></div></div>
+
+<div class="paper b"><div class="top"><span class="g b">B</span><div class="tags"><span class="tag">种植</span><span class="tag">影像</span><span class="tag">深度学习</span></div></div><h3>混合多注意力深度学习自动检测 CBCT 上颌窦黏膜增厚（种植术前规划）</h3><div class="src">Journal of Clinical Medicine · 09-09 · <a href="https://pubmed.ncbi.nlm.nih.gov/42795761/">PMID 42795761</a></div><div class="fields"><div class="f"><b>研究目的</b>：开发含多种注意力机制的混合深度学习模型，在种植手术用 CBCT 上自动检测并分类上颌窦黏膜增厚，以降低专家误差并加速处理。</div><div class="f"><b>研究设计 + 样本</b>：数据预处理后用 CNN 骨干提取特征；并行接入 SE、CBAM、ECA 三种注意力机制以更好刻画通道/空间/局部关系；融合特征经带 dropout 的 MLP 与 softmax 输出分类；与文献预训练模型比较，评估测试准确率。</div><div class="f"><b>核心结果</b>：混合模型自动检测并分类上颌窦黏膜增厚的测试准确率达 99.43%，优于所比较的预训练模型，注意力机制同时提升表征与分类性能。</div><div class="f limit"><b>局限</b>：单中心 CBCT 数据集；需独立外部验证与前瞻性临床评估方能确定临床落地潜力。</div></div></div>
+
+<div class="paper b"><div class="top"><span class="g b">B</span><div class="tags"><span class="tag">影像</span><span class="tag">大语言模型</span><span class="tag">器械/设备</span></div></div><h3>多模态大语言模型 vs 颌面放射科医师：全景片偶发发现检测（CBCT 参照）</h3><div class="src">Healthcare (Basel) · 09-10 · <a href="https://pubmed.ncbi.nlm.nih.gov/42793485/">PMID 42793485</a></div><div class="fields"><div class="f"><b>研究目的</b>：以 CBCT 为参照标准，比较可读图的多模态大语言模型与口腔颌面放射科医师对全景片 9 类偶发发现的检出能力。</div><div class="f"><b>研究设计 + 样本</b>：回顾性诊断表现研究；500 张富集（finding-enriched）全景片配对 CBCT；3 名放射科医师阅 CBCT 建立参照；2 名专家与 3 个 LLM（消费级网页界面）各判读；共 4500 条发现级决策/读者；用 GEE 与聚类 bootstrap（5000 次重抽样）处理患者内聚类，Cochran's Q + Benjamini-Hochberg 校正。</div><div class="f"><b>核心结果</b>：两位专家一致性 κ=0.86；专家敏感度/特异度/准确率 89.5–91.6%/92.0–93.0%/91.8–92.9%，LLM 为 75.1–83.1%/88.0–90.0%/86.8–89.0%；读者效应均 p&lt;0.001；多重校正后仅颈动脉钙化（q&lt;0.001）与上颌窦广泛病变（q=0.005）差异仍显著。</div><div class="f limit"><b>局限</b>：富集样本不等于真实患病率场景；LLM 经消费级界面访问、版本与提示敏感，且为单中心，绝对值不可直接外推；不宜独立用于全景片判读。</div></div></div>
+
+<div class="paper b"><div class="top"><span class="g b">B</span><div class="tags"><span class="tag">影像</span><span class="tag">大语言模型</span><span class="tag">颌面外科</span></div></div><h3>通用多模态 AI 聊天机器人 vs 放射科专家：CBCT 下颌阻生第三磨牙 Winter 分型</h3><div class="src">Diagnostics (Basel) · 09-09 · <a href="https://pubmed.ncbi.nlm.nih.gov/42793689/">PMID 42793689</a></div><div class="fields"><div class="f"><b>研究目的</b>：探讨通用多模态 AI 聊天机器人在 CBCT 下颌阻生第三磨牙 Winter 分型中的表现，并与口腔颌面放射科专家对比。</div><div class="f"><b>研究设计 + 样本</b>：回顾性评估 114 颗阻生下颌第三磨牙；每颗牙以轴/冠/矢状多平面重建 + 1 张 3D 表面渲染合成单张 JPEG，按 FDI 牙位命名；五款多模态 AI 聊天机器人（ChatGPT、Gemini、Copilot、Perplexity、Grok）经网页界面以相同结构化提示、各自独立会话判读；2 名委员会认证颌面放射科医师独立分类同一批图像建立裁定参照；计算准确率、平衡准确率、宏召回、精确率、F1、Cohen κ 并与多数类（无信息）基线比较。</div><div class="f"><b>核心结果</b>：参照分布：近中倾 28、远中倾 9、垂直 25、水平 46、倒置 6（无横位，六类谱不全）；两医师一致性 80.7%（κ=0.688）。准确率 ChatGPT 41.2%、Copilot 30.7%、Gemini/Perplexity/Grok 24.6%，均未超 40.4% 多数类基线（ChatGPT vs 基线 p=0.85）；平衡准确率均 ≤23.8%，与参照一致性 κ −0.003~0.097（95%CI 均含 0）；远中倾与倒置无一正确分类。</div><div class="f limit"><b>局限</b>：限特定网页界面、提示、图像合成与测试时段；静态 CBCT 二维合成损失立体信息；稀有类别样本极少、估计高度不精确；结论不应外推至所有多模态模型或专用牙科 AI。</div></div></div>
+
+<div class="paper b"><div class="top"><span class="g b">B</span><div class="tags"><span class="tag">影像</span><span class="tag">AI/算法</span><span class="tag">监管</span></div></div><h3>口腔影像中的可解释 AI：可解释性与信任证据的系统综述</h3><div class="src">Frontiers in Dental Medicine · 09-11 · <a href="https://pubmed.ncbi.nlm.nih.gov/42798518/">PMID 42798518</a></div><div class="fields"><div class="f"><b>研究目的</b>：系统识别与分类口腔颌面影像中可解释 AI（XAI）的方法、评估方式，及与临床医生信任和可用性相关的结局。</div><div class="f"><b>研究设计 + 样本</b>：按 PRISMA 2020 检索 6 个电子数据库并补充 Google Scholar 与参考文献筛选；提取影像模态、临床应用、解释方法、解释范围、与预测模型关系、输出格式、评估方式、信任/可用性结局、外部验证状态；用 QUADAS-2 与 PROBAST 评估偏倚与适用性。</div><div class="f"><b>核心结果</b>：纳入 61 篇；基于 CAM 的局部解释占主导；对忠实性、临床医生信任与可用性的正式评估并不常见；多数研究总体偏倚风险高。</div><div class="f limit"><b>局限</b>：现有证据更多描述 XAI 的技术使用而非临床效用；作者呼吁预设解释分类学、定量忠实性与定位测试及以临床医生为中心的决策表现评估。</div></div></div>
+
+<div class="paper b"><div class="top"><span class="g b">B</span><div class="tags"><span class="tag">影像</span><span class="tag">深度学习</span><span class="tag">牙体牙髓</span></div></div><h3>AI 龋病检测跨影像模态诊断准确性：系统综述与描述性综合</h3><div class="src">Diagnostics (Basel) · 09-16 · <a href="https://pubmed.ncbi.nlm.nih.gov/42793779/">PMID 42793779</a></div><div class="fields"><div class="f"><b>研究目的</b>：系统梳理 AI 龋病检测证据的临床构成与可信度（影像模态、病变阈值、观察单位、参照标准、验证设计），并单列「临床医生 + AI」研究。</div><div class="f"><b>研究设计 + 样本</b>：检索 5 个数据库至 2026-06-10，纳入使用临床采集人体牙科数据的诊断准确性研究；应用 QUADAS-3 与结构化 GRADE-DTA 评估；因研究未针对共同临床问题，不估计合并操作点。</div><div class="f"><b>核心结果</b>：纳入 29 篇报告/28 项研究；全部 28 项总体偏倚风险高，仅 5 项使用外部验证；12 篇独立 AI 报告提供精确 2×2 数据，敏感度 0.360–0.940、特异度 0.700–0.983；两项受控阅片研究显示 AI 辅助提高敏感度，但一项特异度下降、另一项治疗决策更趋侵入；独立准确率与临床医生增益的证据确定性均极低。</div><div class="f limit"><b>局限</b>：现有证据不支持可迁移的准确率基准或净临床获益结论；需锁定模型的外部验证与配对前瞻性、以患者相关结局为终点的评估。</div></div></div>
+
+<div class="paper b"><div class="top"><span class="g b">B</span><div class="tags"><span class="tag">正畸</span><span class="tag">影像</span><span class="tag">机器学习</span></div></div><h3>颈椎成熟度自动评估的机器学习模型：头颅侧位片三阶段/六阶段分类</h3><div class="src">Diagnostics (Basel) · 09-08 · <a href="https://pubmed.ncbi.nlm.nih.gov/42793671/">PMID 42793671</a></div><div class="fields"><div class="f"><b>研究目的</b>：开发并外部验证全自动深度学习管线进行颈椎成熟度（CVM）评估，确定其相对专家分期在三阶段与六阶段分类上的诊断准确性。</div><div class="f"><b>研究设计 + 样本</b>：横断面三阶段深度学习管线，在 523 张 King Abdulaziz 大学头颅侧位片上训练并内部交叉验证；CLAHE 增强后 YOLOv8 检测 C2–C4 区域，ResNet-50 分类生长相（早/峰/晚），分相二分类器判定 CVM 阶段（CS1–CS6）；以独立 Aariz 数据集（n=150）外部验证。</div><div class="f"><b>核心结果</b>：检测器 mAP@0.5=0.9939、平均 IoU 0.8884；外部验证三阶段分类准确率 96.0%、宏 F1 0.919、加权 κ 0.951、ROC-AUC 0.998；端到端六阶段级联准确率 79.3%、宏 F1 0.735、加权 κ 0.910、ROC-AUC 0.923；多数错误发生在相邻阶段，98.7% 预测落在参照 ±1 期内。</div><div class="f limit"><b>局限</b>：仅在一个独立外部基准上验证；六阶段分类为中等性能；需多中心前瞻性验证确定泛化性与临床效用。</div></div></div>
+
+<div class="paper b"><div class="top"><span class="g b">B</span><div class="tags"><span class="tag">大语言模型</span><span class="tag">数字化</span><span class="tag">产品</span></div></div><h3>牙科临床文书中的环境语音技术：叙述性综述</h3><div class="src">British Dental Journal · 09-25 · <a href="https://pubmed.ncbi.nlm.nih.gov/42791295/">PMID 42791295</a></div><div class="fields"><div class="f"><b>研究目的</b>：综合环境语音技术（AVT）与生成式 AI 在牙科及更广医疗中临床文书应用的现有证据（准确性、文书时间、医患体验）。</div><div class="f"><b>研究设计 + 样本</b>：多库检索 AI/AI 临床文书、大语言模型与摘要、文书产出相关研究；纳入评估 AI 生成临床文书并以准确性、文书时间、临床医生/患者体验为结局的研究。</div><div class="f"><b>核心结果</b>：牙科证据有限——仅 1 项评估 AVT 语音转文字准确率，系统间表现不一，对牙科术语准确率下降并出现临床显著错误与幻觉；无牙科研究评估 AI 生成临床记录或信函。更广医疗研究表现不一（含可能致害错误）；实施研究提示 AVT 可减少文书时间与负担，但效应量不一致、采用率因医生而异且笔记更长；患者态度总体积极但有条件（取决于准确性与隐私）。</div><div class="f limit"><b>局限</b>：牙科证据极少，多为更广医疗类比；需要安全性、效率的持续研究与 AI 素养提升，临床医生仍须为最终记录负责。</div></div></div>
+
+<div class="grade-head"><span class="badge c">C 级</span><span class="desc">相关性中等 / 初步或概念性 · 今日新增 1 篇</span></div>
+
+<div class="paper c"><div class="top"><span class="g c">C</span><div class="tags"><span class="tag">影像</span><span class="tag">器械/设备</span><span class="tag">监管</span></div></div><h3>牙科从业者采用 AI 解读 CBCT 的就绪度：横断面调查</h3><div class="src">Cureus · 08-26 · <a href="https://pubmed.ncbi.nlm.nih.gov/42799519/">PMID 42799519</a></div><div class="fields"><div class="f"><b>研究目的</b>：评估牙科从业者采用 AI 进行 CBCT 解读的就绪度，并识别与 AI 就绪度相关的人口学与职业因素。</div><div class="f"><b>研究设计 + 样本</b>：横断面问卷调查——第一部分人口学信息、第二部分 AI 就绪度评估（多学科牙科专家组开发、预试验并检验内部一致性）；五级 Likert 电子作答；描述统计、独立 t 检验、Spearman 相关与多元线性回归分析相关因素。</div><div class="f"><b>核心结果</b>：共 380 份完整回答纳入分析；问卷内部一致性良好（Cronbach α=0.87）；31–40 岁与 20–30 岁组占比最高，男性 209 人（55.0%），多数为 MDS 学历。</div><div class="f limit"><b>局限</b>：便利抽样、单一时点横断面，仅反映态度/就绪度而非实际使用绩效；地域与人群代表性有限。</div></div></div>
+
+  <!-- 行业速递 -->
+  <div class="tip">
+    <div class="tt">💡 行业速递</div>
+    <ul>
+<li><b>研究 · J Clin Periodontol：11 款商用 AI 牙周诊疗系统最高 46.7% 回答含「危险」要素</b>：以色列 Rambam 医疗中心与 Technion 主导的国际研究（发表于 Journal of Clinical Periodontology）评估并排名 11 款市售 AI 系统对牙周病诊断与治疗规划的能力；依系统不同，最高 46.7% 的回答包含至少一项被评为「差或危险」的要素（范围 3.3%–46.7%）。采用检索增强生成（RAG）的 Perplexity、OpenEvidence 总分居前二，其后为 Claude 4.7 Opus，但即便最强系统亦非无误。信号：商用 AI 用于牙周诊疗规划仍须专业复核与更严的安全/准确性验证，勿在无监督下直接采用。</li>
+<li><b>器械/设备 · Trust AI 将 VELMENI 牙科 AI 接入 Isaac PracticeOS</b>：Trust AI 宣布将 FDA 获批的 VELMENI 牙科 AI 与 AI 原生诊所管理系统 Isaac PracticeOS 原生集成——VELMENI for DENTISTS（V4D）的 2D/3D 影像分析直接嵌入 Isaac 价值 200 万美元的 RCM Hub，由自主代理围绕影像证据组装并辩护保险理赔。VELMENI 持有咬翼片/根尖片/全景片 AI 检测 510(k)，并于 2026 年 7 月获 3D CBCT 分析许可。信号：牙科影像 AI 正从独立软件转为「影像→文书→理赔」闭环的底层能力。</li>
+<li><b>资本 · 玉汝成完成数千万元 B 轮融资</b>：深圳玉汝成口腔材料有限公司完成数千万元 B 轮融资，由穗开投资、珠海高科金投及产业投资方谊安医疗联合投资，涵宇资本担任财务顾问；资金将重点投向口腔数字化智造体系建设并推进上下游产业链生态整合。信号：国产口腔材料/数字化制造环节持续获资本加注。</li>
+    </ul>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="mono">DENTAL × AI LITERATURE DAILY · 2026-09-28</div>
+    <div class="src-note">数据来源：PubMed E-utilities（近3天增量检索）· 分级依据期刊影响力 + 主题相关度 + 研究设计 · 摘要经 AI 简略提炼，详情以原文为准</div>
+  </div>
+</footer>
+</body>
+</html>
