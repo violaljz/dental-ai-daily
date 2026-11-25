@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>口腔×AI 文献日报 · 2026-11-25</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f6f7f9; --surface:#ffffff; --border:#e5e8ec; --border-soft:#eef0f3;
+    --text:#1a2233; --text-2:#4a5568; --text-3:#8b95a5;
+    --s:#b8860b; --s-bg:#fff8e6; --s-line:#d4a017;
+    --a:#2563eb; --a-bg:#eef4ff; --a-line:#3b82f6;
+    --b:#0f8a5f; --b-bg:#eafaf2; --b-line:#10b981;
+    --c:#6b7280; --c-bg:#f3f4f6; --c-line:#9ca3af;
+    --mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+    --sans:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:15px;line-height:1.65;-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:980px;margin:0 auto;padding:0 24px;}
+  header.hero{background:linear-gradient(135deg,#0f172a,#1e293b);color:#fff;padding:52px 0 44px;}
+  .kicker{font-family:var(--mono);font-size:12px;letter-spacing:2px;color:#93c5fd;text-transform:uppercase;}
+  h1{font-size:30px;font-weight:800;margin-top:8px;letter-spacing:-.5px;}
+  h1 .hl{color:#fbbf24;}
+  .sub{color:#cbd5e1;margin-top:8px;font-size:15px;font-weight:300;}
+  .meta-row{display:flex;gap:12px;margin-top:18px;flex-wrap:wrap;}
+  .meta{font-family:var(--mono);font-size:12px;color:#e2e8f0;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:6px;padding:5px 11px;}
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:28px 0 8px;}
+  .stat{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:16px 10px;text-align:center;margin-top:-70px;box-shadow:0 6px 18px rgba(15,23,42,.08);}
+  .stat .num{font-family:var(--mono);font-size:26px;font-weight:700;}
+  .stat .lbl{font-size:11.5px;color:var(--text-3);margin-top:3px;}
+  .stat.s .num{color:var(--s);} .stat.a .num{color:var(--a);} .stat.b .num{color:var(--b);} .stat.c .num{color:var(--c);}
+  main{padding:36px 0 60px;}
+  .grade-head{display:flex;align-items:center;gap:12px;margin:34px 0 14px;}
+  .grade-head .badge{font-family:var(--mono);font-weight:700;font-size:14px;color:#fff;border-radius:7px;padding:4px 12px;letter-spacing:1px;}
+  .grade-head .desc{font-size:13px;color:var(--text-3);}
+  .badge.s{background:var(--s-line);} .badge.a{background:var(--a-line);} .badge.b{background:var(--b-line);} .badge.c{background:var(--c-line);}
+  .paper{background:var(--surface);border:1px solid var(--border);border-left:4px solid var(--c-line);border-radius:12px;padding:20px 22px;margin-bottom:14px;box-shadow:0 1px 3px rgba(15,23,42,.04);}
+  .paper.s{border-left-color:var(--s-line);background:var(--s-bg);}
+  .paper.a{border-left-color:var(--a-line);background:var(--a-bg);}
+  .paper.b{border-left-color:var(--b-line);background:var(--b-bg);}
+  .paper.c{border-left-color:var(--c-line);background:var(--c-bg);}
+  .paper .top{display:flex;align-items:flex-start;gap:10px;flex-wrap:wrap;}
+  .paper .g{font-family:var(--mono);font-weight:700;font-size:12px;border-radius:5px;padding:2px 8px;color:#fff;letter-spacing:1px;}
+  .g.s{background:var(--s-line);} .g.a{background:var(--a-line);} .g.b{background:var(--b-line);} .g.c{background:var(--c-line);}
+  .paper .tags{margin-left:auto;display:flex;gap:6px;flex-wrap:wrap;}
+  .paper .tag{font-size:11px;color:var(--text-2);background:#fff;border:1px solid var(--border);border-radius:999px;padding:2px 9px;}
+  .paper h3{font-size:16.5px;font-weight:700;margin:10px 0 4px;line-height:1.4;letter-spacing:-.2px;}
+  .paper .src{font-family:var(--mono);font-size:12px;color:var(--text-3);}
+  .paper .src a{color:var(--a);text-decoration:none;}
+  .paper .src a:hover{text-decoration:underline;}
+  .paper .fields{margin-top:12px;display:grid;gap:7px;}
+  .paper .f{font-size:13.5px;color:var(--text-2);}
+  .paper .f b{color:var(--text);font-weight:600;}
+  .paper .f.limit b{color:#9a3412;}
+  .tip{background:#fff;border:1px dashed #f59e0b;border-radius:12px;padding:18px 22px;margin-top:10px;}
+  .tip .tt{font-weight:800;color:#b45309;font-size:14px;}
+  .tip ul{margin:8px 0 0 18px;font-size:13.5px;color:var(--text-2);}
+  .tip li{margin-bottom:8px;}
+  footer{background:var(--surface);border-top:1px solid var(--border);padding:28px 0 46px;text-align:center;color:var(--text-3);font-size:12.5px;}
+  footer .mono{font-family:var(--mono);}
+  footer .src-note{margin-top:8px;font-size:11.5px;color:var(--text-3);}
+  @media(max-width:640px){ .stats{grid-template-columns:repeat(2,1fr);} .stat{margin-top:0;} main{padding-top:20px;} h1{font-size:24px;} }
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="wrap">
+    <div class="kicker">Dental × AI Literature Daily</div>
+    <h1>口腔 × AI <span class="hl">文献日报</span></h1>
+    <div class="sub">口腔医学与人工智能交叉领域 · 高质量文献精选</div>
+    <div class="meta-row">
+      <span class="meta">📅 2026-11-25</span>
+      <span class="meta">🔍 PubMed</span>
+      <span class="meta">📚 今日收录 6 篇 + 2 条行业速递</span>
+      <span class="meta">⭐ 重点：CBCT 下颌管分割真实精度、LLM 指南问答可靠性、瘤内菌群驱动 OSCC</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="stats">
+    <div class="stat s"><div class="num">0</div><div class="lbl">S 级 · 重磅</div></div>
+    <div class="stat a"><div class="num">1</div><div class="lbl">A 级 · 重要</div></div>
+    <div class="stat b"><div class="num">2</div><div class="lbl">B 级 · 有价值</div></div>
+    <div class="stat c"><div class="num">3</div><div class="lbl">C 级 · 参考</div></div>
+  </div>
+</div>
+
+<main class="wrap">
+<div class="grade-head"><span class="badge a">A 级</span><span class="desc">高影响力期刊（IF≥5）高相关原创研究 · 今日新增 1 篇</span></div>
+
+<div class="paper a"><div class="top"><span class="g a">A</span><div class="tags"><span class="tag">口腔微生物</span><span class="tag">AI/算法</span><span class="tag">颌面外科</span></div></div><h3>瘤内 Peptostreptococcus stomatis 经整合素 α6/β4–ERBB2–MAPK 通路驱动口腔鳞癌进展</h3><div class="src">mSystems · 11-24 · <a href="https://pubmed.ncbi.nlm.nih.gov/43076405/">PMID 43076405</a></div><div class="fields"><div class="f"><b>研究目的</b>：明确口腔鳞癌（OSCC）瘤内菌群的组成特征与功能贡献，找出可干预的致病菌与宿主通路。</div><div class="f"><b>研究设计 + 样本</b>：9 个公共 16S rRNA 数据集共 578 样本的整合 Meta 分析 + 机器学习诊断建模；临床标本 FISH 验证富集；OSCC 细胞株体外功能实验（增殖/迁移/侵袭）与小鼠异种移植模型；ERBB2 基因敲除回复实验。</div><div class="f"><b>核心结果</b>：OSCC 瘤内菌群显著失调（α 多样性降低、β 多样性分离），ML 签名平均交叉验证 AUC 0.83；<i>Peptostreptococcus stomatis</i> 在肿瘤中持续富集并经 FISH 证实；该菌直接黏附 OSCC 细胞、激活整合素 α6/β4–ERBB2–MAPK 通路，Erbb2 敲除后促恶性表型与体内促瘤作用均被消除。</div><div class="f limit"><b>局限</b>：公共 16S 数据以关联为主、菌株水平分辨率有限；机制验证集中于单一菌株与细胞/小鼠模型，人体因果与干预价值待前瞻性研究。</div></div></div>
+
+<div class="grade-head"><span class="badge b">B 级</span><span class="desc">中等期刊相关研究 / 系统综述 / 有价值的方法学工作 · 今日新增 2 篇</span></div>
+
+<div class="paper b"><div class="top"><span class="g b">B</span><div class="tags"><span class="tag">影像</span><span class="tag">深度学习</span><span class="tag">种植</span><span class="tag">器械/设备</span></div></div><h3>深度学习下颌管分割的真实精度：54 项研究的系统综述与 Meta 分析</h3><div class="src">Journal of Imaging Informatics in Medicine · 11-23 · <a href="https://pubmed.ncbi.nlm.nih.gov/43073639/">PMID 43073639</a></div><div class="fields"><div class="f"><b>研究目的</b>：在明确效度标准下估计深度学习下颌管（下牙槽神经管）分割的准确度，并分析评估设计如何影响报告值——该结构是种植术前规划的关键解剖标志。</div><div class="f"><b>研究设计 + 样本</b>：PROSPERO 注册系统综述与 Meta 分析（CRD420261403406），检索 5 个数据库至 2026-05；仅纳入三维、按患者划分测试集的 CBCT/CT 研究；DSC 经 logit 变换随机效应合并；公共基准单独分析，参考标准由被评估模型自身生成的测试集不纳入合并。</div><div class="f"><b>核心结果</b>：合并 15 项研究 DSC 0.826（95%CI 0.752–0.881；95%PI 0.444–0.966），与既往三项综述（0.80–0.84）接近；ToothFairy 官方测试集两系统合并 DSC 0.751；7 项研究合并 95 百分位 Hausdorff 距离 1.15 mm（预测区间至 6.11 mm）；内部与外部估计差异不显著（P=0.974），但外部研究仅 5 项。</div><div class="f limit"><b>局限</b>：15 项可合并研究中 14 项偏倚风险不明或高、证据确定性极低；预测区间宽（0.444–0.966）说明跨机构表现高度不确定，仍需专家复核与前瞻性外部验证。</div></div></div>
+
+<div class="paper b"><div class="top"><span class="g b">B</span><div class="tags"><span class="tag">牙体牙髓</span><span class="tag">大语言模型</span><span class="tag">监管</span></div></div><h3>八款大语言模型回答 ESE S3 级牙髓指南问题：准确可复现，但弱推荐处明显下滑</h3><div class="src">Odontology · 11-22 · <a href="https://pubmed.ncbi.nlm.nih.gov/43069390/">PMID 43069390</a></div><div class="fields"><div class="f"><b>研究目的</b>：评估 8 款最新大语言模型回答欧洲牙体牙髓病学会（ESE）S3 级临床实践指南衍生问题时的准确性、可复现性与指南一致性。</div><div class="f"><b>研究设计 + 样本</b>：50 道题由两名牙髓专科医生制定答案键（Kappa 0.867），分 3 个难度层级；ChatGPT-4o/5、Gemini 2.5 Pro、DeepSeek V3.2-Exp、Claude Sonnet/Haiku 4.5、Copilot、Grok 4 以标准化提示在 3 个独立账号、3 个时间点（第 1/7/30 天）各作答；Fleiss Kappa、Cochran Q、Friedman 检验评估账号间与时间稳定性。</div><div class="f"><b>核心结果</b>：总体准确率 86.7%（95%CI 77.8–94.7）至 97.3%（94.2–99.6）；多数模型跨评估一致、跨时间稳定；准确率随推荐强度下降而降低（强推荐 99.8%、弱推荐 84.7%）；模型间差异更多体现在响应稳定性而非峰值准确率。</div><div class="f limit"><b>局限</b>：以结构化指南题目为测试集、非真实患者情境；模型版本迭代快，结果时效性有限；作者仅支持教学/信息辅助用途，临床决策支持需真实病例验证。</div></div></div>
+
+<div class="grade-head"><span class="badge c">C 级</span><span class="desc">相关性中等 / 初步或概念性 · 今日新增 3 篇</span></div>
+
+<div class="paper c"><div class="top"><span class="g c">C</span><div class="tags"><span class="tag">牙体牙髓</span><span class="tag">器械/设备</span><span class="tag">数字化</span></div></div><h3>动态导航引导钙化根管开髓的学习曲线：体外试点数据驱动分析</h3><div class="src">Odontology · 11-22 · <a href="https://pubmed.ncbi.nlm.nih.gov/43069389/">PMID 43069389</a></div><div class="fields"><div class="f"><b>研究目的</b>：刻画临床医生掌握动态导航系统（DNS）引导钙化根管开髓的学习曲线，为器械培训与准入提供初步量化基准。</div><div class="f"><b>研究设计 + 样本</b>：体外试点研究；一名 DNS 经验有限的操作者用 DCARER 系统对 18 颗 3D 打印上颌前牙（模拟钙化根管）开髓；记录线性偏差、角度偏差与操作时间；分段回归识别性能转折点，比较前 8 例与后 10 例。</div><div class="f"><b>核心结果</b>：18/18 成功定位（100%）；总体中位三维偏差 0.30 mm（IQR 0.22–0.38）、平均角度偏差 0.89°±0.52°；分段回归提示第 8.5 例出现显著学习拐点（p=0.022）；早期 vs 后期用时 422.5 vs 179 s（p=0.004）、角度偏差 1.22° vs 0.63°（p=0.013），线性精度始终较高。</div><div class="f limit"><b>局限</b>：单操作者、n=18 的探索性体外研究，不代表整体学习曲线或体内表现；打印牙与真实钙化根管的力学差异大，需大样本与临床验证。</div></div></div>
+
+<div class="paper c"><div class="top"><span class="g c">C</span><div class="tags"><span class="tag">影像</span><span class="tag">放射组学</span><span class="tag">AI/算法</span></div></div><h3>鸡冠 CBCT 放射组学与颅前底解剖复杂度：初步关联研究</h3><div class="src">European Archives of Oto-Rhino-Laryngology · 11-22 · <a href="https://pubmed.ncbi.nlm.nih.gov/43069002/">PMID 43069002</a></div><div class="fields"><div class="f"><b>研究目的</b>：探索鸡冠（crista galli）CBCT 放射组学特征与颅前底解剖复杂度评分（ACS，整合 Keros 等分类）的关联，为鼻内镜/颅底入路风险评估寻找影像标志物线索。</div><div class="f"><b>研究设计 + 样本</b>：单中心回顾性探索性试点研究；50 例 CBCT，三维分割鸡冠后提取 107 个放射组学特征；以 Keros、Komut-Golpinar、Hajiioannou 与气化分类构建 ACS；相关分析 + FDR 校正 + 探索性线性/逻辑回归与 5 折交叉验证。</div><div class="f"><b>核心结果</b>：60% 低复杂度、40% 中等复杂度（无高复杂度病例）；Keros 分类与 ACS 内部关联最强（p&lt;0.001，ε²=0.372）；放射组学与 ACS 的相关性仅未校正时名义显著，FDR 校正后均不显著；探索性模型表观 AUC 0.743、交叉验证均值 0.715。</div><div class="f limit"><b>局限</b>：样本量小（n=50）、单中心、无高复杂度病例；主要终点经多重校正后为阴性，属假设生成性研究，不能作为临床决策依据。</div></div></div>
+
+<div class="paper c"><div class="top"><span class="g c">C</span><div class="tags"><span class="tag">颌面外科</span><span class="tag">数字化</span><span class="tag">器械/设备</span><span class="tag">产品</span></div></div><h3>下颌与颞下颌关节手术的患者特异性植入物：83 项研究的系统综述</h3><div class="src">Oral and Maxillofacial Surgery · 11-23 · <a href="https://pubmed.ncbi.nlm.nih.gov/43071211/">PMID 43071211</a></div><div class="fields"><div class="f"><b>研究目的</b>：按适应证、材料、结局与并发症分层，系统评价患者特异性植入物（PSI）在下颌与颞下颌关节手术中的临床证据。</div><div class="f"><b>研究设计 + 样本</b>：PROSPERO 注册（CRD42024580864）系统综述，检索 PubMed 与 Scopus 至 2026-01；两名评价者独立筛选、提取并用 JBI 工具评估偏倚；因异质性大采用分层叙述性综合。</div><div class="f"><b>核心结果</b>：共 83 项研究 790 例；下颌节段/肿瘤/创伤重建 34 项以钛承重植入物为主，并发症含软组织裂开、板外露与硬件取出；TMJ 重建 27 项（187 例）多用混合假体，最大开口度普遍改善但见暂时性面神经无力；正颌 5 项（193 例）骨性转移精度可接受但偶有就位偏差，优于常规微型板未获证实；美学/颏成形 17 项（&gt;200 例）多用多孔聚乙烯或 PEEK，满意度高、并发症多为暂时性。</div><div class="f limit"><b>局限</b>：证据以病例报告与病例系列为主（仅 1 项 RCT），发表偏倚与选择偏倚风险高；缺乏长期随访与标准化结局，不能据此确立 PSI 相对常规方案的优越性。</div></div></div>
+
+  <!-- 行业速递 -->
+  <div class="tip">
+    <div class="tt">💡 行业速递</div>
+    <ul>
+<li><b>审批 · DS Core Detect 获 510(k)：CBCT 根尖周 AI 并发阅片</b>：FDA 于 2026-10-30 向 Dentsply Sirona 的 DS Core Detect 发出 510(k)（K261072），许可用途为「对因其他原因已拍摄的 CBCT 做恒牙根尖周透射影并发阅片检测，≥22 岁」，并纳入预设变更控制计划（PCCP）。截至 2026-11-24 第三方统计：全行业牙科 AI 510(k) 累计 <b>57 项 / 20 家公司</b>（2026 年新增 16 项），Overjet 12、Pearl 8、Dentsply Sirona 5；15 项 CBCT 相关许可中仅 DS Core Detect 与 Diagnocat 可直接「标注病变」，其余为分割/测量/规划。信号：CBCT 病变检测成为影像 AI 竞争新高地，PCCP 让算法可持续迭代而无需重新申报。</li>
+<li><b>资本 · 清皓普众完成数千万元 A 轮：口腔修复材料 + AI4CAD 双线推进</b>：2026-11-25 报道，湖南清皓普众完成数千万元 A 轮，云和资本领投、麓山资本跟投，日新资本任 FA；资金用于海外品牌与渠道、AI4CAD 产品研发及新材料研发注册投产。公司由清华博士团队创立，高性能氧化锆已量产交付，树脂渗透陶瓷完成全流程验证；2026 年已取得 3 张 NMPA 二类医疗器械注册证与 2 项 FDA 认证。AI 分两条线：AI4S 用于材料配方与工艺参数优化，AI4CAD 面向修复体设计（口扫→设计→切削/烧结）。信号：国产修复材料厂商把 AI 从「设计端」向「材料端」延伸，义齿加工链条的软件价值正被材料商捕获。</li>
+    </ul>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="mono">DENTAL × AI LITERATURE DAILY · 2026-11-25</div>
+    <div class="src-note">数据来源：PubMed E-utilities（近3天增量检索）· 分级依据期刊影响力 + 主题相关度 + 研究设计 · 摘要经 AI 简略提炼，详情以原文为准</div>
+  </div>
+</footer>
+</body>
+</html>
